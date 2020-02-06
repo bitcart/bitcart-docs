@@ -20,6 +20,14 @@
   * [Raspberry Pi 4 Deployment](deployment/raspberrypideployment/rpi4.md)
 * [Third-Party Hosting](deployment/thirdpartyhosting.md)
 
+## Getting started
+
+* [\(1\) Register account](getting-started/registeraccount.md)
+* [\(2\) Create a wallet](getting-started/createwallet/README.md)
+  * [Electrum wallet](getting-started/createwallet/electrumwallet.md)
+* [\(3\) Create a store](getting-started/createstore.md)
+* [\(4\) What's Next?](getting-started/whatsnext.md)
+
 ## Support and Community
 
 * [Support](support-and-community/support.md)
