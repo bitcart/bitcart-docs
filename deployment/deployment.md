@@ -12,19 +12,19 @@ Developer deployments are not recommended for production environments and requir
 
 ## What are my options?
 
-* ​[LunaNode Web Deployment​](lunanodewebdeployment.md)
+* ​[LunaNode Web Deployment​](lunanodeweb.md)
 * ​Azure Deployment​
-* ​Docker Deployment​
+* [​Docker Deployment​](docker.md)
 * ​Google Cloud Deployment​
-* [​Hardware Deployment​](hardwaredeployment.md)
+* [​Hardware Deployment​](hardware.md)
 * [​Third-Party Hosting​](thirdpartyhosting.md)
-* [​Manual Deployment](manualdeployment.md)
+* [​Manual Deployment](manual.md)
 
 ## To chose one that will best suit your needs, consider the following: <a id="to-chose-one-that-will-best-suit-your-needs-consider-the-following"></a>
 
 | Web Solutions | 1. | 2. | Why? |
 | :--- | :---: | :---: | :---: |
-| Business \(Fast Setup\) | [3rd Party   BitcartCC Hosts](thirdpartyhosting.md) | [LunaNode   Web-Wizard](lunanodewebdeployment.md)\* | - Low Difficulty - BitcartCC Support \(1\) - Lightning Network \(2\) |
+| Business \(Fast Setup\) | [3rd Party   BitcartCC Hosts](thirdpartyhosting.md) | [LunaNode   Web-Wizard](lunanodeweb.md)\* | - Low Difficulty - BitcartCC Support \(1\) - Lightning Network \(2\) |
 | Cost / Month | Free | $3.5 | BTC Accepted |
 
 _\*LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface._
@@ -39,7 +39,7 @@ _- BitcartCC can also be deployed on any VPS that meets the minimal requirements
 | Developer Solutions |  |  |  |
 | :--- | :---: | :---: | :---: |
 | Developer \(Testing Setup\) | Manual Install | Manual Build | Hardware Build |
-| **Not Recommended** **For New Users** | Install From Command Line | [Build Without Docker Image](manualdeployment.md) | ARM32v7 [Raspberry Pi](raspberrypideployment/) [BitcartCCBox](hardwaredeployment.md) |
+| **Not Recommended** **For New Users** | Install From Command Line | [Build Without Docker Image](manual.md) | ARM32v7 [Raspberry Pi](raspberrypi/) [BitcartCCBox](hardware.md) |
 
 ​
 
