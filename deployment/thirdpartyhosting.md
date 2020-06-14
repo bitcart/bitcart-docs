@@ -8,7 +8,9 @@ In layman words, think of this feature as a payment processor factory which allo
 
 ## The list of BitcartCC third-party hosts <a id="the-list-of-bitcartcc-third-party-hosts"></a>
 
-There are currently no third-party BitcartCC hosts. Contact us in [telegram](https://t.me/bitcartcc) if you want your host to get added to the list.
+* [admin.bsty.business](https://admin.bsty.business) \(BTC, BSTY, free\)
+
+Contact us in [telegram](https://t.me/bitcartcc) if you want your host to get added to the list.
 
 Feel free to chat with the [Community](../support-and-community/community.md) to find the appropriate host for your needs, but also make sure to choose a host you trust. Read the rest of this document to better understand the pros and cons of using a third party host.
 

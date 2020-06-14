@@ -8,7 +8,7 @@ BitcartCC has a ready store which you can use to receive payments from your cust
 
 ## Creating Custom Invoices <a id="creating-the-payment-request"></a>
 
-Create custom invoices which can be shared with others, by sending a link to your invoice checkout page. Users can pay the invoice at any time until the invoice has expired. 
+Create custom invoices which can be shared with others, by sending a link to your invoice checkout page. Users can pay the invoice at any time until the invoice has expired.
 
 ## Connecting your BitcartCC store to your e-commerce platform <a id="connecting-your-bitcartcc-store-to-your-e-commerce-platform"></a>
 

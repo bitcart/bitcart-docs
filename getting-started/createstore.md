@@ -12,7 +12,7 @@ To create a store, make sure you're logged in into your account, and go to &gt; 
 
 You can always edit your store by clicking the edit icon.
 
-To configure email servers, click on email icon in actions column. 
+To configure email servers, click on email icon in actions column.
 
 For more information, check Stores FAQ.
 
