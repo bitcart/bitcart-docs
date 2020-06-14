@@ -10,14 +10,14 @@ BitcartCC has a ready store which you can use to receive payments from your cust
 
 Create custom invoices which can be shared with others, by sending a link to your invoice checkout page. Users can pay the invoice at any time until the invoice has expired. 
 
-## Connecting your BitcartCC store to your e-commerce platform <a id="connecting-your-btcpay-store-to-your-e-commerce-platform"></a>
+## Connecting your BitcartCC store to your e-commerce platform <a id="connecting-your-bitcartcc-store-to-your-e-commerce-platform"></a>
 
 Depending on the CMS you're using, you can easily connect BitcartCC to your online store. Currently, BitcartCC offers following integrations :
 
 * ​WooCommerce​​
 * ​Custom integration​
 
-## Join The BitcartCC Community <a id="join-the-btcpay-community"></a>
+## Join The BitcartCC Community <a id="join-the-bitcartcc-community"></a>
 
 BitcartCC is an open-source project, not a company. We rely on a network of diverse contributors and users to provide support for numerous use-cases. Join us in improving, learning, and building BitcartCC.
 

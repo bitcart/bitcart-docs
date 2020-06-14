@@ -202,7 +202,7 @@ Enable your firewall:
 ufw enable
 ```
 
-## Setup BitcartCC <a id="setup-btcpay-server"></a>
+## Setup BitcartCC <a id="setup-bitcartcc"></a>
 
 Download BitcartCC from GitHub:
 

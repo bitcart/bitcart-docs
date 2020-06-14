@@ -30,7 +30,7 @@ Then you can create an invoice, either through
 
 See the [What's Next](https://docs.bitcartcc.com/getting-started/whatsnext) page for other options on how to continue exploring BitcartCC.
 
-## BitcartCC Demo <a id="btcpay-demo"></a>
+## BitcartCC Demo <a id="bitcartcc-demo"></a>
 
 To see BitcartCC in action, visit our demo apps and stores or check out some of the stores using BitcartCC in production.
 

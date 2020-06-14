@@ -6,7 +6,7 @@ While this feature in BitcartCC exists for complex multi-store business manageme
 
 In layman words, think of this feature as a payment processor factory which allows anyone to deploy a server and help others receive payments which are validated via the server owner BitcartCC core.
 
-## The list of BitcartCC third-party hosts <a id="the-list-of-btcpay-third-party-hosts"></a>
+## The list of BitcartCC third-party hosts <a id="the-list-of-bitcartcc-third-party-hosts"></a>
 
 There are currently no third-party BitcartCC hosts. Contact us in [telegram](https://t.me/bitcartcc) if you want your host to get added to the list.
 

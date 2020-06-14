@@ -1,6 +1,6 @@
 # \(2\) Create a wallet
 
-## Creating a Wallet in BitcartCC <a id="creating-a-store-in-btcpay"></a>
+## Creating a Wallet in BitcartCC <a id="creating-a-wallet-in-bitcartcc"></a>
 
 Inside BitcartCC, you can create and manage an unlimited number of wallets. Each wallet has its own xpub and currency. One wallet holds one currency.
 
