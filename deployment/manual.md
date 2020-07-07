@@ -152,3 +152,65 @@ NUXT_PORT=4000 yarn start
 
 Your BitcartCC API will run on port 8000, daemons on ports 5000-500X, admin panel on 3000, store on 4000.
 
+## Upgrading manual deployment
+
+Note: it is recommended to use docker deployment for easy upgrades.
+
+To upgrade manually, follow the following steps:
+
+### 1\) Stop everything already running
+
+Merchants API, workers, daemons, Admin panel and Store should be stopped
+
+### 2\) Pull latest changes
+
+Run :
+
+```text
+git pull
+```
+
+For every BitcartCC component directory \(Merchants API, Admin Panel, Store\).
+
+### 3\) Upgrade dependencies
+
+#### BitcartCC core\(daemons\) & Merchants API:
+
+```bash
+sudo pip3 install -r requirements.txt
+sudo pip3 install -r requirements/production.txt
+sudo pip3 install -r requirements/daemons/btc.txt
+```
+
+**BitcartCC admin**
+
+```text
+yarn
+```
+
+**BitcartCC store**
+
+```text
+yarn
+```
+
+### 4\) Apply new database migrations
+
+In BitcartCC core\(daemons\) & Merchants API directory, run:
+
+```text
+alembic upgrade head
+```
+
+### 5\) Rebuild store and admin
+
+For BitcartCC Admin Panel and Store, run:
+
+```text
+yarn build
+```
+
+### 6\) Start everything again
+
+Follow instructions [here](manual.md#run-everything)
+
