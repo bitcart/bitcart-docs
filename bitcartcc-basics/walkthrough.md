@@ -189,3 +189,70 @@ By clicking open checkout you'll be redirected to full checkout, respecting invo
 
 ![Full checkout page](../.gitbook/assets/checkout_full.png)
 
+## Notification providers
+
+On this page you can configure your notification providers, to later connect them to your stores.  
+  
+Supported information:  
+
+
+* Notification provider name for display
+* Provider to use, you can choose of many available ones
+* Provider options, differing from provider to provider
+
+![Notification providers page](../.gitbook/assets/notifications.png)
+
+![Create notification provider pop-up](../.gitbook/assets/create_notification.png)
+
+![Choice of various providers](../.gitbook/assets/notification_provider_selection.png)
+
+Each notification provider has different settings. Refer to their documentation about how to get certain settings. After that, select needed provider, fill in the settings and save changes.
+
+Then you can reuse notification providers by connecting them to needed stores! 
+
+When notification provider is connected, on each successful order it will be run to deliver a notification to you.
+
+![Connect notification provider to store](../.gitbook/assets/connect_notification_provider.png)
+
+![Sample notification via telegram provider](../.gitbook/assets/notification.png)
+
+## Templates
+
+On templates page you can override global server templates, or create custom ones.
+
+Available fields:
+
+* Name of template, you can select from built-in ones or type in a new one
+* Template text
+
+All templates in BitcartCC are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x). 
+
+Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/2.11.x/templates).
+
+![Templates page](../.gitbook/assets/templates.png)
+
+![Create template pop-up](../.gitbook/assets/create_template.png)
+
+![Default templates list](../.gitbook/assets/default_templates.png)
+
+### Template selection rules
+
+When a template is being requested to render \(for example, when sending notification via notification providers, or composing email message\), it is selected in the following order:
+
+1. If this product or store has template connected, it will be used
+2. If it has no template connected, default global store or product template will be used \(named store or product\), if exists
+3.  If none of templates above are customized, [default templates](https://github.com/MrNaif2018/bitcart/tree/master/api/templates) are used 
+
+### Changing object's templates
+
+On some pages, for example, stores or products pages, you will be able to edit templates per each item \(per each product, per each store, etc.\)  
+If so, on such pages you will see the following icon:
+
+![Edit templates icon](../.gitbook/assets/edit_templates.png)
+
+By clicking on it, you will be able to override default templates for this item. Such templates are always used the first if they are set.
+
+![Edit default templates pop-up](../.gitbook/assets/edit_templates_popup.png)
+
+Note that in the example image above it is not neccesary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store. 
+
