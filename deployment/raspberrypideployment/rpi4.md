@@ -209,7 +209,7 @@ Download BitcartCC from GitHub:
 ```bash
 cd # ensure we are in root home
 apt install -y fail2ban git
-git clone https://github.com/MrNaif2018/bitcart-docker
+git clone https://github.com/bitcartcc/bitcart-docker
 cd bitcart-docker
 ```
 

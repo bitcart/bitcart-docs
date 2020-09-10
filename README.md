@@ -4,9 +4,9 @@
 
 BitcartCC is an open-source, self-hosted all-in-one solution for Bitcoin and other cryptocurrencies.
 
-If you have trouble using BitcartCC, consider joining the [communities listed on the official website](https://bitcartcc.com#community) to get help from BitcartCC community members. Only file [Github issue](https://github.com/MrNaif2018/bitcart/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
+If you have trouble using BitcartCC, consider joining the [communities listed on the official website](https://bitcartcc.com#community) to get help from BitcartCC community members. Only file [Github issue](https://github.com/bitcartcc/bitcart/issues) for technical issues you can't resolve through other channels or feature requests you've validated with other members of community.
 
-Please check out our [official website](https://bitcartcc.com), our [complete documentation](https://github.com/MrNaif2018/bitcart-docs) and FAQ for more details.
+Please check out our [official website](https://bitcartcc.com), our [complete documentation](https://github.com/bitcartcc/bitcart-docs) and FAQ for more details.
 
 ![](.gitbook/assets/bitcartcc-platform-presents.png)
 

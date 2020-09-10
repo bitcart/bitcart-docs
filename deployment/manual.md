@@ -59,7 +59,7 @@ sudo apt install redis-server
 #### BitcartCC core\(daemons\) & Merchants API:
 
 ```bash
-git clone https://github.com/MrNaif2018/bitcart
+git clone https://github.com/bitcartcc/bitcart
 cd bitcart
 sudo pip3 install -r requirements.txt
 sudo pip3 install -r requirements/production.txt
@@ -95,7 +95,7 @@ alembic upgrade head
 #### BitcartCC admin panel
 
 ```bash
-git clone https://github.com/MrNaif2018/bitcart-admin
+git clone https://github.com/bitcartcc/bitcart-admin
 cd bitcart-admin
 yarn
 yarn build
@@ -104,8 +104,8 @@ yarn build
 #### BitcartCC store
 
 ```bash
-git clone https://github.com/MrNaif2018/bitcart-frontend
-cd bitcart-frontend
+git clone https://github.com/bitcartcc/bitcart-store
+cd bitcart-store
 yarn
 yarn build
 ```

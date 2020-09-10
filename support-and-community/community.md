@@ -6,5 +6,5 @@ Join us:
 
 [Telegram](https://t.me/bitcartcc)
 
-[Github](https://github.com/MrNaif2018/bitcart)
+[Github](https://github.com/bitcartcc/bitcart)
 

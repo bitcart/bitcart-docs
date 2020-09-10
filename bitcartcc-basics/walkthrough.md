@@ -241,7 +241,7 @@ When a template is being requested to render \(for example, when sending notific
 
 1. If this product or store has template connected, it will be used
 2. If it has no template connected, default global store or product template will be used \(named store or product\), if exists
-3.  If none of templates above are customized, [default templates](https://github.com/MrNaif2018/bitcart/tree/master/api/templates) are used 
+3.  If none of templates above are customized, [default templates](https://github.com/bitcartcc/bitcart/tree/master/api/templates) are used 
 
 ### Changing object's templates
 

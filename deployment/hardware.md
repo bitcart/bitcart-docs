@@ -109,7 +109,7 @@ Create a folder for BitcartCC
 
 Clone the bitcart-docker repository
 
-* `git clone https://github.com/MrNaif2018/bitcart-docker`
+* `git clone https://github.com/bitcartcc/bitcart-docker`
 * `cd bitcart-docker`
 
 Set your environment variables. Run each command separately.

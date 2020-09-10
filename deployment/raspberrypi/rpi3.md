@@ -231,7 +231,7 @@ cd bitcartcc
 Clone the BitcartCC-Docker repository into the folder:
 
 ```text
-git clone https://github.com/MrNaif2018/bitcart-docker
+git clone https://github.com/bitcartcc/bitcart-docker
 cd bitcart-docker
 ```
 

@@ -23,5 +23,5 @@ BitcartCC is an open-source project, not a company. We rely on a network of dive
 
 If you have questions, try searching our FAQ Section or join the [BitcartCC Community](../support-and-community/community.md) and share questions and ideas for improvement.
 
-If you are a developer take a look at the Local Development guide and help us with any [open issues](https://github.com/MrNaif2018/bitcart/issues) on Github. If you would like to contribute to BitcartCC in other ways, check out the [Contribution Guide](../support-and-community/contribute.md) for ideas.
+If you are a developer take a look at the Local Development guide and help us with any [open issues](https://github.com/bitcartcc/bitcart/issues) on Github. If you would like to contribute to BitcartCC in other ways, check out the [Contribution Guide](../support-and-community/contribute.md) for ideas.
 
