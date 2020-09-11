@@ -44,7 +44,7 @@ Here is a complete list of configuration settings:
 
 ## Live demo
 
-We have live demo available at [https://admin.bitcartcc.com](https://admin.bitcartcc.com/) \(admin\), [https://store.bitcartcc.com](https://store.bitcartcc.com/) \(store\) and [https://demo.bitcartcc.com](https://demo.bitcartcc.com/) \(merchants API\). Note that it isn't designed for your production use, it is for testing and learning.
+We have live demo available at [https://admin.bitcartcc.com](https://admin.bitcartcc.com/) \(admin\), [https://store.bitcartcc.com](https://store.bitcartcc.com/) \(store\) and [https://api.bitcartcc.com](https://api.bitcartcc.com/) \(merchants API\). Note that it isn't designed for your production use, it is for testing and learning.
 
 ## Guide: how demo was set up
 
