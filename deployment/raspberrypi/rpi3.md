@@ -240,8 +240,8 @@ Set your environment variables. Make sure the `BITCART_HOST` and other HOST and 
 ```bash
 export BITCART_HOST="api.bitcartcc.YourDomain.com"
 export BITCART_ADMIN_HOST="admin.bitcartcc.YourDomain.com"
-export BITCART_FRONTEND_HOST="bitcartcc.YourDomain.com"
-export BITCART_FRONTEND_URL="https://api.bitcartcc.YourDomain.com"
+export BITCART_STORE_HOST="bitcartcc.YourDomain.com"
+export BITCART_STORE_URL="https://api.bitcartcc.YourDomain.com"
 export BITCART_ADMIN_URL="https://api.bitcartcc.YourDomain.com"
 export BITCART_CRYPTOS=btc
 export BITCART_REVERSEPROXY="nginx-https"

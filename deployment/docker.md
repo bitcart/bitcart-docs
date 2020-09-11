@@ -28,10 +28,10 @@ Here is a complete list of configuration settings:
 | Name | Description | Default | Type |
 | :--- | :--- | :--- | :--- |
 | BITCART\_HOST | Host where to run BitcartCC Merchants API. Is used when merchants API \(backend component\) is enabled. | ❌ | App |
-| BITCART\_FRONTEND\_HOST | Host where to run BitcartCC Ready Store. Is used when store component is enabled. | ❌ | App |
+| BITCART\_STORE\_HOST | Host where to run BitcartCC Ready Store. Is used when store component is enabled. | ❌ | App |
 | BITCART\_ADMIN\_HOST | Host where to run BitcartCC Admin Panel. Is used when admin component is enabled. | ❌ | App |
-| BITCART\_FRONTEND\_URL | URL of BitcartCC Merchants API instance. It can be your instance hosted together with store or a completely separate instance. In case of default setup \(store+admin+API at once\), you need to set it to https://$BITCART\_HOST or \(http if nginx-https component is not enabled\). | ❌ | App |
-| BITCART\_ADMIN\_URL | Same as BITCART\_FRONTEND\_URL, but for configuring your admin panel. | ❌ | App |
+| BITCART\_STORE\_URL | URL of BitcartCC Merchants API instance. It can be your instance hosted together with store or a completely separate instance. In case of default setup \(store+admin+API at once\), you need to set it to https://$BITCART\_HOST or \(http if nginx-https component is not enabled\). | ❌ | App |
+| BITCART\_ADMIN\_URL | Same as BITCART\_STORE\_URL, but for configuring your admin panel. | ❌ | App |
 | BITCART\_LETSENCRYPT\_EMAIL | Email used for notifying you about your https certificates. Usually no action is needed to renew your certificates, but otherwise you'll get an email. Is used when nginx-https component is enabled. | ❌ | App |
 | COINNAME\_NETWORK | Used for configuring network of COINNAME daemon. Daemon can be run in only one network at once. Possible values are mainnet, testnet, and sometimes regtest and simnet. This setting affects only daemon of COINNAME, you need to set this value for each coin daemon you want to customize. | mainnet | App |
 | COINNAME\_LIGHTNING | Used for enabling/disabling lightning support of COINNAME daemon. Some coins might not support lightning, in this case this setting does nothing. Possible values are true, false or not set. This setting affects only daemon of COINNAME, you need to set this value for each coin daemon you want to customize. | false | App |
