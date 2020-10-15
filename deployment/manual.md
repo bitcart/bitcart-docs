@@ -72,7 +72,7 @@ For any other daemon\(coin\) you want to use, run:
 sudo pip3 install -r requirements/daemons/coin_name.txt
 ```
 
-Where coin\_name is coin code\(btc, ltc, etc.\).
+Where coin_name is coin code\(btc, ltc, etc.\).
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
@@ -132,10 +132,10 @@ Start api:
 gunicorn -c gunicorn.conf.py main:app
 ```
 
-Start task queue:
+Start background worker:
 
 ```bash
-dramatiq api.tasks
+python3 worker.py
 ```
 
 #### BitcartCC admin panel
@@ -213,4 +213,3 @@ yarn build
 ### 6\) Start everything again
 
 Follow instructions [here](manual.md#run-everything)
-
