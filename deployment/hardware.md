@@ -96,7 +96,7 @@ If you are using another Linux machine open a new terminal and type in the follo
 
 * `ssh user@LANIP` \(ie. bob@192.168.1.2\)
 
-Run the following commands. Make sure you change the `BITCART_HOST`  and other HOST and URL parameters to your own domain name.
+Run the following commands. Make sure you change the `BITCART_HOST` and other HOST and URL parameters to your own domain name.
 
 Login as root
 

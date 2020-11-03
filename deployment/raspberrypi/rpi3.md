@@ -16,11 +16,11 @@ BitcartCC can be successfully installed on the following hardware:
 
 1. 64GB SanDisk Ultra Fit USB Flash Drive
 
- ![SanDisk Ultra Fit USB 3.1 Flash Drive](https://drh1.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/SDCZ430-210.png)​
+   ![SanDisk Ultra Fit USB 3.1 Flash Drive](https://drh1.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/SDCZ430-210.png)​
 
-1. 16 GB SanDisk Ultra MicroSDXC Card
+2. 16 GB SanDisk Ultra MicroSDXC Card
 
- ![16 GB SanDisk Ultra MicroSDXC Card](https://drh2.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/ultra-microsd-16gb-sandisk-210x210.png)​
+   ![16 GB SanDisk Ultra MicroSDXC Card](https://drh2.img.digitalriver.com/DRHM/Storefront/Company/sandiskus/images/product/detail/ultra-microsd-16gb-sandisk-210x210.png)​
 
 Other requirements are as follows:
 

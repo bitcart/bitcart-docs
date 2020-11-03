@@ -39,7 +39,7 @@ In layman's terms, BitcartCC is a self-hosted and automated invoicing system. Wh
 
 ### How is it different
 
-BitcartCC is code, not a company. There is no third-party between a merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscription fees. BitcartCC is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code, users can find  bugs themselves and help us, other developers can extend and add new features to it.
+BitcartCC is code, not a company. There is no third-party between a merchant and a customer. Merchant is always in full control of the funds. There are no processing or subscription fees. BitcartCC is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code, users can find bugs themselves and help us, other developers can extend and add new features to it.
 
 ### How it keeps funds secure <a id="how-it-keeps-funds-secure"></a>
 
@@ -61,6 +61,4 @@ BitcartCC does not have a central point of failure since nobody is controlling i
 ### Beyond payment processing <a id="beyond-payment-processing"></a>
 
 BitcartCC is not only a payment processor for merchants. It is called all-in-one crypto solution because it can be used for anything you want. It abstracts a lot of complex components into simple and easy to use interfaces, APIs and SDKs. Developers can build entire businesses and projects on top of the stack. Enterprises can use it as scalable and secure back-end of their infrastracture without ever having to put a trust in a third-party. BitcartCC is a toolbox with lots of tools you can use, it's up to you how you want to use it.
-
-### 
 

@@ -28,7 +28,7 @@ Now, to the other common settings.
 
 Each page basically contains one common thing - a datatable.
 
-It is a feature-rich datatable, supporting searching, ordering, create/edit/delete actions, and some additional actions depending on what page you're on. For example,  on stores page, you can configure email settings for a store by clicking email icon in actions column.  
+It is a feature-rich datatable, supporting searching, ordering, create/edit/delete actions, and some additional actions depending on what page you're on. For example, on stores page, you can configure email settings for a store by clicking email icon in actions column.
 
 ![Actions example](../.gitbook/assets/email_icon.png)
 
@@ -58,7 +58,7 @@ You can create unlimited amount of stores in BitcartCC.
 
 Each store can contain any amount of products and associated invoices. Store is a base entrypoint for anything related to checkout.
 
-Store may have multiple wallets connected. That way, connecting different wallets with different base currencies, you can achieve multicurrency checkout. 
+Store may have multiple wallets connected. That way, connecting different wallets with different base currencies, you can achieve multicurrency checkout.
 
 Selecting multiple wallets of the same currency is **NOT** recommended. On invoice creation, BitcartCC will pick the first wallet of that currency, returned by database\(they might be returned in any order\).
 
@@ -86,7 +86,7 @@ It is optional page for your initial setup, you may skip it for now.
 
 In many cases you might want to add some discounts to your store. New year discounts, other holidays? Limited time promocode discounts? Discount when paying in your preferred currency? Anything is possible with BitcartCC.
 
-Just provide a percent\(integer\) for your discount, and discount apply conditions: 
+Just provide a percent\(integer\) for your discount, and discount apply conditions:
 
 * promocode\(optional, when not provided discount is always applied when other conditions succeed\)
 * end date
@@ -102,9 +102,9 @@ When one invoice at creation time has matched multiple discounts, BitcartCC will
 
 ## Products
 
-Products are your base selling unit. Create your products, link them to your stores, add product details - and they will get displayed in your store POS! 
+Products are your base selling unit. Create your products, link them to your stores, add product details - and they will get displayed in your store POS!
 
-BitcartCC supports many different information for creating products: 
+BitcartCC supports many different information for creating products:
 
 * Amount, displayed in store POS in USD
 * quantity\(how many products of the same kind available\)
@@ -191,10 +191,9 @@ By clicking open checkout you'll be redirected to full checkout, respecting invo
 
 ## Notification providers
 
-On this page you can configure your notification providers, to later connect them to your stores.  
-  
-Supported information:  
+On this page you can configure your notification providers, to later connect them to your stores.
 
+Supported information:
 
 * Notification provider name for display
 * Provider to use, you can choose of many available ones
@@ -208,7 +207,7 @@ Supported information:
 
 Each notification provider has different settings. Refer to their documentation about how to get certain settings. After that, select needed provider, fill in the settings and save changes.
 
-Then you can reuse notification providers by connecting them to needed stores! 
+Then you can reuse notification providers by connecting them to needed stores!
 
 When notification provider is connected, on each successful order it will be run to deliver a notification to you.
 
@@ -225,7 +224,7 @@ Available fields:
 * Name of template, you can select from built-in ones or type in a new one
 * Template text
 
-All templates in BitcartCC are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x). 
+All templates in BitcartCC are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x).
 
 Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/2.11.x/templates).
 
@@ -241,7 +240,7 @@ When a template is being requested to render \(for example, when sending notific
 
 1. If this product or store has template connected, it will be used
 2. If it has no template connected, default global store or product template will be used \(named store or product\), if exists
-3.  If none of templates above are customized, [default templates](https://github.com/bitcartcc/bitcart/tree/master/api/templates) are used 
+3. If none of templates above are customized, [default templates](https://github.com/bitcartcc/bitcart/tree/master/api/templates) are used 
 
 ### Changing object's templates
 
@@ -254,5 +253,5 @@ By clicking on it, you will be able to override default templates for this item.
 
 ![Edit default templates pop-up](../.gitbook/assets/edit_templates_popup.png)
 
-Note that in the example image above it is not neccesary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store. 
+Note that in the example image above it is not neccesary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store.
 

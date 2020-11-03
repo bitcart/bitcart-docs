@@ -34,7 +34,7 @@ sudo apt install python3 python3-pip python3-dev
 sudo apt install nodejs
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt remove cmdtest
+sudo apt remove cmdtest # comes preinstalled on ubuntu 18.04, overrides yarn
 sudo apt update && sudo apt install yarn
 ```
 
@@ -72,7 +72,7 @@ For any other daemon\(coin\) you want to use, run:
 sudo pip3 install -r requirements/daemons/coin_name.txt
 ```
 
-Where coin_name is coin code\(btc, ltc, etc.\).
+Where coin\_name is coin code\(btc, ltc, etc.\).
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
@@ -213,3 +213,4 @@ yarn build
 ### 6\) Start everything again
 
 Follow instructions [here](manual.md#run-everything)
+
