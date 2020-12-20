@@ -154,6 +154,8 @@ If your invoice contains connected products, you'll be able to know which produc
 
 Amount will be the same for every payment method, so if you enter 5 as amount, it'll create payment methods for example for 5 BTC, 5 LTC and 5 GZRO. Take that in mind when creating a new invoice. This might be changed in future.
 
+### Notification URL
+
 If you fill in notification URL, BitcartCC instance will send IPN notifications to that URL via a POST request.
 
 It will send the following json data:
@@ -162,7 +164,7 @@ It will send the following json data:
 
 When invoice status changes\(Pending-&gt;complete, Pending-&gt;expired, etc.\), notification will be sent.
 
-It's up to you how to process that IPN notification. You should also verify that data sent is corrected, as theoretically, anyone can send that POST request if they know your IPN handler URL. So, check that sent status is the same as the one got from get invoice request.
+It's up to you how to process that IPN notification. You should also verify that data sent is correct, as theoretically, anyone can send that POST request if they know your IPN handler URL. So, check that sent status is the same as the one got from get invoice request.
 
 Invoices statuses can be one of the following:
 
@@ -172,6 +174,8 @@ Invoices statuses can be one of the following:
 * expired
 * In progress\(lightning network status\)
 * Failed\(lightning network status\)
+
+
 
 After invoice creation, you'll be able to view checkout information by clicking show button in payment methods column. It will display a so-called "invoice preview", it is not a fully functional checkout, but just an information dialog to display payment methods\(it ignores invoice status\).
 
