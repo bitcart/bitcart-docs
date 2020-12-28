@@ -2,20 +2,20 @@
 
 Most new merchants will likely only consider the price of the service. Since BitcartCC is free, that may have led you here and if so, welcome.
 
-First of all, as said above, BitcartCC is fully free, fully opensouce and has no limitations. You are your own bank.
+First of all, as said above, BitcartCC is fully free, fully opensource and has no limitations. You are your own bank.
 
 The second main difference is that other services are usually providing only one thing - rate-limited API or a web interface. But BitcartCC, as opposed to others, is a full-featured solution, all-in-one crypto solution. It can satisfy needs of any audience:
 
 * Developers, having daemons for bitcoin and other coins, and [SDK](https://sdk.bitcartcc.com) sharing same APIs for any coin, easy to create any kind of app\(for example atomic [tipbot](https://t.me/bitcart_atomic_tipbot)\)
-* Merchants, providing ready solutions for your stores to accept cryptocurrency payments with simplest setup
-* Server maintainers, providing simplest setup with a diversity of deployment options, with automatic updates\(github -&gt; docker hub -&gt; end machines\)
+* Merchants, providing ready solutions for your stores to accept cryptocurrency payments with the simplest setup
+* Server maintainers, providing simplest setup with a diversity of deployment options, with automatic updates \(github release -&gt; docker hub -&gt; end machines\)
 * Anyone else wanting to try out cryptocurrencies
 
 BitcartCC is a light self-hosted solution. It is as safe\(even safer than most\) as other solutions, but is light, easy to use and install.
 
-How did we achieve this? BitcartCC is using the electrum wallet internally\(see Architecture page for more information\). Electrum wallet is one of the oldest and the most secure and feature-wide wallets. It is using SPV\(Simple Payment Verification\) to verify everything and it makes electrum and so BitcartCC secure and light. If you're not satisfied with the way it works, you can host your own electrumx server and make BitcartCC use only your own server. We will provide easy setup for that in near future.
+How did we achieve this? BitcartCC is using the electrum wallet internally\(see Architecture \(INSERT LINK\) page for more information\). Electrum wallet is one of the oldest and the most secure and feature-wide wallets. It is using SPV\(Simple Payment Verification\) to verify everything and it makes electrum and so BitcartCC secure and light. If you're not satisfied with the way it works, you can host your own electrumx server and make BitcartCC use only your own server. We will provide easy setup for that in near future.
 
-Due to it's lightness, you can host BitcartCC on a minimal server, with minimal costs! Current lunanode 1-click installer would cost you **3.5$ a month** to host BitcartCC with all components\(admin, store\) and from 1 to 5 cryptocurrencies for the same price, still being light. Or you can find even cheaper hosting providers and host it even cheaper! In fact, all BitcartCC demos\([store](https://store.bitcartcc.com), [admin](https://admin.bitcartcc.com), [api](https://api.bitcartcc.com)\) run on 1 GB server with only 25 GB disk.
+Due to it's lightness, you can host BitcartCC on a minimal server, with minimal costs! Current lunanode 1-click installer would cost you **3.5$ a month** to host BitcartCC with all components\(admin, store\) and from 1 to 5 cryptocurrencies for the same price, still being light. Or you can find even cheaper hosting providers and host it even cheaper! In fact, all BitcartCC demos \([store](https://store.bitcartcc.com), [admin](https://admin.bitcartcc.com), [api](https://api.bitcartcc.com)\) run on 1 GB server with only 25 GB disk.
 
 The approximate system requirements differ, but almost any server is fine, **less than 1 GB RAM and less than 10 GB disk.**
 
@@ -26,10 +26,6 @@ BitcartCC is also a great source of **learning**. We use many different technolo
 BitcartCC provides a ready full-featured merchants solution - BitcartCC [store](https://store.bitcartcc.com). You can get up and running without any technical knowledge for minimal ever price\(depending on VPS provider you have selected\).
 
 The list of the reasons why you should use BitcartCC can go on and on. Now some features of it as a payment processor:
-
-BitcartCC is code, not a company. There is no third-party between a merchant and a customer. The merchant is always in full control of their funds. There are no processing or subscription fees. BitcartCC is free to use and completely open-source, so developers or security auditors can always inspect the quality of the code and easily add new features.
-
-We want users to understand not only BitcartCC, but also how payments can be processed on behalf of a merchant. In order to help users understand trade-offs when using various cryptocurrency payment processing methods. We don't know which payment processors provide which services. That will need to be part of your own research. The following list is a good place to start:
 
 * [Features](bitcartcc-vs-others.md#features)
 * [Cost](bitcartcc-vs-others.md#cost)
@@ -51,6 +47,7 @@ Every payment processor has features, here are some BitcartCC features:
 * **Unlimited Stores** - Merchants can process payments for their own stores, or for others.
 * **Payment Requests** - Create & send a long-lived invoice requesting payment for goods or services.
 * **Ready solutions for starting merchants** - your own store and admin panel.
+* **Solutions for checkout flow automation** - you can create scripts to process the order for you.
 
 ## Cost
 
@@ -88,6 +85,7 @@ Fortunately, the Bitcoin Network does not use or collect these types of personal
 * Information is shared between customer and seller only.
 * Self-hosted users run a secure BitcartCC core or [a full node](https://en.bitcoin.it/wiki/Why_Your_Business_Should_Use_a_Full_Node_to_Accept_Bitcoin).
 * No address re-use.
+* Any non-decentralized solutions are avoided, instances are self-contained.
 
 ## Decentralized
 

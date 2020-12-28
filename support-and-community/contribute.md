@@ -14,5 +14,5 @@ Translating BitcartCC, helping us with [documentation](https://github.com/bitcar
 
 We need more VPS hosting providers to implement [1-Click BitcartCC deployment](../deployment/lunanodeweb.md) and make the installation of software more accessible, decentralized and widely-available.
 
-We are actively looking for developers who can take on and resolve GitHub issues and help with development. If you would like to help us, but need some guidance, [our community chat](https://t.me/bitcartcc) is the place to ask questions.
+We are actively looking for developers who can take on and resolve GitHub issues and help with development. If you would like to help us, but need some guidance, [our community chat](https://t.me/bitcartcc) is the place to ask questions. Also, take a look at our [contributing guidelines](https://github.com/bitcartcc/bitcart/blob/master/CONTRIBUTING.md).
 

@@ -243,8 +243,6 @@ export BITCART_ADMIN_HOST="admin.bitcartcc.YourDomain.com"
 export BITCART_STORE_HOST="bitcartcc.YourDomain.com"
 export BITCART_STORE_URL="https://api.bitcartcc.YourDomain.com"
 export BITCART_ADMIN_URL="https://api.bitcartcc.YourDomain.com"
-export BITCART_CRYPTOS=btc
-export BITCART_REVERSEPROXY="nginx-https"
 export BTC_LIGHTNING=true
 ```
 

@@ -6,11 +6,11 @@ When creating an account, if you're the first user registered on the instance, y
 
 After you created the account on the BitcartCC instance hosted by yourself or a third-party, you'll see a lot of information cards.
 
-![Overview of your created wallets, stores, invoices and more!](../.gitbook/assets/admin_cards.png)
+![Information cards in your admin panel](../.gitbook/assets/admin_main.png)
 
 Note about the night mode of the panel. By default, admin panel uses day mode, but if in your local time it is from 8 pm to 6 am, night mode will be enabled automatically 😉 You can configure it by clicking the moon icon in the top right corner of the page.
 
-![Day mode](../.gitbook/assets/day_mode.png)
+![Admin panel&apos;s day mode](../.gitbook/assets/admin_day_mode.png)
 
 Each information card contains summary about something in your account: wallets, stores, products, invoices, etc.
 
@@ -20,15 +20,15 @@ Note, wallets balance is displayed not in BTC, but in abstract currency. It is a
 
 If you're a superuser, you can click on profile icon in the top right corner of the page to visit server settings page.
 
-![Server management button](../.gitbook/assets/superuser_button.png)
+![Server management button](../.gitbook/assets/open_server_management.png)
 
-From server settings page, you can control the users of your server, and many more. For more information, check Server Settings FAQ
+From server settings page, you can control the users of your server, and many more. For more information, check Server Settings FAQ \(TODO: insert link\)
 
 Now, to the other common settings.
 
 Each page basically contains one common thing - a datatable.
 
-It is a feature-rich datatable, supporting searching, ordering, create/edit/delete actions, and some additional actions depending on what page you're on. For example, on stores page, you can configure email settings for a store by clicking email icon in actions column.
+It is a feature-rich datatable, supporting searching, ordering, create/edit/delete actions, batch actions, and some additional actions depending on what page you're on. For example, on stores page, you can configure email settings for a store by clicking email icon in actions column.
 
 ![Actions example](../.gitbook/assets/email_icon.png)
 
@@ -36,17 +36,17 @@ It is a feature-rich datatable, supporting searching, ordering, create/edit/dele
 
 The core of BitcartCC is creating a wallet. In BitcartCC, one wallet represents one currency.
 
-Default currency is btc, you can change that. When creating wallet, just type in the currency code\(btc,ltc etc.\) in currency field. Wallets may have a name and their xpub.
+Default currency is btc, you can change that. When creating wallet, just select currency code from the ones available on your instance \(btc,ltc etc.\). Wallets may have a name and their xpub \(TODO: insert a link to glossary page\).
 
 The nice feature of BitcartCC is that it does not require your private keys, but it supports many different formats.
 
-You can enter \(x/y/z\)pub - public key, \(x/y/z\)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check Architecture page for more information.
+You can enter \(x/y/z\)pub - public key, \(x/y/z\)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check Architecture page \(TODO: insert link\) for more information.
 
-When creating a wallet, it will get synced very fast\(depends on the size of the wallet, but shoudn't take too long\), and BitcartCC will fetch it's balance and display it.
+When creating a wallet, it will get synced very fast \(depends on the size of the wallet, but shoudn't take too long\), and BitcartCC will fetch it's balance and display it.
 
-![Wallets page](../.gitbook/assets/wallets.png)
+![Wallets page](../.gitbook/assets/admin_wallets.png)
 
-![Create wallet pop-up](../.gitbook/assets/create_wallet.png)
+![Create wallet pop-up](../.gitbook/assets/create_wallet%20%281%29.png)
 
 By clicking arrow near any of the rows, you can view some additional details, like wallet xpub.
 
@@ -62,9 +62,9 @@ Store may have multiple wallets connected. That way, connecting different wallet
 
 Selecting multiple wallets of the same currency is **NOT** recommended. On invoice creation, BitcartCC will pick the first wallet of that currency, returned by database\(they might be returned in any order\).
 
-![Stores page](../.gitbook/assets/store_page.png)
+![Stores page](../.gitbook/assets/admin_stores.png)
 
-![Create store pop-up](../.gitbook/assets/create_store.png)
+![Create store pop-up](../.gitbook/assets/create_store%20%281%29.png)
 
 If you want to send customers invoices on successful checkout, you should configure email server.
 
@@ -76,9 +76,21 @@ Email host, port, login and password are credentials for your SMTP server. Email
 
 When done\(you should click save button first\), click on Test ping button to see if your setup is working.
 
-Note for gmail SMTP servers, you should enable access by turning on [less secure apps](https://myaccount.google.com/lesssecureapps)\(it is still secure, gmail apps aren't the requirement\). You might also need to [allow access](https://accounts.google.com/DisplayUnlockCaptcha) on a new account.
+Note for gmail SMTP servers, you should enable access by turning on [less secure apps](https://myaccount.google.com/lesssecureapps) \(it is still secure, gmail apps aren't the requirement\). You might also need to [allow access](https://accounts.google.com/DisplayUnlockCaptcha) on a new account.
 
-![Email server settings](../.gitbook/assets/email_settings.png)
+From the email settings pop-up, you will also be able to load a ready preset for some popular email server providers.
+
+![Email server settings](../.gitbook/assets/store_email_settings.png)
+
+Your store is the main configuration point for all the futher actions with it, like invoice creation.
+
+You can configure different policies from your store settings.
+
+By clicking on settings icon, you will be presented with the store checkout settings pop-up, where you can change different settings affecting the checkout.
+
+* Invoice expiration time, in minutes. It affects the timer displayed in the checkout. It is the time in which the customer must send the payment, otherwise invoice is marked as expired
+
+![Store checkout settings](../.gitbook/assets/store_checkout_settings.png)
 
 ## Discounts
 
@@ -96,9 +108,9 @@ You can link discounts to products in the products page.
 
 When one invoice at creation time has matched multiple discounts, BitcartCC will pick the best discount\(by percent\).
 
-![Discounts page](../.gitbook/assets/discounts_page.png)
+![Discounts page](../.gitbook/assets/discounts_page%20%281%29.png)
 
-![Create discount pop-up](../.gitbook/assets/create_discount.png)
+![Create discount pop-up](../.gitbook/assets/create_discount%20%281%29.png)
 
 ## Products
 
@@ -137,22 +149,23 @@ This page can be used to monitor your paid invoices, create new invoices and sen
 
 Supported information:
 
-* Amount is amount in currency unit\(BTC, LTC, etc.\) which will be used to generate invoice
+* Price is the price in store's default currency, which will be converted to payment method's currency when generating payment URL
+* Currency, used to override store's default currency if needed
 * Store, from which to take wallets and other information
 * Connected products\(for store POS, optional\)
-* Promocode, if customer entered it during checkout process\(auto-filled\)
-* Notification URL where to send IPN notifications on invoice status change\(more below\)
+* Promocode, if customer entered it during checkout process \(auto-filled\)
+* Notification URL where to send IPN notifications on invoice status change \(more below\)
 * Redirect URL, customer will be redirected to it after successful checkout.
 * Buyer email, if customer entered it during checkout process\(auto-filled\)
 * Order ID, used by external integrations like woocommerce, track your orders by searching for order id\(auto-filled\)
 * Discount - ID of the discount applied during invoice creation\(auto-filled\)
 * Invoice status, more below
-* Date of creation\(auto-filled\)
+* Date of creation \(auto-filled\)
 * Payment methods - not editable fields, displaying checkout information
 
-If your invoice contains connected products, you'll be able to know which products were bought by the customer. The name of the first connected product will be used on checkout, or words "QR code" otherwise.
+If your invoice contains connected products, you'll be able to know which products were bought by the customer. The name of the store will be used on checkout.
 
-Amount will be the same for every payment method, so if you enter 5 as amount, it'll create payment methods for example for 5 BTC, 5 LTC and 5 GZRO. Take that in mind when creating a new invoice. This might be changed in future.
+When converting to payment method's currency, destination currency's maximum decimal points is taken in mind, and the price is being formatted as per currency settings. The convert, the exchange rate is used. See this page \(INSERT URL to guide about fiat currencies\) for more information.
 
 ### Notification URL
 
@@ -168,30 +181,30 @@ It's up to you how to process that IPN notification. You should also verify that
 
 Invoices statuses can be one of the following:
 
-* Pending\(in progress\)
-* complete\(invoice paid\)
-* invalid\(unexpected error\)
+* Pending \(in progress\)
+* complete \(invoice paid\)
+* invalid \(unexpected error\)
 * expired
-* In progress\(lightning network status\)
-* Failed\(lightning network status\)
+* In progress \(lightning network status\)
+* Failed \(lightning network status\)
 
 
 
 After invoice creation, you'll be able to view checkout information by clicking show button in payment methods column. It will display a so-called "invoice preview", it is not a fully functional checkout, but just an information dialog to display payment methods\(it ignores invoice status\).
 
-By clicking open checkout you'll be redirected to full checkout, respecting invoice statuses and other things. Invoice url can be safely shared with others and used for checkout right from your admin panel.
+By clicking open checkout you'll be redirected to full checkout, respecting invoice statuses and other things. Invoice URL can be safely shared with others and used for checkout right from your admin panel.
 
-![Invoices page](../.gitbook/assets/invoices_page.png)
+![Invoices page](../.gitbook/assets/admin_invoices.png)
 
-![Create invoice pop-up](../.gitbook/assets/create_invoice_popup.png)
+![Create invoice pop-up](../.gitbook/assets/create_invoice%20%281%29.png)
 
-![Preview payment methods in admin panel](../.gitbook/assets/checkout_preview.png)
+![Preview payment methods in the admin panel](../.gitbook/assets/checkout_preview%20%281%29.png)
 
 ![Invoice expired](../.gitbook/assets/checkout_expired.png)
 
 ![Invoice paid](../.gitbook/assets/checkout_complete.png)
 
-![Full checkout page](../.gitbook/assets/checkout_full.png)
+![Full checkout page](../.gitbook/assets/full_checkout.png)
 
 ## Notification providers
 
@@ -231,6 +244,8 @@ Available fields:
 All templates in BitcartCC are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x).
 
 Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/2.11.x/templates).
+
+Read more about example usages of templates in BitcartCC here \(INSERT LINK to guide\)
 
 ![Templates page](../.gitbook/assets/templates.png)
 

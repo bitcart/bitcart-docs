@@ -19,7 +19,7 @@ After the installation, open Electrum Wallet by clicking on the icon on your des
 
 ## Step by Step <a id="step-by-step"></a>
 
-The following setup guides you through setting up an entirely new Bech32\(SegWit\) Wallet in Electrum. If you already have a wallet skip to the Extended Public Key copying.
+The following setup guides you through setting up an entirely new Bech32 \(SegWit\) Wallet in Electrum. If you already have a wallet skip to the Extended Public Key copying.
 
 Firstly, give your wallet a name, for example, `BitcartCC Wallet` and click `Next`.
 
@@ -57,7 +57,7 @@ Select and **copy** the `Master Public Key`. This is the **public** key from whi
 
 Return to your BitcartCC. Click on the `Details` button in the `Wallets` card and click on the `New Wallet` button. Enter your wallet name and Paste the Master Public Key from electrum to xpub field. Click `Save`.
 
-![Add new wallet](../../.gitbook/assets/electrum_createwallet_step9.png)
+![Add new wallet](../../.gitbook/assets/connect_electrum.png)
 
 ### Configuring the Gap Limit in Electrum <a id="configuring-the-gap-limit-in-electrum"></a>
 

@@ -26,7 +26,8 @@ Let's configure the store so it uses your Electrum wallet:
 Then you can create an invoice, either through
 
 * the **Invoices** page [on the website](https://admin.bitcartcc.com/invoices) or
-* the process documented on the Custom integration
+* the process documented on the Custom integration \(INSERT LINK\)
+* or the store POS, if you are the owner of the instance \(INSERT LINK to features/pos\)
 
 See the [What's Next](https://docs.bitcartcc.com/getting-started/whatsnext) page for other options on how to continue exploring BitcartCC.
 
@@ -36,5 +37,6 @@ To see BitcartCC in action, visit our demo apps and stores or check out some of 
 
 * [BitcartCC Demo Store](https://store.bitcartcc.com)
 * [Admin panel](https://admin.bitcartcc.com)
+* [Merchants API](https://api.bitcartcc.com)
 * [Atomic tipbot](https://t.me/bitcart_atomic_tipbot)
 

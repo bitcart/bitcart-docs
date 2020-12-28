@@ -6,7 +6,7 @@ Inside BitcartCC, you can create and manage an unlimited number of stores. Each 
 
 To create a store, make sure you're logged in into your account, and go to &gt; **Stores** page by clicking on **Details** in it's card. Click on the **New Store** button. Enter the store name, and select this store's wallets.
 
-![Create a store](../.gitbook/assets/create_store_guide.png)
+![Create a store](../.gitbook/assets/create_new_store.png)
 
 ## Customizing your BitcartCC Store Settings <a id="customizing-your-bitcartcc-store-settings"></a>
 
@@ -14,7 +14,7 @@ You can always edit your store by clicking the edit icon.
 
 To configure email servers, click on email icon in actions column.
 
-For more information, check Stores FAQ.
+For more information, check Stores FAQ \(INSERT LINK\).
 
 _**Proceed to the next step -**_ [_**What's Next?**_](whatsnext.md)_**.**_
 

@@ -2,7 +2,7 @@
 
 There are several different deployment methods available, all using the same BitcartCC software. Because BitcartCC is a free and open-source all-in-one crypto solution, we support diversity in deployment methods for users. Different solutions work best for [different use cases](../bitcartcc-basics/use-case.md).
 
-Business deployment methods can vary by setup, maintenance, support, price, etc. You can run BitcartCC as a self-hosted solution on your own server, or use a third-party host. The self-hosted solution allows you not only to attach an unlimited number of stores and use the Lightning Network but also become a payment processor for others.
+Business deployment methods can vary by setup, maintenance, support, price, etc. You can run BitcartCC as a self-hosted solution on your own server, or use a third-party host. The self-hosted solution allows you not only to attach an unlimited number of stores but also become a payment processor for others.
 
 BitcartCC is a non-custodial invoicing system which eliminates the involvement of a third-party when managing funds. Payments with BitcartCC go directly to your wallet. Your private keys are never uploaded to the server. Meaning 3rd Party BitcartCC hosts do not control user funds, they are simply hosting your instance of the BitcartCC software for you.
 

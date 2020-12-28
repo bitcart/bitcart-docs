@@ -8,3 +8,5 @@ Join us:
 
 [Github](https://github.com/bitcartcc/bitcart)
 
+[More communities](https://bitcartcc.com/#community)
+

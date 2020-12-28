@@ -120,14 +120,12 @@ Set your environment variables. Run each command separately.
 * `export BITCART_STORE_URL="https://api.bitcartcc.YourDomain.com"`
 * `export BITCART_ADMIN_URL="https://api.bitcartcc.YourDomain.com"`
 * `export BITCART_CRYPTOS=btc,ltc`
-* `export BITCART_REVERSEPROXY="nginx-https"`
 * `export BTC_LIGHTNING=true`
 * `export LTC_LIGHTNING=true`
 
 The last step is to launch the BitcartCC setup script and start BitcartCC.
 
 * `./setup.sh`
-* `./start.sh`
 * `exit`
 
 **Step 11** Go to [https://admin.bitcartcc.yourdomain.com](https://admin.bitcartcc.yourdomain.com) and confirm that your BitcartCC instance is up and running. Enjoy!

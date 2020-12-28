@@ -221,7 +221,6 @@ export BITCART_ADMIN_HOST="admin.raspberrypi.local"
 export BITCART_STORE_HOST="raspberrypi.local"
 export BITCART_STORE_URL="http://api.raspberrypi.local"
 export BITCART_ADMIN_URL="http://api.raspberrypi.local"
-export BITCART_CRYPTOS=btc
 export BITCART_REVERSEPROXY="nginx"
 export BTC_LIGHTNING=true
 ```
