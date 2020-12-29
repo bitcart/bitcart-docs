@@ -1,0 +1,2 @@
+# Altcoin FAQ
+

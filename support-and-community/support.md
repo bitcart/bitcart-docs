@@ -10,7 +10,7 @@ Problem? Don't worry, someone else has probably been through that before you.
 * If your issue is not referenced there, or you want to request a new feature, please open a [github issue](https://github.com/bitcartcc/bitcart/issues).
 * If you have more general questions about BitcartCC, the way it works and why you should use it, you're welcome on our [Telegram](https://t.me/bitcartcc)
 
-Getting a proper support also depends on how you formulate your questions. Read our troubleshooting guidelines. \(INSERT LINK or guide\)
+Getting a proper support also depends on how you formulate your questions. Read our [troubleshooting guidelines](troubleshooting-an-issue.md).
 
 ## Paid support
 

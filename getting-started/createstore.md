@@ -14,7 +14,7 @@ You can always edit your store by clicking the edit icon.
 
 To configure email servers, click on email icon in actions column.
 
-For more information, check Stores FAQ \(INSERT LINK\).
+For more information, check [Stores FAQ](../support-and-community/faq/stores-faq.md).
 
 _**Proceed to the next step -**_ [_**What's Next?**_](whatsnext.md)_**.**_
 

@@ -41,13 +41,13 @@ In layman's terms, BitcartCC is a solution for anything you might need to do in 
 
 If you need to process payments as a merchant, BitcartCC can serve either as a full invoicing system, or just as a payment processor for cryptocurrencies' payment methods. When checking out, the customer will be presented with an invoice. The invoice is a fresh address from your wallet that wasn't used before. This way, by avoiding address re-use, your privacy is enhanced. BitcartCC is using Electrum wallet protocol and it's SPV \(Simple Payment Verification\) feature to verify sent payments. After successful payment, your BitcartCC instance can automate most of the work needed to fulfill the order safely. You are provided with ready solutions for your store, your company or application. Anything is possible with BitcartCC.
 
-But if you just need a way to check the blockchain, or a way to create transactions \(for tipping bot \(INSERT LINK\), for example\), BitcartCC provides ready developer tools for the most comfortable experience: ready and well-documented [SDK](https://sdk.bitcartcc.com), Merchants API \(see it's swagger documentation [here](https://api.bitcartcc.com)\) and various plugins.
+But if you just need a way to check the blockchain, or a way to create transactions \(for [tipping bot](examples/atomic-tip-bot.md), for example\), BitcartCC provides ready developer tools for the most comfortable experience: ready and well-documented [SDK](https://sdk.bitcartcc.com), Merchants API \(see it's swagger documentation [here](https://api.bitcartcc.com)\) and various plugins.
 
 ### How is it different
 
 BitcartCC is a completely open source project. Every feature added, every change is documented and is publicly visible. There is no third-party between a merchant and a customer. Each merchant can set up their own individual instance, not dependent on other instances, or any third-party. Every action is under control of the merchant. As BitcartCC is self-hosted, of course there are no processing or subscription fees.
 
-As BitcartCC is open source, everyone is welcome to read it's code, help in finding bugs and suggest new features! Security auditors can always inspect the quality of our code, and they have a secure way to report vulnerabilities to make them fixed before they were used for bad \(INSERT LINK to docs page\)
+As BitcartCC is open source, everyone is welcome to read it's code, help in finding bugs and suggest new features! Security auditors can always inspect the quality of our code, and they have [a secure way](development/security-disclosures.md) to report vulnerabilities to make them fixed before they were used for bad
 
 There are a few projects existing in the cryptocurrencies sphere targeting payment processing, but BitcartCC is way more than just that. Payment processing is just one of the possible use-cases, but the user can always choose which parts of BitcartCC to use.
 

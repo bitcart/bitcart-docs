@@ -29,9 +29,42 @@
 * [\(3\) Create a store](getting-started/createstore.md)
 * [\(4\) What's Next?](getting-started/whatsnext.md)
 
+## Guides
+
+* [Lightning Network](guides/lightning.md)
+* [Fiat currencies support](guides/fiat-currencies-support.md)
+* [Templates](guides/templates.md)
+* [Store POS](guides/store-pos.md)
+* [Server management settings](guides/server-management-settings.md)
+* [Tor](guides/tor.md)
+
+## Integrations
+
+* [WooCommerce](integrations/woocommerce.md)
+* [WHMCS](integrations/whmcs.md)
+* [Custom Integration](integrations/custom-integration.md)
+
+## Examples
+
+* [Atomic Tip Bot](examples/atomic-tip-bot.md)
+
 ## Support and Community
 
+* [FAQ and common issues](support-and-community/faq/README.md)
+  * [General FAQ](support-and-community/faq/general-faq.md)
+  * [Server Settings FAQ](support-and-community/faq/server-settings-faq.md)
+  * [Terminology FAQ](support-and-community/faq/terminology-faq.md)
+  * [Stores FAQ](support-and-community/faq/stores-faq.md)
+  * [Altcoin FAQ](support-and-community/faq/altcoin-faq.md)
 * [Support](support-and-community/support.md)
+* [Troubleshooting an issue](support-and-community/troubleshooting-an-issue.md)
 * [Contribute](support-and-community/contribute.md)
 * [Community](support-and-community/community.md)
+
+## Development
+
+* [Architecture](development/architecture.md)
+* [Developing Locally](development/developing-locally.md)
+* [How to add an Altcoin](development/how-to-add-an-altcoin.md)
+* [Security Disclosures](development/security-disclosures.md)
 

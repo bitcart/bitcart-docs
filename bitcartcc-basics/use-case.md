@@ -44,7 +44,7 @@ Merchants or freelancers can use this for bill pay services. You can even use yo
 
 ### Lightning Network payments <a id="lightning-network-payments"></a>
 
-No matter the kind of business you run, BitcartCC offers a very easy way to get started on the Lightning Network. You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](https://docs.bitcartcc.com/features/lightningnetwork) \(INSERT LINK\). Both merchants and customers can use BitcartCC to receive or make payments off-chain with instant confirmations and neglectable network fees.
+No matter the kind of business you run, BitcartCC offers a very easy way to get started on the Lightning Network. You can use and experiment with this innovative second-layer solution build on top of Bitcoin by [following this guide](../guides/lightning.md). Both merchants and customers can use BitcartCC to receive or make payments off-chain with instant confirmations and neglectable network fees.
 
 ## Charities and Content Creators \(Donations\) <a id="charities-and-content-creators-donations"></a>
 
@@ -80,7 +80,7 @@ Being an open source project, BitcartCC doesn't have the power to impose anythin
 
 ## Hosting Providers <a id="hosting-providers"></a>
 
-Hosting providers can \(and some already did \(MAYBE INSERT LINK to bithosting\)\) create easy 1-click BitcartCC deployment solutions for their customers. With the growing interest in BitcartCC, hosting companies can tap into this source of new customers and make money by hosting easily-deployable BitcartCC instances for merchants.
+Hosting providers can \(and some already did\) create easy 1-click BitcartCC deployment solutions for their customers. With the growing interest in BitcartCC, hosting companies can tap into this source of new customers and make money by hosting easily-deployable BitcartCC instances for merchants.
 
 ## Developers
 

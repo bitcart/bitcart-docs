@@ -22,7 +22,7 @@ If you're a superuser, you can click on profile icon in the top right corner of 
 
 ![Server management button](../.gitbook/assets/open_server_management.png)
 
-From server settings page, you can control the users of your server, and many more. For more information, check Server Settings FAQ \(TODO: insert link\)
+From server settings page, you can control the users of your server, and many more. For more information, check [Server Settings FAQ](../support-and-community/faq/server-settings-faq.md)
 
 Now, to the other common settings.
 
@@ -36,11 +36,11 @@ It is a feature-rich datatable, supporting searching, ordering, create/edit/dele
 
 The core of BitcartCC is creating a wallet. In BitcartCC, one wallet represents one currency.
 
-Default currency is btc, you can change that. When creating wallet, just select currency code from the ones available on your instance \(btc,ltc etc.\). Wallets may have a name and their xpub \(TODO: insert a link to glossary page\).
+Default currency is btc, you can change that. When creating wallet, just select currency code from the ones available on your instance \(btc,ltc etc.\). Wallets may have a name and their [xpub](../support-and-community/faq/terminology-faq.md#what-is-an-xpub).
 
 The nice feature of BitcartCC is that it does not require your private keys, but it supports many different formats.
 
-You can enter \(x/y/z\)pub - public key, \(x/y/z\)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check Architecture page \(TODO: insert link\) for more information.
+You can enter \(x/y/z\)pub - public key, \(x/y/z\)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check [Architecture page](../development/architecture.md) for more information.
 
 When creating a wallet, it will get synced very fast \(depends on the size of the wallet, but shoudn't take too long\), and BitcartCC will fetch it's balance and display it.
 
@@ -165,7 +165,7 @@ Supported information:
 
 If your invoice contains connected products, you'll be able to know which products were bought by the customer. The name of the store will be used on checkout.
 
-When converting to payment method's currency, destination currency's maximum decimal points is taken in mind, and the price is being formatted as per currency settings. The convert, the exchange rate is used. See this page \(INSERT URL to guide about fiat currencies\) for more information.
+When converting to payment method's currency, destination currency's maximum decimal points is taken in mind, and the price is being formatted as per currency settings. The convert, the exchange rate is used. See this [page](../guides/fiat-currencies-support.md) for more information.
 
 ### Notification URL
 
@@ -245,7 +245,7 @@ All templates in BitcartCC are rendered via [Jinja2](https://jinja.palletsprojec
 
 Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/2.11.x/templates).
 
-Read more about example usages of templates in BitcartCC here \(INSERT LINK to guide\)
+Read more about example usages of templates in BitcartCC [here](../guides/templates.md)
 
 ![Templates page](../.gitbook/assets/templates.png)
 
