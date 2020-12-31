@@ -37,6 +37,7 @@
 * [Store POS](guides/store-pos.md)
 * [Server management settings](guides/server-management-settings.md)
 * [Tor](guides/tor.md)
+* [Multiple deployments on one server](guides/multiple-deployments-on-one-server.md)
 
 ## Integrations
 
@@ -47,6 +48,7 @@
 ## Examples
 
 * [Atomic Tip Bot](examples/atomic-tip-bot.md)
+* [Templates](examples/templates.md)
 
 ## Support and Community
 
