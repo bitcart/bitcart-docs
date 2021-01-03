@@ -12,7 +12,21 @@ The templates for an object are selected as per [template selection rules](../bi
 
 ![Store default templates](../.gitbook/assets/store_default_templates.png)
 
-## Notification
+## HTML templates
+
+In some places of BitcartCC, it is possible to render templates as html files instead of plain text.
+
+For example, in emails sent to customer on successful checkout, you could use default templates \(or customized a bit\) which are plain text, or instead, you could enable html template rendering and send your customers a beautiful email.
+
+Currently html template rendering is available only in [store emails sent to customer](../bitcartcc-basics/walkthrough.md#store-checkout-settings)
+
+**Note**: if you enable html template rendering, default templates or any plain text templates will now render incorrectly, without new lines. So ensure to check that template rendering templates match the templates themselves.
+
+You can check html templates examples [here](../examples/templates.md).
+
+## Available templates
+
+### Notification
 
 Notification template is used when building the message to be sent via all configured [notification providers](../bitcartcc-basics/walkthrough.md#notification-providers) to the merchant notifying of successful order \(to start shipping, for example\).
 
@@ -31,7 +45,7 @@ New order from {{ invoice.buyer_email }}
 
  An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/notification.j2)
 
-## Shop
+### Shop
 
 Shop template is used when building the base message for a successful payment associated with a store. It may optionally include paid invoice products' templates.
 
@@ -57,7 +71,7 @@ Best wishes, your {{store.name}}.
 
 An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/shop.j2)
 
-## Product
+### Product
 
 Product template is used when building the message for each individual product. Normally it is included as part of the main store message sent to the customer upon successful payment.
 

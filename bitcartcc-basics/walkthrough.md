@@ -86,9 +86,12 @@ Your store is the main configuration point for all the futher actions with it, l
 
 You can configure different policies from your store settings.
 
+### Store checkout settings
+
 By clicking on settings icon, you will be presented with the store checkout settings pop-up, where you can change different settings affecting the checkout.
 
 * Invoice expiration time, in minutes. It affects the timer displayed in the checkout. It is the time in which the customer must send the payment, otherwise invoice is marked as expired
+* Use HTML templates - whether to render templates of email message sent to customer as html or as plain text. For more information, see this [guide](../guides/templates.md#html-templates).
 
 ![Store checkout settings](../.gitbook/assets/store_checkout_settings.png)
 
