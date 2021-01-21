@@ -32,6 +32,7 @@
 ## Guides
 
 * [Lightning Network](guides/lightning.md)
+* [Transaction speed](guides/transaction-speed.md)
 * [Fiat currencies support](guides/fiat-currencies-support.md)
 * [Templates](guides/templates.md)
 * [Store POS](guides/store-pos.md)
