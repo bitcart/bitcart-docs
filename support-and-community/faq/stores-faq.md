@@ -20,3 +20,11 @@ To keep consistent branding, you can change the default BitcartCC logo to your o
 
 ![Maybe in the future \(:](../../.gitbook/assets/custom_logo_checkout.png)
 
+## Recommended fee
+
+Show recommended fee setting enables showing recommended fee for all onchain \(i.e. not lightning\) payment methods. 
+
+To configure it, you need to set the recommended fee confirmation target blocks setting, which configures the fee displayed. If you set it to 2, it would mean it will show the recommended fee for the customer to pay for his payment to be confirmed in 2 blocks. Default value is 1.
+
+![Recommended fee on checkout](../../.gitbook/assets/recommended_fee.png)
+
