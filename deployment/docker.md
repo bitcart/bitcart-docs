@@ -23,8 +23,8 @@ cd bitcart-docker
 export BITCART_HOST=api.yourdomain.tld
 export BITCART_ADMIN_HOST=admin.yourdomain.tld
 export BITCART_STORE_HOST=store.yourdomain.tld
-export BITCART_ADMIN_URL=https://api.yourdomain.tld
-export BITCART_STORE_URL=https://api.yourdomain.tld
+export BITCART_ADMIN_API_URL=https://api.yourdomain.tld
+export BITCART_STORE_API_URL=https://api.yourdomain.tld
 ./setup.sh
 ```
 
@@ -40,11 +40,11 @@ But in most cases, you can basically do:
 
 ```bash
 # if https (BITCART_REVERSEPROXY=nginx-https, default)
-export BITCART_ADMIN_URL=https://$BITCART_HOST
-export BITCART_STORE_URL=https://$BITCART_HOST
+export BITCART_ADMIN_API_URL=https://$BITCART_HOST
+export BITCART_STORE_API_URL=https://$BITCART_HOST
 # if http (BITCART_REVERSEPROXY=nginx, local deployments, other)
-export BITCART_ADMIN_URL=http://$BITCART_HOST
-export BITCART_STORE_URL=http://$BITCART_HOST
+export BITCART_ADMIN_API_URL=http://$BITCART_HOST
+export BITCART_STORE_API_URL=http://$BITCART_HOST
 ```
 
 _**Tip:**_ if you want to try out BitcartCC locally on your PC without a server, you can either enable [Tor support](../guides/tor.md) or use local deployment mode. 
@@ -102,8 +102,8 @@ cd bitcart-docker
 export BITCART_HOST=api.bitcartcc.com
 export BITCART_ADMIN_HOST=admin.bitcartcc.com
 export BITCART_STORE_HOST=store.bitcartcc.com
-export BITCART_ADMIN_URL=https://api.bitcartcc.com
-export BITCART_STORE_URL=https://api.bitcartcc.com
+export BITCART_ADMIN_API_URL=https://api.bitcartcc.com
+export BITCART_STORE_API_URL=https://api.bitcartcc.com
 # reverse proxy settings, we use none because we configure nginx manually
 export BITCART_REVERSEPROXY=none
 # cryptocurrency settings

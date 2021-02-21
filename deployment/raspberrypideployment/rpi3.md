@@ -241,8 +241,8 @@ Set your environment variables. Make sure the `BITCART_HOST` and other HOST and 
 export BITCART_HOST="api.bitcartcc.YourDomain.com"
 export BITCART_ADMIN_HOST="admin.bitcartcc.YourDomain.com"
 export BITCART_STORE_HOST="bitcartcc.YourDomain.com"
-export BITCART_STORE_URL="https://api.bitcartcc.YourDomain.com"
-export BITCART_ADMIN_URL="https://api.bitcartcc.YourDomain.com"
+export BITCART_STORE_API_URL="https://api.bitcartcc.YourDomain.com"
+export BITCART_ADMIN_API_URL="https://api.bitcartcc.YourDomain.com"
 export BITCART_CRYPTOS=btc
 export BITCART_REVERSEPROXY="nginx-https"
 export BTC_LIGHTNING=true
