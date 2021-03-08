@@ -56,6 +56,8 @@ export BITCART_STORE_PORT=3001 # store at port 3001
 
 You should configure nginx yourself. The only recommendation is: it is easy to configure nginx via certbot.
 
+Instead of disabling nginx, you may also leave it running at different ports, see this [guide](../support-and-community/faq/deployment-faq.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination).
+
 Run:
 
 ```bash
@@ -63,4 +65,14 @@ sudo certbot --nginx -d your.domain.tld
 ```
 
 And it will create nginx config records for you, and then edit the `location /` config, by using `proxy_pass http://localhost:port`
+
+**Note:** when using multiple deployments on one server, environment variables may be loaded incorrectly on login \(due to same environment variable names\).
+
+To ensure that you have loaded the correct environment for your deployment, in your deployment directory, run:
+
+```bash
+./load_env.sh
+```
+
+It will load the correct settings.
 

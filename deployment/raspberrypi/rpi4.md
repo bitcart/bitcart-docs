@@ -1,6 +1,6 @@
 # Raspberry Pi 4 Deployment
 
-This document guides you step by step on how to run BitcartCC on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](rpi3.md)
+gThis document guides you step by step on how to run BitcartCC on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](rpi3.md)
 
 The newly released Raspberry Pi 4 is currently the best low-cost single-board computer available. You can use a Raspberry Pi 4 to run your BitcartCC at home for around $130 worth of parts, described below.
 

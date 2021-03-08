@@ -31,6 +31,8 @@
 
 ## Guides
 
+* [One domain mode](guides/one-domain-mode.md)
+* [Configurator](guides/configurator.md)
 * [Lightning Network](guides/lightning.md)
 * [Transaction speed](guides/transaction-speed.md)
 * [Fiat currencies support](guides/fiat-currencies-support.md)
@@ -56,6 +58,7 @@
 * [FAQ and common issues](support-and-community/faq/README.md)
   * [General FAQ](support-and-community/faq/general-faq.md)
   * [Server Settings FAQ](support-and-community/faq/server-settings-faq.md)
+  * [Deployment FAQ](support-and-community/faq/deployment-faq.md)
   * [Terminology FAQ](support-and-community/faq/terminology-faq.md)
   * [Stores FAQ](support-and-community/faq/stores-faq.md)
   * [Altcoin FAQ](support-and-community/faq/altcoin-faq.md)

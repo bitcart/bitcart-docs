@@ -60,6 +60,10 @@ It will start the update process. During it your instance might be unavailable, 
 
 The update process will upgrade the cloned `bitcart-docker` repository, upgrade the docker-compose generator image, generate new configuration file from saved settings \(from `.env` file\), upgrade all the used docker images, recreate the modified containers and clean up the now unused images
 
+### Restart the server
+
+It will start the restart process. During restart your instance might be unavailable. Use restart feature to fix some possible bugs, if you met some.
+
 ### Cleanup the server
 
 The cleanup process will do two actions: [cleanup unused images](server-management-settings.md#cleanup-unused-images) and [cleanup logs](server-management-settings.md#cleanup-logs).
@@ -96,15 +100,23 @@ When enabled, your instance will check github for new BitcartCC releases, and di
 
 ![New update available message](../.gitbook/assets/new_update.jpg)
 
+### Allow access to configurator for unauthorized users
+
+By default it is on. When enabled, users can access `https://admin.yourbitcartcc.com/configurator`, and deploy their instance from there via the [Configurator](configurator.md).
+
 ## Store policies
 
-![Store policies page](../.gitbook/assets/store_policies.png)
+![](../.gitbook/assets/store_policies%20%281%29.png)
 
 On the store policies page, you are able to configure some settings related to all the stores on the server or the [Store POS](store-pos.md)
 
 ### ID of the store to enable on POS
 
 Enter the id of the store that will be displayed by the store POS. It will display this store's products and use this store's settings.
+
+### Require email on POS checkout
+
+By default it is on. When enabled, users must enter their email on store POS to continue to checkout, otherwise they can continue without email.
 
 ## Daemons management
 

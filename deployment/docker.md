@@ -1,5 +1,7 @@
 # Docker deployment
 
+Note: you might as weel look at an easier method: [BitcartCC Configurator](../guides/configurator.md).
+
 To install BitcartCC, to download, set up, and run your BitcartCC instance, it is a matter of few commands:
 
 ```text
@@ -20,6 +22,28 @@ Here is an example of the setup you will use in 90% cases. Replace `yourdomain.t
 sudo su -
 git clone https://github.com/bitcartcc/bitcart-docker
 cd bitcart-docker
+export BITCART_HOST=yourdomain.tld
+./setup.sh
+```
+
+This setup utilizes the [one domain mode](../guides/one-domain-mode.md). We recommend you to read about that.
+
+**Important: for everything to work, you will need to first set up DNS A records for** `BITCART_HOST`**,** `BITCART_ADMIN_HOST` **\(if set\) and** `BITCART_STORE_HOST` **\(if set\) to point to the server where you are deploying BitcartCC.**
+
+![DNS A records for bitcartcc demo](../.gitbook/assets/namecheap_dns_records.png)
+
+_**Tip:**_ All the `_HOST` environment variables determine on which host \(domain, without protocol\) to run a service. All the `_URL` environment variables are to specify the URL \(with protocol, http:// or https://\) of the BitcartCC Merchants API to use.
+
+_**Tip:**_ if you want to try out BitcartCC locally on your PC without a server, you can either enable [Tor support](../guides/tor.md) or use local deployment mode.
+
+For that, replace `yourdomain.tld` with `bitcart.local` \(or any domain ending in `.local`\), and it will modify `/etc/hosts` for you, for it to work like a regular domain. If using local deployment mode, of course your instance will only be accessible from your PC.
+
+If not using the [one domain mode](../guides/one-domain-mode.md), then you would probably run:
+
+```bash
+sudo su -
+git clone https://github.com/bitcartcc/bitcart-docker
+cd bitcart-docker
 export BITCART_HOST=api.yourdomain.tld
 export BITCART_ADMIN_HOST=admin.yourdomain.tld
 export BITCART_STORE_HOST=store.yourdomain.tld
@@ -28,13 +52,7 @@ export BITCART_STORE_API_URL=https://api.yourdomain.tld
 ./setup.sh
 ```
 
-**Important: for everything to work, you will need to first set up DNS A records for** `BITCART_HOST`**,** `BITCART_ADMIN_HOST` **and** `BITCART_STORE_HOST` **to point to the server where you are deploying BitcartCC.** 
-
-![DNS A records for bitcartcc demo](../.gitbook/assets/namecheap_dns_records.png)
-
-_**Tip:**_ All the `_HOST` environment variables determine on which host \(domain, without protocol\) to run a service. All the `_URL` environment variables are to specify the URL \(with protocol, http:// or https://\) of the BitcartCC Merchants API to use. 
-
-Why was it done like so? It's because it is possible to run Merchants API on one server, and everything else on different servers. 
+Why was it done like so? It's because it is possible to run Merchants API on one server, and everything else on different servers.
 
 But in most cases, you can basically do:
 
@@ -46,10 +64,6 @@ export BITCART_STORE_API_URL=https://$BITCART_HOST
 export BITCART_ADMIN_API_URL=http://$BITCART_HOST
 export BITCART_STORE_API_URL=http://$BITCART_HOST
 ```
-
-_**Tip:**_ if you want to try out BitcartCC locally on your PC without a server, you can either enable [Tor support](../guides/tor.md) or use local deployment mode. 
-
-For that, replace `yourdomain.tld` with `bitcart.local` \(or any domain ending in `.local`\), and it will modify `/etc/hosts` for you, for it to work like a regular domain. If using local deployment mode, of course your instance will only be accessible from your PC.
 
 ## Configuration
 
