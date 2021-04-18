@@ -59,7 +59,7 @@ Another key difference is that, we are open to community ideas, and the project 
 
 Payments via BitcartCC are direct, peer to peer. The merchant receives the coins directly to their wallet, with no intermediary. 
 
-How it works? For each invoice, BitcartCC generates a new address, belonging to the xpub entered, and this address is presented to the user. As this address is your wallet's address, you receive the funds directly. BitcartCC just watches the payments, it can't modify anything along the way, as when configuring the wallet \(LINK HERE to wallets page\),  you only need to enter a watch-only master public key \(LINK HERE to glossary page in the docs or bitcoin wiki\).
+How it works? For each invoice, BitcartCC generates a new address, belonging to the xpub entered, and this address is presented to the user. As this address is your wallet's address, you receive the funds directly. BitcartCC just watches the payments, it can't modify anything along the way, as when configuring the [wallet](bitcartcc-basics/walkthrough.md#wallets),  you only need to enter a watch-only [master public key](support-and-community/faq/terminology-faq.md#what-is-an-xpub).
 
 That way, you have complete control of the funds received.
 
