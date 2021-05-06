@@ -14,7 +14,7 @@ Please check out our [official website](https://bitcartcc.com), our [complete do
 
 ## Features <a id="features"></a>
 
-* Direct, peer-to-peer Bitcoin and altcoin payments
+* Direct, peer-to-peer cryptocurrency payments
 * No transaction fees \(other than those for the crypto networks\)
 * No processing fees
 * No middleman
