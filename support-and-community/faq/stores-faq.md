@@ -28,3 +28,15 @@ To configure it, you need to set the recommended fee confirmation target blocks 
 
 ![Recommended fee on checkout](../../.gitbook/assets/recommended_fee.png)
 
+## How do I change my payment method's name?
+
+By default BitcartCC uses currency symbol as method name, and if there are multiple wallets of the same currency connected it adds an index to it \(BTC\(1\), BTC\(2\)\).
+
+In some cases you may want to have a custom label for your payment methods, for example to indicate if some payment method is for legacy payments, and another is for segwit payments.
+
+To do that, just add a label to your wallet:
+
+![Custom wallet label](../../.gitbook/assets/wallet_label.png)
+
+![It will be enabled automatically for new invoices](../../.gitbook/assets/custom_label_checkout.png)
+
