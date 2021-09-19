@@ -10,6 +10,8 @@ To enter backups management page, go to profile-&gt;server management-&gt;backup
 
 ![Backups management page](../.gitbook/assets/backups_management.png)
 
+![Backups management page](../.gitbook/assets/backups_management2.png)
+
 From there you can start a backup right away, it uses settings from this page to do it.
 
 ### Backup settings
@@ -56,6 +58,12 @@ Settings are saved automatically, and if you had existing schedule configured an
 {% hint style="info" %}
 We assume that daily is exactly every day, weekly is every 7 days, monthly is every 30 days
 {% endhint %}
+
+### Restoring backups
+
+![Restore backup](../.gitbook/assets/restore_backup.png)
+
+Restoring backups is as easy as just uploading backup file to your instance!
 
 ## Backups management from terminal
 
