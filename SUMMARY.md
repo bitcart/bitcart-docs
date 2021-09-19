@@ -31,8 +31,9 @@
 
 ## Guides
 
-* [One domain mode](guides/one-domain-mode.md)
 * [Configurator](guides/configurator.md)
+* [One domain mode](guides/one-domain-mode.md)
+* [Backups](guides/backups.md)
 * [Lightning Network](guides/lightning.md)
 * [Transaction speed](guides/transaction-speed.md)
 * [Fiat currencies support](guides/fiat-currencies-support.md)
