@@ -1,8 +1,12 @@
 # Raspberry Pi 4 Deployment
 
-gThis document guides you step by step on how to run BitcartCC on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](rpi3.md)
+This document guides you step by step on how to run BitcartCC on a Raspberry Pi 4. See here the [Raspberry Pi 3 instructions](rpi3.md)
 
 The newly released Raspberry Pi 4 is currently the best low-cost single-board computer available. You can use a Raspberry Pi 4 to run your BitcartCC at home for around $130 worth of parts, described below.
+
+## Important note about 32-bit operating systems
+
+It is recommended that you install 64-bit version of raspberry pi OS, as it is tested natively via our CI systems. 32 bit version is obsolete and is less tested. But if you want to stay 32 bits, note that on debian modern docker images won't start. See [this guide](https://docs.linuxserver.io/faq#libseccomp) for instructions on how to fix it. Option 2 is recommended one if you can't upgrade to 64 bits.
 
 ## Required Hardware <a id="required-hardware"></a>
 
@@ -216,11 +220,7 @@ cd bitcart-docker
 Configure BitcartCC by setting some environment variables:
 
 ```bash
-export BITCART_HOST="api.raspberrypi.local"
-export BITCART_ADMIN_HOST="admin.raspberrypi.local"
-export BITCART_STORE_HOST="raspberrypi.local"
-export BITCART_STORE_API_URL="http://api.raspberrypi.local"
-export BITCART_ADMIN_API_URL="http://api.raspberrypi.local"
+export BITCART_HOST="raspberrypi.local"
 export BITCART_REVERSEPROXY="nginx"
 export BTC_LIGHTNING=true
 ```
@@ -231,7 +231,6 @@ Run the BitcartCC installation:
 
 ```bash
 ./setup.sh
-./start.sh
 ```
 
 It should be up and running within a few minutes. Try opening [http://admin.raspberrypi.local](http://admin.raspberrypi.local) in your web browser. If everything is correct, you will see BitcartCC front page.

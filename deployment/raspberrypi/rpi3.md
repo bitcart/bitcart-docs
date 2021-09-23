@@ -31,6 +31,10 @@ Other requirements are as follows:
 
 Once you have the hardware and other requirements, you're ready to begin!
 
+## Important note about 32-bit operating systems
+
+It is recommended that you install 64-bit version of raspberry pi OS, as it is tested natively via our CI systems. 32 bit version is obsolete and is less tested. But if you want to stay 32 bits, note that on debian modern docker images won't start. See [this guide](https://docs.linuxserver.io/faq#libseccomp) for instructions on how to fix it. Option 2 is recommended one if you can't upgrade to 64 bits.
+
 ## Here are the setup instructions: <a id="here-are-the-setup-instructions"></a>
 
 **Step 1** - Configure your domain name.
@@ -238,11 +242,7 @@ cd bitcart-docker
 Set your environment variables. Make sure the `BITCART_HOST` and other HOST and URL parameters use your own domain & subdomain. As usual, run each command separately:
 
 ```bash
-export BITCART_HOST="api.bitcartcc.YourDomain.com"
-export BITCART_ADMIN_HOST="admin.bitcartcc.YourDomain.com"
-export BITCART_STORE_HOST="bitcartcc.YourDomain.com"
-export BITCART_STORE_API_URL="https://api.bitcartcc.YourDomain.com"
-export BITCART_ADMIN_API_URL="https://api.bitcartcc.YourDomain.com"
+export BITCART_HOST="bitcartcc.yourdomain.com"
 export BTC_LIGHTNING=true
 ```
 
@@ -252,11 +252,10 @@ Finally, run the BitcartCC setup script and start it:
 
 ```bash
 ./setup.sh
-./start.sh
 exit
 ```
 
-**Step 16** - Go to `https://bitcartcc.YourDomain.com` and confirm that your site is up and running!
+**Step 16** - Go to `https://bitcartcc.yourdomain.com/admin` and confirm that your site is up and running!
 
 **Setup Complete!**
 
