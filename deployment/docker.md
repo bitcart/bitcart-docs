@@ -91,6 +91,8 @@ Here is a complete list of configuration settings:
 | BITCART\_ADDITIONAL\_COMPONENTS | A space separated list of additional components to add to docker-compose stack. Enable custom integrations or your own developed components, making your app fit into one container stack. \(allows communication between containers, using same db, redis, etc.\) | ❌ | Generator |
 | BITCART\_COINNAME\_EXPOSE | Used only when no reverse proxy is enabled. By default daemons aren't exposed to outside internet and are accessible only from inside container network \(from other containers\). Note that exposing daemon port to outside is a security risk, as potentially your daemon might be using default credentials that can be viewed from source code. Only do that if you know what you're doing! Merchants API exists for many reasons, and one of those is to protect daemons from direct access. | ❌ | Generator |
 | BITCART\_COMPONENT\_PORT | Used when no reverse proxy is enabled. By default certain services are exposed to outside by their internal ports \(3000 for store, 4000 for admin, 8000 for merchants API, 500X for daemons\). Use that to override external container port. Here component is the internal component name. It can be found in generator/docker-components directory. For example for store it is store, for admin it is admin, for merchants API-backend, for bitcoin daemon-bitcoin. When unset, default port is used. | ❌ | Generator |
+| TOR\_RELAY\_NICKNAME | If tor relay is activated, the relay nickname | ❌ | Extension |
+| TOR\_RELAY\_EMAIL | If tor relay is activated, the email for Tor to contact you regarding your relay | ❌ | Extension |
 
 ## Live demo
 
@@ -122,7 +124,7 @@ export BITCART_STORE_API_URL=https://api.bitcartcc.com
 export BITCART_REVERSEPROXY=none
 # cryptocurrency settings
 # we enable all currencies we support on the demo to test that they work
-export BITCART_CRYPTOS=btc,bch,ltc,gzro,bsty
+export BITCART_CRYPTOS=btc,bch,ltc,gzro,bsty,xrg
 # lightning network for supported coins
 export BTC_LIGHTNING=true
 export LTC_LIGHTNING=true
