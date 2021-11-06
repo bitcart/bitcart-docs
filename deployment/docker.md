@@ -124,7 +124,7 @@ export BITCART_STORE_API_URL=https://api.bitcartcc.com
 export BITCART_REVERSEPROXY=none
 # cryptocurrency settings
 # we enable all currencies we support on the demo to test that they work
-export BITCART_CRYPTOS=btc,bch,ltc,gzro,bsty,xrg
+export BITCART_CRYPTOS=btc,bch,ltc,bsty,xrg
 # lightning network for supported coins
 export BTC_LIGHTNING=true
 export LTC_LIGHTNING=true
@@ -184,4 +184,3 @@ Rules are loaded from `generator/rules` directory. Each rule is a python file. E
 If such function exists, it will be called with current services dictionary. Rules can modify that based on different settings. There are a few default settings bundled with BitcartCC \(for example, to expose ports to outside when no reverse proxy is enabled\). You can create your own rules to add completely custom settings for your deployment. Your BitcartCC deployment is not only BitcartCC itself, but also a powerful and highly customizable ocker-compose stack generator.
 
 After applying rules, the resulting data is written to compose/generated.yml file, which is final docker-compose.yml file used by startup scripts.
-
