@@ -2,7 +2,7 @@
 
 In this article, we will walk you through the BitcartCC admin panel user interface and show you how to navigate through different options.
 
-When creating an account, if you're the first user registered on the instance, you'll granted superuser rights\(full control over the server\). On third-party hosts it usually not so, but if you're hosting your own instance you'll of course become the full owner of it.
+When creating an account, if you're the first user registered on the instance, you'll be granted superuser rights \(full control over the server\). On third-party hosts it is usually not so, but if you're hosting your own instance you'll of course become the full owner of it.
 
 After you created the account on the BitcartCC instance hosted by yourself or a third-party, you'll see a lot of information cards.
 
