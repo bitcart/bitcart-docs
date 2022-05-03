@@ -23,11 +23,11 @@
 
 ## Getting started
 
-* [\(1\) Register account](getting-started/registeraccount.md)
-* [\(2\) Create a wallet](getting-started/createwallet/README.md)
+* [(1) Register account](getting-started/registeraccount.md)
+* [(2) Create a wallet](getting-started/createwallet/README.md)
   * [Electrum wallet](getting-started/createwallet/electrumwallet.md)
-* [\(3\) Create a store](getting-started/createstore.md)
-* [\(4\) What's Next?](getting-started/whatsnext.md)
+* [(3) Create a store](getting-started/createstore.md)
+* [(4) What's Next?](getting-started/whatsnext.md)
 
 ## Guides
 
@@ -45,6 +45,7 @@
 
 ## Integrations
 
+* [Shopify](integrations/shopify.md)
 * [WooCommerce](integrations/woocommerce.md)
 * [WHMCS](integrations/whmcs.md)
 * [Custom Integration](integrations/custom-integration.md)
@@ -74,4 +75,3 @@
 * [Developing Locally](development/developing-locally.md)
 * [How to add an Altcoin](development/how-to-add-an-altcoin.md)
 * [Security Disclosures](development/security-disclosures.md)
-
