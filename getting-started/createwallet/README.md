@@ -7,7 +7,7 @@ Inside BitcartCC, you can setup and manage an unlimited number of wallets. Each 
 **You need to have your blockchain wallets created beforehand to specify their credentials in BitcartCC! (more on this below)**
 
 
-### Creating Bitcoin wallet (BTC)
+### Creating Bitcoin-based wallet (BTC)
 _Note: A_ [_private key_](https://en.bitcoin.it/wiki/Private_key) _\(xprv\) is **never** required for receiving money on-chain to a BitcartCC wallet. The software needs a public key \(xpubkey\) which is a watch-only wallet token. The xpubkey allows BitcartCC to generate a new address each time a new invoice is generated. It enables users to observe the wallet balance and transactions without having to share their private key._
 
 To manage the funds received to your BitcartCC wallet, you can use an external wallet.
