@@ -10,13 +10,13 @@ For each of the objects, you are able to select a custom template.
 
 The templates for an object are selected as per [template selection rules](../bitcartcc-basics/walkthrough.md#template-selection-rules)
 
-![Store default templates](../.gitbook/assets/store_default_templates.png)
+![Store default templates](../.gitbook/assets/store\_default\_templates.png)
 
 ## HTML templates
 
 In some places of BitcartCC, it is possible to render templates as html files instead of plain text.
 
-For example, in emails sent to customer on successful checkout, you could use default templates \(or customized a bit\) which are plain text, or instead, you could enable html template rendering and send your customers a beautiful email.
+For example, in emails sent to customer on successful checkout, you could use default templates (or customized a bit) which are plain text, or instead, you could enable html template rendering and send your customers a beautiful email.
 
 Currently html template rendering is available only in [store emails sent to customer](../bitcartcc-basics/walkthrough.md#store-checkout-settings)
 
@@ -28,22 +28,22 @@ You can check html templates examples [here](../examples/templates.md).
 
 ### Notification
 
-Notification template is used when building the message to be sent via all configured [notification providers](../bitcartcc-basics/walkthrough.md#notification-providers) to the merchant notifying of successful order \(to start shipping, for example\).
+Notification template is used when building the message to be sent via all configured [notification providers](../bitcartcc-basics/walkthrough.md#notification-providers) to the merchant notifying of successful order (to start shipping, for example).
 
 The are two variables passed:
 
 * `store`, containing the store this notification belongs to
 * `invoice`, containing the invoice that has been paid
 
-You can use those two variables to build whatever message that fits the best for you. 
+You can use those two variables to build whatever message that fits the best for you.&#x20;
 
 The default template is the following:
 
-```text
+```
 New order from {{ invoice.buyer_email }}
 ```
 
- An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/notification.j2)
+&#x20;An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/notification.j2)
 
 ### Shop
 
@@ -58,13 +58,15 @@ You can use this template to provide some design for the order confirmation mess
 
 The default template is the following:
 
-```text
+```
 Welcome to our shop!
 Thank you so much for your purchase!
 Your summary is below:
+{% raw %}
 {% for product in products %}
 {{product}}
 {% endfor %}
+{% endraw %}
 If you've got any questions, email us at {{store.email}}.
 Best wishes, your {{store.name}}.
 ```
@@ -85,16 +87,16 @@ Note that, you can configure different templates for each product, or use the sa
 
 The default template is the following:
 
-```text
+```
 Thanks for buying {{product.name}} x {{quantity|int}}!
+{% raw %}
 {% if product.download_url %}
 Your download link: {{product.download_url}}
 {% else %}
 It'll ship shortly!
 {% endif %}
+{% endraw %}
 ```
 
 An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/product.j2)
-
-
 

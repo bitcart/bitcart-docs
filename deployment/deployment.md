@@ -8,7 +8,7 @@ BitcartCC is a non-custodial invoicing system which eliminates the involvement o
 
 Developer deployments are not recommended for production environments and require the user to have technical knowledge related to the build.
 
-![Pick your deployment method](../.gitbook/assets/bitcartcc_deployment.png)
+![Pick your deployment method](../.gitbook/assets/bitcartcc\_deployment.png)
 
 ## What are my options?
 
@@ -20,26 +20,25 @@ Developer deployments are not recommended for production environments and requir
 * [​Third-Party Hosting​](thirdpartyhosting.md)
 * [​Manual Deployment](manual.md)
 
-## To chose one that will best suit your needs, consider the following: <a id="to-chose-one-that-will-best-suit-your-needs-consider-the-following"></a>
+## To chose one that will best suit your needs, consider the following: <a href="#to-chose-one-that-will-best-suit-your-needs-consider-the-following" id="to-chose-one-that-will-best-suit-your-needs-consider-the-following"></a>
 
-| Web Solutions | 1. | 2. | Why? |
-| :--- | :---: | :---: | :---: |
-| Business \(Fast Setup\) | [3rd Party   BitcartCC Hosts](thirdpartyhosting.md) | [LunaNode   Web-Wizard](lunanodeweb.md)\* | - Low Difficulty - BitcartCC Support \(1\) - Lightning Network \(2\) |
-| Cost / Month | Free | $3.5 | BTC Accepted |
+| Web Solutions                   |                                    1.                                    |                               2.                              |                                      Why?                                     |
+| ------------------------------- | :----------------------------------------------------------------------: | :-----------------------------------------------------------: | :---------------------------------------------------------------------------: |
+| <p>Business<br>(Fast Setup)</p> | <p><a href="thirdpartyhosting.md">3rd Party <br> BitcartCC Hosts</a></p> | <p><a href="lunanodeweb.md">LunaNode <br> Web-Wizard</a>*</p> | <p>- Low Difficulty<br>- BitcartCC Support (1)<br>- Lightning Network (2)</p> |
+| Cost / Month                    |                                   Free                                   |                              $3.5                             |                                  BTC Accepted                                 |
 
 _\*LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface._
 
-| VPS Solutions | 1. | 2. | 3. | 4. | 5. | Why? |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| Business \(Self Setup\) | LunaNode | Digital Ocean | Amazon AWS EC2 | Microsoft Azure | Google Cloud | - Moderate Difficulty - Docker Compose - Lightning Network |
-| Cost / Month | $3.5 | $5 | $9 | $15-20 | $7 | BTC Accepted \(1\) |
+| VPS Solutions                   |    1.    |            2.           |            3.            |             4.            |           5.           |                                   Why?                                  |
+| ------------------------------- | :------: | :---------------------: | :----------------------: | :-----------------------: | :--------------------: | :---------------------------------------------------------------------: |
+| <p>Business<br>(Self Setup)</p> | LunaNode | <p>Digital<br>Ocean</p> | <p>Amazon<br>AWS EC2</p> | <p>Microsoft<br>Azure</p> | <p>Google<br>Cloud</p> | <p>- Moderate Difficulty<br>- Docker Compose<br>- Lightning Network</p> |
+| Cost / Month                    |   $3.5   |            $5           |            $9            |           $15-20          |           $7           |                             BTC Accepted (1)                            |
 
 _- BitcartCC can also be deployed on any VPS that meets the minimal requirements._
 
-| Developer Solutions |  |  |  |
-| :--- | :---: | :---: | :---: |
-| Developer \(Testing Setup\) | Manual Install | Manual Build | Hardware Build |
-| **Not Recommended** **For New Users** | Install From Command Line | [Build Without Docker Image](manual.md) | ARM32v7 [Raspberry Pi](raspberrypi/) [BitcartCCBox](hardware.md) |
+| Developer Solutions                                                       |                                     |                                                              |                                                                                                     |
+| ------------------------------------------------------------------------- | :---------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
+| <p>Developer<br>(Testing Setup)</p>                                       |            Manual Install           |                         Manual Build                         |                                            Hardware Build                                           |
+| <p><strong>Not Recommended</strong><br><strong>For New Users</strong></p> | <p>Install From<br>Command Line</p> | <p><a href="manual.md">Build Without<br>Docker Image</a></p> | <p>ARM32v7<br><a href="raspberrypi/">Raspberry Pi</a><br><a href="hardware.md">BitcartCCBox</a></p> |
 
 ​
-
