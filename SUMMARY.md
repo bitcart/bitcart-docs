@@ -13,12 +13,11 @@
 
 * [Choosing a Deployment Method](deployment/deployment.md)
 * [Web Deployment](deployment/lunanodeweb.md)
-* [Docker deployment](deployment/docker.md)
+* [Docker Deployment](deployment/docker.md)
+* [Local Deployment](deployment/local-deployment.md)
 * [Manual Deployment](deployment/manual.md)
 * [Hardware Deployment](deployment/hardware.md)
-* [Raspberry Pi Deployment](deployment/raspberrypi/README.md)
-  * [Raspberry Pi 3 Deployment](deployment/raspberrypi/rpi3.md)
-  * [Raspberry Pi 4 Deployment](deployment/raspberrypi/rpi4.md)
+* [Raspberry Pi Deployment](deployment/raspberrypi.md)
 * [Third-Party Hosting](deployment/thirdpartyhosting.md)
 
 ## Getting started

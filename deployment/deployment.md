@@ -36,9 +36,9 @@ _\*LunaNode Web-Wizard is a VPS solution, deployable from an easy-web interface.
 
 _- BitcartCC can also be deployed on any VPS that meets the minimal requirements._
 
-| Developer Solutions                                                       |                                     |                                                              |                                                                                                     |
-| ------------------------------------------------------------------------- | :---------------------------------: | :----------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
-| <p>Developer<br>(Testing Setup)</p>                                       |            Manual Install           |                         Manual Build                         |                                            Hardware Build                                           |
-| <p><strong>Not Recommended</strong><br><strong>For New Users</strong></p> | <p>Install From<br>Command Line</p> | <p><a href="manual.md">Build Without<br>Docker Image</a></p> | <p>ARM32v7<br><a href="raspberrypi/">Raspberry Pi</a><br><a href="hardware.md">BitcartCCBox</a></p> |
+| Developer Solutions                                                       |                                     |                                                              |                                                                                                         |
+| ------------------------------------------------------------------------- | :---------------------------------: | :----------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
+| <p>Developer<br>(Testing Setup)</p>                                       |            Manual Install           |                         Manual Build                         |                                              Hardware Build                                             |
+| <p><strong>Not Recommended</strong><br><strong>For New Users</strong></p> | <p>Install From<br>Command Line</p> | <p><a href="manual.md">Build Without<br>Docker Image</a></p> | <p>ARM32v7<br><a href="broken-reference">Raspberry Pi</a><br><a href="hardware.md">BitcartCCBox</a></p> |
 
 ​

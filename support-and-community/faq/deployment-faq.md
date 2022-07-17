@@ -6,11 +6,11 @@ This document covers the most common questions, errors, and issues you may encou
 
 ### How much does it cost to run BitcartCC?
 
-BitcartCC is a 100% free and open-source software. We do not charge you anything. However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do. 
+BitcartCC is a 100% free and open-source software. We do not charge you anything. However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do.&#x20;
 
-Advanced users can run BitcartCC on [their own hardware](../../deployment/hardware.md). 
+Advanced users can run BitcartCC on [their own hardware](../../deployment/hardware.md).&#x20;
 
-If you do not wish to host your own server, you can use a free [Third-Party Host](../../deployment/thirdpartyhosting.md). 
+If you do not wish to host your own server, you can use a free [Third-Party Host](../../deployment/thirdpartyhosting.md).&#x20;
 
 Visit our [Deployment Page](../../deployment/deployment.md) for more information on the various ways in which you can run BitcartCC.
 
@@ -20,15 +20,15 @@ Hosting your own instance might make it a bit harder to start using BitcartCC, b
 
 ### What are the minimal requirements for running BitcartCC?
 
-The system requirements depend on the components you have chosen, but a typical full installation \(with all essential components enabled, and btc daemon\):
+The system requirements depend on the components you have chosen, but a typical full installation (with all essential components enabled, and btc daemon):
 
-* 1 GB RAM \(if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too\)
-* ~= 10 GB disk \(way less actually, but just to be sure\)
-* Docker support by the OS \(Ubuntu should work\)
+* 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
+* \~= 10 GB disk (way less actually, but just to be sure)
+* Docker support by the OS (Ubuntu should work)
 
 Note that, adding new coins typically don't increase the requirements a lot.
 
-As of BitcartCC 0.3.1.0 \(March 8 2021\), the system requirements to run BitcartCC with all supported coins enabled are the same as the minimal requirements \(maybe with a bit more swap space allocated\).
+As of BitcartCC 0.3.1.0 (March 8 2021), the system requirements to run BitcartCC with all supported coins enabled are the same as the minimal requirements (maybe with a bit more swap space allocated).
 
 ### What is the easiest way to get started with BitcartCC?
 
@@ -72,7 +72,7 @@ unset BITCART_STORE_URL
 ./setup.sh
 ```
 
-If that's what you want, then maybe the `BITCART_ADMIN_URL` or `BITCART_STORE_URL` is set to an incorrect value. Ensure that it starts with the protocol \(http:// or https://\), and that that URL is accessible.
+If that's what you want, then maybe the `BITCART_ADMIN_URL` or `BITCART_STORE_URL` is set to an incorrect value. Ensure that it starts with the protocol (http:// or https://), and that that URL is accessible.
 
 #### 3. Merchant API not running or is having errors
 
@@ -168,7 +168,7 @@ If you need to figure out which environment variable you need to modify, have a 
 
 ### How can I run BitcartCC on testnet?
 
-There is no such term as "testnet BitcartCC". BitcartCC is modular, and what you can do instead is, enable testnet on certain coins \(daemons\), but not on every one. So it is possible, let's say, to have bitcoin daemon running in mainnet, bitcoin cash in testnet, and litecoin in regtest.
+There is no such term as "testnet BitcartCC". BitcartCC is modular, and what you can do instead is, enable testnet on certain coins (daemons), but not on every one. So it is possible, let's say, to have bitcoin daemon running in mainnet, bitcoin cash in testnet, and litecoin in regtest.
 
 To change the network of a coin, run:
 
@@ -176,7 +176,7 @@ To change the network of a coin, run:
 export COIN_NETWORK=network
 ```
 
-Replace `COIN` with the coin symbol \(BTC, LTC, etc.\), and `network` with the actual network name \(mainnet,testnet,regtest\).
+Replace `COIN` with the coin symbol (BTC, LTC, etc.), and `network` with the actual network name (mainnet,testnet,regtest).
 
 So, for example, to enable testnet on bitcoin, run:
 
@@ -211,7 +211,7 @@ Check the list of URLs to connect to [here](https://github.com/bitcartcc/bitcart
 
 For that, run:
 
-```text
+```
 export COIN_EXPOSE=true
 ./setup.sh
 ```
@@ -236,7 +236,7 @@ Create an extra config file for your vhost in `/etc/nginx/sites-available/bitcar
 
 The contents of this vhost file should look like this:
 
-```text
+```
 server {
 	listen 80;
 
@@ -295,7 +295,7 @@ server {
 
 Also, put the following in your main Nginx config file at `/etc/nginx/nginx.conf`:
 
-```text
+```
 http {
 
 	# ... # Existing stuff
@@ -323,17 +323,17 @@ Now test your Nginx config with `nginx -t` and reload the config with `service n
 
 Then, you need to make sure that BitcartCC does not try to handle HTTPS on its side, you can do this by disabling it on your BitcartCC instance.
 
-```text
+```
 export BITCART_REVERSEPROXY=nginx
 export REVERSEPROXY_HTTP_PORT=10080
 ./setup.sh
 ```
 
-Notice: If your BitcartCC install has more than one domain \(for example, when [one domain mode](../../guides/one-domain-mode.md) is off\) you will need to modify your config for each domain name. The example above only covers 1 domain name called `bitcartcc.domain.com`.
+Notice: If your BitcartCC install has more than one domain (for example, when [one domain mode](../../guides/one-domain-mode.md) is off) you will need to modify your config for each domain name. The example above only covers 1 domain name called `bitcartcc.domain.com`.
 
 ### Can I run BitcartCC on my home computer?
 
-Similar to the requirements for hosting a website, a web server is required for a BitcartCC instance. While it is possible to run BitcartCC locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to BitcartCC payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server \(VPS\) is commonly used to address these problems.
+Similar to the requirements for hosting a website, a web server is required for a BitcartCC instance. While it is possible to run BitcartCC locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to BitcartCC payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server (VPS) is commonly used to address these problems.
 
 But if you really need to do so, you have two options:
 
@@ -355,7 +355,7 @@ See the [Tor guide](../../guides/tor.md) for more details.
 
 See this [guide](../../deployment/manual.md).
 
-### How do I completely uninstall BitcartCC from a linux environment \(docker version\)
+### How do I completely uninstall BitcartCC from a linux environment (docker version)
 
 1. Shutdown BitcartCC with `./stop.sh` and cleanup the install with `./cleanup.sh`.
 2. Delete all volumes in `/var/lib/docker/volumes/` with:`docker-compose -f compose/generated.yml down --v`
@@ -383,7 +383,7 @@ lsblk
 lsblk
 ```
 
-The second `lsblk` should show the drive you just plugged in. \(of TYPE `disk`\) Make sure you don't make a mistake as the next command will erase all the data on this disk.
+The second `lsblk` should show the drive you just plugged in. (of TYPE `disk`) Make sure you don't make a mistake as the next command will erase all the data on this disk.
 
 For the sake of this example, let's suppose it has the NAME `/dev/sdd`.
 
@@ -470,11 +470,11 @@ systemctl start docker
 
 #### **Cause 1: Trying to access my BitcartCC by IP address**
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment guide on pi 4](../../deployment/raspberrypi/rpi4.md)  said to setup the source domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BitcartCC into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment guide on pi 4](../../deployment/raspberrypi.md)  said to setup the source domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BitcartCC into the web-browser.
 
 Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 
-```text
+```
 503 Service Temporarily Unavailable
 -----------------------------------
 nginx
@@ -482,7 +482,7 @@ nginx
 
 You can fix this by forcing nginx to route the HTTP request to BitcartCC even if the request domain name is not recognized. Simply, re-run the setup script like this:
 
-```text
+```
 sudo su -
 
 export REVERSEPROXY_DEFAULT_HOST="$BITCART_HOST" && ./setup.sh
@@ -494,7 +494,7 @@ Now putting local IP in the web-browser works.
 
 To check, run:
 
-```text
+```
 sudo  docker ps | less -S
 ```
 
@@ -509,13 +509,12 @@ And the status should be "Up"
 
 If the docker container is not running, then check the reason for crash like this:
 
-```text
+```
  sudo docker logs compose_backend_1 --tail 20
 ```
 
 Where `compose_backend_1` is the container name that is having issues.
 
-**\# Cause 4: Other**
+**# Cause 4: Other**
 
 There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/bitcartcc/bitcart/issues) and when cause becomes known add it here in the [Deployment FAQ](deployment-faq.md) doc.
-
