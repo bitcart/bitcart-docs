@@ -14,7 +14,7 @@
 * [Choosing a Deployment Method](deployment/deployment.md)
 * [Web Deployment](deployment/lunanodeweb.md)
 * [Docker Deployment](deployment/docker.md)
-* [Local Deployment](deployment/local-deployment.md)
+* [Local Deployment](deployment/local.md)
 * [Manual Deployment](deployment/manual.md)
 * [Hardware Deployment](deployment/hardware.md)
 * [Raspberry Pi Deployment](deployment/raspberrypi.md)

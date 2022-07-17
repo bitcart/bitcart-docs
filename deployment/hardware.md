@@ -16,7 +16,7 @@ Here are the requirements for running BitcartCC on your own hardware:
 
 ### Setup
 
-This guide assumes that you have static ip set up and your own domain name. If not, refer to the [local setup guide](local-deployment.md).
+This guide assumes that you have static ip set up and your own domain name. If not, refer to the [local setup guide](local.md).
 
 * Configure static IP in ubuntu via something like [this guide](https://linuxconfig.org/how-to-configure-static-ip-address-on-ubuntu-18-10-cosmic-cuttlefish-linux)
 * If you have a domain name, create a DNS A record pointing to your static ip address (tip: you can get it if you type `whatsmyip` in google)
