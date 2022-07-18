@@ -5,7 +5,7 @@ The following document guides you through **setting up BitcartCC with** [**Shopi
 ### Prerequisites: <a href="#prerequisites" id="prerequisites"></a>
 
 * Shopify account
-* BitcartCC - [self-hosted](broken-reference) or run by a [third-party host](../deployment/thirdpartyhosting.md) v0.6.7.0 or later.
+* BitcartCC - [self-hosted](../deployment/) or run by a [third-party host](../deployment/thirdpartyhosting.md) v0.6.7.0 or later.
 * [Created BitcartCC store](../getting-started/createstore.md) with [wallet set up](../getting-started/createwallet/)
 
 {% embed url="https://youtu.be/c09Av7SgaQM" %}

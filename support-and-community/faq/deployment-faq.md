@@ -1,6 +1,6 @@
 # Deployment FAQ
 
-This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployment methods and instructions for each, please see [Deployment page](../../deployment/deployment.md).
+This document covers the most common questions, errors, and issues you may encounter prior and during the installation of the software. For a detailed list of deployment methods and instructions for each, please see [Deployment page](../../deployment/).
 
 ## General Deployment FAQ
 
@@ -12,7 +12,7 @@ Advanced users can run BitcartCC on [their own hardware](../../deployment/hardwa
 
 If you do not wish to host your own server, you can use a free [Third-Party Host](../../deployment/thirdpartyhosting.md).&#x20;
 
-Visit our [Deployment Page](../../deployment/deployment.md) for more information on the various ways in which you can run BitcartCC.
+Visit our [Deployment Page](../../deployment/) for more information on the various ways in which you can run BitcartCC.
 
 Hosting prices differ, but even a minimal server would suffice.
 
@@ -32,13 +32,13 @@ As of BitcartCC 0.3.1.0 (March 8 2021), the system requirements to run BitcartCC
 
 ### What is the easiest way to get started with BitcartCC?
 
-For a self-hosted solution, we recommend using our [BitcartCC Configurator](../../guides/configurator.md) to easily deploy instances, without any techical skills required. You may also use the [Lunanode Web deployment](../../deployment/lunanodeweb.md).
+For a self-hosted solution, we recommend using our [BitcartCC Configurator](../../deployment/configurator.md) to easily deploy instances, without any techical skills required. You may also use the Lunanode Web deployment.
 
 For just trying out, you can use our [demo](../../deployment/docker.md#live-demo) or a [third-party host](../../deployment/thirdpartyhosting.md).
 
 ### How to choose the best deployment method for my use case?
 
-Please refer to [Deployment](../../deployment/deployment.md) page to view comparison of different deployment methods
+Please refer to [Deployment](../../deployment/) page to view comparison of different deployment methods
 
 ### Can I run BitcartCC on my own hardware?
 

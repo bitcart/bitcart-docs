@@ -9,16 +9,16 @@
 * [BitcartCC vs others](bitcartcc-basics/bitcartcc-vs-others.md)
 * [Try it out](bitcartcc-basics/try-it-out.md)
 
-## Deployment
+***
 
-* [Choosing a Deployment Method](deployment/deployment.md)
-* [Web Deployment](deployment/lunanodeweb.md)
-* [Docker Deployment](deployment/docker.md)
-* [Local Deployment](deployment/local.md)
-* [Manual Deployment](deployment/manual.md)
-* [Hardware Deployment](deployment/hardware.md)
-* [Raspberry Pi Deployment](deployment/raspberrypi.md)
-* [Third-Party Hosting](deployment/thirdpartyhosting.md)
+* [Deployment](deployment/README.md)
+  * [Configurator](deployment/configurator.md)
+  * [Docker Deployment](deployment/docker.md)
+  * [Local Deployment](deployment/local.md)
+  * [Manual Deployment](deployment/manual.md)
+  * [Hardware Deployment](deployment/hardware.md)
+  * [Raspberry Pi Deployment](deployment/raspberrypi.md)
+  * [Third-Party Hosting](deployment/thirdpartyhosting.md)
 
 ## Getting started
 
@@ -30,7 +30,6 @@
 
 ## Guides
 
-* [Configurator](guides/configurator.md)
 * [One domain mode](guides/one-domain-mode.md)
 * [Backups](guides/backups.md)
 * [Lightning Network](guides/lightning.md)

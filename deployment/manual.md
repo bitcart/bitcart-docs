@@ -2,13 +2,13 @@
 
 The process is basically the following:
 
-1. Install python3
-2. Install nodejs and yarn
+1. Install python3 (3.8+)
+2. Install nodejs (16+) and yarn
 3. Install postgresql
 4. Install redis
 5. Clone and run all parts of BitcartCC
 
-## Warning: Not recommended to use in production <a id="warning-not-recommended-to-use-in-production"></a>
+## Warning: Not recommended to use in production <a href="#warning-not-recommended-to-use-in-production" id="warning-not-recommended-to-use-in-production"></a>
 
 Manual installation is NOT recommended in production. It should be only used for learning purpose.
 
@@ -16,11 +16,11 @@ Instead you should use the [docker deployment](docker.md).
 
 The docker deployment will provide you easy update system and make sure that all moving parts are wired correctly without any technical knowledge. It will also setup HTTPS for you.
 
-## Typical manual installation <a id="typical-manual-installation"></a>
+## Typical manual installation <a href="#typical-manual-installation" id="typical-manual-installation"></a>
 
 This steps have been done on ubuntu 18.04, adapt for your own install.
 
-### 1\) Install Python 3
+### 1) Install Python 3
 
 Usually it might have already been installed, but we also need pip3 and dev packages, so:
 
@@ -28,7 +28,7 @@ Usually it might have already been installed, but we also need pip3 and dev pack
 sudo apt install python3 python3-pip python3-dev
 ```
 
-### 2\) Install Node.JS and Yarn
+### 2) Install Node.JS and Yarn
 
 ```bash
 sudo apt install nodejs
@@ -38,7 +38,11 @@ sudo apt remove cmdtest # comes preinstalled on ubuntu 18.04, overrides yarn
 sudo apt update && sudo apt install yarn
 ```
 
-### 3\) Install PostgresSQL
+{% hint style="info" %}
+If nodejs from your distro is not at least the version we require, then you should install it via [nodesource](https://github.com/nodesource/distributions)
+{% endhint %}
+
+### 3) Install PostgresSQL
 
 Note, replace `REPLACEME` with your new postgres password.
 
@@ -48,15 +52,15 @@ sudo -u postgres createdb bitcart
 sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'REPLACEME';"
 ```
 
-### 4\) Install Redis
+### 4) Install Redis
 
 ```bash
 sudo apt install redis-server
 ```
 
-### 5\) Clone and prepare BitcartCC components
+### 5) Clone and prepare BitcartCC components
 
-#### BitcartCC core\(daemons\) & Merchants API:
+#### BitcartCC core(daemons) & Merchants API:
 
 ```bash
 git clone https://github.com/bitcartcc/bitcart
@@ -66,13 +70,13 @@ sudo pip3 install -r requirements/production.txt
 sudo pip3 install -r requirements/daemons/btc.txt
 ```
 
-For any other daemon\(coin\) you want to use, run:
+For any other daemon(coin) you want to use, run:
 
 ```bash
 sudo pip3 install -r requirements/daemons/coin_name.txt
 ```
 
-Where coin\_name is coin code\(btc, ltc, etc.\).
+Where coin\_name is coin code(btc, ltc, etc.).
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
@@ -112,7 +116,7 @@ yarn build
 
 ## Run everything
 
-#### BitcartCC core\(daemons\) & Merchants API:
+#### BitcartCC core(daemons) & Merchants API:
 
 Start daemons:
 
@@ -158,23 +162,23 @@ Note: it is recommended to use docker deployment for easy upgrades.
 
 To upgrade manually, follow the following steps:
 
-### 1\) Stop everything already running
+### 1) Stop everything already running
 
 Merchants API, workers, daemons, Admin panel and Store should be stopped
 
-### 2\) Pull latest changes
+### 2) Pull latest changes
 
 Run :
 
-```text
+```
 git pull
 ```
 
-For every BitcartCC component directory \(Merchants API, Admin Panel, Store\).
+For every BitcartCC component directory (Merchants API, Admin Panel, Store).
 
-### 3\) Upgrade dependencies
+### 3) Upgrade dependencies
 
-#### BitcartCC core\(daemons\) & Merchants API:
+#### BitcartCC core(daemons) & Merchants API:
 
 ```bash
 sudo pip3 install -r requirements.txt
@@ -184,33 +188,32 @@ sudo pip3 install -r requirements/daemons/btc.txt
 
 **BitcartCC admin**
 
-```text
+```
 yarn
 ```
 
 **BitcartCC store**
 
-```text
+```
 yarn
 ```
 
-### 4\) Apply new database migrations
+### 4) Apply new database migrations
 
-In BitcartCC core\(daemons\) & Merchants API directory, run:
+In BitcartCC core(daemons) & Merchants API directory, run:
 
-```text
+```
 alembic upgrade head
 ```
 
-### 5\) Rebuild store and admin
+### 5) Rebuild store and admin
 
 For BitcartCC Admin Panel and Store, run:
 
-```text
+```
 yarn build
 ```
 
-### 6\) Start everything again
+### 6) Start everything again
 
 Follow instructions [here](manual.md#run-everything)
-
