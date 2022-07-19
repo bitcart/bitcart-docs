@@ -8,7 +8,7 @@ Underpaid percentage is a store checkout setting, which can be in range from 0 t
 
 When enabling this store checkout setting, the checkout page will always be served in dark mode. Ensure to check that your logo is suitable for dark mode.&#x20;
 
-![Light (default) version of checkout](../../.gitbook/assets/checkout\_light.png)
+![Light (default) version of checkout](../../.gitbook/assets/checkout\_page.png)
 
 ![Dark version of the checkout](../../.gitbook/assets/checkout\_dark.png)
 

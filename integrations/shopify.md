@@ -6,7 +6,7 @@ The following document guides you through **setting up BitcartCC with** [**Shopi
 
 * Shopify account
 * BitcartCC - [self-hosted](../deployment/) or run by a [third-party host](../deployment/thirdpartyhosting.md) v0.6.7.0 or later.
-* [Created BitcartCC store](../getting-started/createstore.md) with [wallet set up](../getting-started/createwallet/)
+* [Created BitcartCC store](../your-first-invoice/#create-a-store) with [wallet set up](../your-first-invoice/#creating-a-wallet)
 
 {% embed url="https://youtu.be/c09Av7SgaQM" %}
 

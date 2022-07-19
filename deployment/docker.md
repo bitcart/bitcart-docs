@@ -42,4 +42,11 @@ Here are the main ones:
 * `BITCART_REVERSEPROXY` - configures the reverse proxy used. By default `nginx-https` is used (with automatic ssl certificates generation). It might be useful to disable it to access your services directly or you can set it to `nginx` to disable ssl
 * `BITCART_ADDITIONAL_COMPONENTS` - you can add additional components to your deployment. For example, using `export BITCART_ADDITIONAL_COMPONENTS=tor` enables tor.
 
+There are also quite a few settings related to configuring coins in BitcartCC. Each coin has the same set of settings you can configure:
+
+* `COIN_NETWORK` changes on which network the coin runs. For example: `export BTC_NETWORK=testnet` would enable testnet in BTC coin with no other changes required!
+* `COIN_LIGHTNING` enables lightning network for coins which support it (BTC-based). For BTC you would do: `export BTC_LIGHTNING=true`
+* `COIN_DEBUG` enables debug mode for daemons to log more information. For example `export BCH_DEBUG=true`
+* `COIN_SERVER` configures the daemon to use exact server you specify instead of connecting to many servers at once. For example `export BNB_SERVER=https://bsc-dataseed.binance.org` For btc-based coins, you can set up your own [ElectrumX](https://github.com/spesmilo/electrumx) or [Fulcrum](https://github.com/cculianu/Fulcrum) server with your own full node. For eth-based coins, server is your full node's RPC url.
+
 For the complete list of configuration settings you can use (to e.g. open some ports, change networks used or anything else), check out full configuration description at [bitcart-docker github](https://github.com/bitcartcc/bitcart-docker/blob/master/README.md#configuration).

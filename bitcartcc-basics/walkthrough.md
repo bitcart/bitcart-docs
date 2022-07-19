@@ -2,15 +2,15 @@
 
 In this article, we will walk you through the BitcartCC admin panel user interface and show you how to navigate through different options.
 
-When creating an account, if you're the first user registered on the instance, you'll be granted superuser rights \(full control over the server\). On third-party hosts it is usually not so, but if you're hosting your own instance you'll of course become the full owner of it.
+When creating an account, if you're the first user registered on the instance, you'll be granted superuser rights (full control over the server). On third-party hosts it is usually not so, but if you're hosting your own instance you'll of course become the full owner of it.
 
 After you created the account on the BitcartCC instance hosted by yourself or a third-party, you'll see a lot of information cards.
 
-![Information cards in your admin panel](../.gitbook/assets/admin_main.png)
+![Information cards in your admin panel](../.gitbook/assets/admin\_main.png)
 
 Note about the night mode of the panel. By default, admin panel uses day mode, but if in your local time it is from 8 pm to 6 am, night mode will be enabled automatically 😉 You can configure it by clicking the moon icon in the top right corner of the page.
 
-![Admin panel&apos;s day mode](../.gitbook/assets/admin_day_mode.png)
+![Admin panel's day mode](../.gitbook/assets/admin\_day\_mode.png)
 
 Each information card contains summary about something in your account: wallets, stores, products, invoices, etc.
 
@@ -20,7 +20,7 @@ Note, wallets balance is displayed not in BTC, but in abstract currency. It is a
 
 If you're a superuser, you can click on profile icon in the top right corner of the page to visit server settings page.
 
-![Server management button](../.gitbook/assets/open_server_management.png)
+![Server management button](../.gitbook/assets/open\_server\_management.png)
 
 From server settings page, you can control the users of your server, and many more. For more information, check [Server Settings FAQ](../support-and-community/faq/server-settings-faq.md)
 
@@ -30,27 +30,27 @@ Each page basically contains one common thing - a datatable.
 
 It is a feature-rich datatable, supporting searching, ordering, create/edit/delete actions, batch actions, and some additional actions depending on what page you're on. For example, on stores page, you can configure email settings for a store by clicking email icon in actions column.
 
-![Actions example](../.gitbook/assets/email_icon.png)
+![Actions example](../.gitbook/assets/email\_icon.png)
 
 ## Wallets
 
 The core of BitcartCC is creating a wallet. In BitcartCC, one wallet represents one currency.
 
-Default currency is btc, you can change that. When creating wallet, just select currency code from the ones available on your instance \(btc,ltc etc.\). Wallets may have a name and their [xpub](../support-and-community/faq/terminology-faq.md#what-is-an-xpub).
+Default currency is btc, you can change that. When creating wallet, just select currency code from the ones available on your instance (btc,ltc etc.). Wallets may have a name and their [xpub](../support-and-community/faq/terminology-faq.md#what-is-an-xpub).
 
 The nice feature of BitcartCC is that it does not require your private keys, but it supports many different formats.
 
-You can enter \(x/y/z\)pub - public key, \(x/y/z\)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check [Architecture page](../development/architecture.md) for more information.
+You can enter (x/y/z)pub - public key, (x/y/z)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check [Architecture page](../development/architecture.md) for more information.
 
-When creating a wallet, it will get synced very fast \(depends on the size of the wallet, but shoudn't take too long\), and BitcartCC will fetch it's balance and display it.
+When creating a wallet, it will get synced very fast (depends on the size of the wallet, but shoudn't take too long), and BitcartCC will fetch it's balance and display it.
 
-![Wallets page](../.gitbook/assets/admin_wallets.png)
+![Wallets page](../.gitbook/assets/admin\_wallets.png)
 
-![Create wallet pop-up](../.gitbook/assets/create_wallet%20%281%29.png)
+![Create wallet pop-up](../.gitbook/assets/create\_wallet.png)
 
 By clicking arrow near any of the rows, you can view some additional details, like wallet xpub.
 
-![Wallet details](../.gitbook/assets/wallet_details.png)
+![Wallet details](../.gitbook/assets/wallet\_details.png)
 
 ## Stores
 
@@ -60,11 +60,11 @@ Each store can contain any amount of products and associated invoices. Store is 
 
 Store may have multiple wallets connected. That way, connecting different wallets with different base currencies, you can achieve multicurrency checkout.
 
-Selecting multiple wallets of the same currency is **NOT** recommended. On invoice creation, BitcartCC will pick the first wallet of that currency, returned by database\(they might be returned in any order\).
+Selecting multiple wallets of the same currency is **NOT** recommended. On invoice creation, BitcartCC will pick the first wallet of that currency, returned by database(they might be returned in any order).
 
-![Stores page](../.gitbook/assets/admin_stores.png)
+![Stores page](../.gitbook/assets/admin\_stores.png)
 
-![Create store pop-up](../.gitbook/assets/create_store%20%281%29.png)
+![Create store pop-up](<../.gitbook/assets/create\_store (1).png>)
 
 If you want to send customers invoices on successful checkout, you should configure email server.
 
@@ -74,13 +74,13 @@ Store email is the email used to send messages from, and the display email in Bi
 
 Email host, port, login and password are credentials for your SMTP server. Email host shoudn't include any http:// or https:// parts. If your SMTP server requires TLS, turn on SSL/TLS switch.
 
-When done\(you should click save button first\), click on Test ping button to see if your setup is working.
+When done(you should click save button first), click on Test ping button to see if your setup is working.
 
-Note for gmail SMTP servers, you should enable access by turning on [less secure apps](https://myaccount.google.com/lesssecureapps) \(it is still secure, gmail apps aren't the requirement\). You might also need to [allow access](https://accounts.google.com/DisplayUnlockCaptcha) on a new account.
+Note for gmail SMTP servers, you should enable access by turning on [less secure apps](https://myaccount.google.com/lesssecureapps) (it is still secure, gmail apps aren't the requirement). You might also need to [allow access](https://accounts.google.com/DisplayUnlockCaptcha) on a new account.
 
 From the email settings pop-up, you will also be able to load a ready preset for some popular email server providers.
 
-![Email server settings](../.gitbook/assets/store_email_settings.png)
+![Email server settings](../.gitbook/assets/store\_email\_settings.png)
 
 Your store is the main configuration point for all the futher actions with it, like invoice creation.
 
@@ -93,7 +93,7 @@ By clicking on settings icon, you will be presented with the store checkout sett
 * Invoice expiration time, in minutes. It affects the timer displayed in the checkout. It is the time in which the customer must send the payment, otherwise invoice is marked as expired
 * Use HTML templates - whether to render templates of email message sent to customer as html or as plain text. For more information, see this [guide](../guides/templates.md#html-templates).
 
-![Store checkout settings](../.gitbook/assets/store_checkout_settings.png)
+![Store checkout settings](../.gitbook/assets/store\_checkout\_settings.png)
 
 ## Discounts
 
@@ -101,19 +101,19 @@ It is optional page for your initial setup, you may skip it for now.
 
 In many cases you might want to add some discounts to your store. New year discounts, other holidays? Limited time promocode discounts? Discount when paying in your preferred currency? Anything is possible with BitcartCC.
 
-Just provide a percent\(integer\) for your discount, and discount apply conditions:
+Just provide a percent(integer) for your discount, and discount apply conditions:
 
-* promocode\(optional, when not provided discount is always applied when other conditions succeed\)
+* promocode(optional, when not provided discount is always applied when other conditions succeed)
 * end date
-* currencies\(comma separated list of currency to apply to, or empty to apply to all currencies\)
+* currencies(comma separated list of currency to apply to, or empty to apply to all currencies)
 
 You can link discounts to products in the products page.
 
-When one invoice at creation time has matched multiple discounts, BitcartCC will pick the best discount\(by percent\).
+When one invoice at creation time has matched multiple discounts, BitcartCC will pick the best discount(by percent).
 
-![Discounts page](../.gitbook/assets/discounts_page%20%281%29.png)
+![Discounts page](<../.gitbook/assets/discounts\_page (1).png>)
 
-![Create discount pop-up](../.gitbook/assets/create_discount%20%281%29.png)
+![Create discount pop-up](<../.gitbook/assets/create\_discount (1).png>)
 
 ## Products
 
@@ -122,29 +122,29 @@ Products are your base selling unit. Create your products, link them to your sto
 BitcartCC supports many different information for creating products:
 
 * Amount, displayed in store POS in USD
-* quantity\(how many products of the same kind available\)
-* product category\(used for filtering in store POS to classify your products\)
-* Discounts applied to the product\(see previous section\)
-* Product status\(like in stock, not available, up to you\)
-* Download url\(for digital content, will be sent to customer in email\)
+* quantity(how many products of the same kind available)
+* product category(used for filtering in store POS to classify your products)
+* Discounts applied to the product(see previous section)
+* Product status(like in stock, not available, up to you)
+* Download url(for digital content, will be sent to customer in email)
 * Store, from which to take wallets and other information
-* Date of creation\(auto-filled\)
-* Product image\(supports cropping, rotating and many more!\)
+* Date of creation(auto-filled)
+* Product image(supports cropping, rotating and many more!)
 * Product description
 
-![Products page](../.gitbook/assets/products_page.png)
+![Products page](../.gitbook/assets/products\_page.png)
 
-![Image preview](../.gitbook/assets/image_preview.png)
+![Image preview](../.gitbook/assets/image\_preview.png)
 
-![IDs of connected discounts](../.gitbook/assets/discounts_list.png)
+![IDs of connected discounts](../.gitbook/assets/discounts\_list.png)
 
-![Click on any ID to copy it](../.gitbook/assets/copy_snackbar.png)
+![Click on any ID to copy it](../.gitbook/assets/copy\_snackbar.png)
 
-![Create product pop-up](../.gitbook/assets/create_product.png)
+![Create product pop-up](../.gitbook/assets/create\_product.png)
 
-![Create a perfect image for your product \(:](../.gitbook/assets/edit_image.png)
+![Create a perfect image for your product (:](../.gitbook/assets/edit\_image.png)
 
-![Store POS reflecting entered products information](../.gitbook/assets/store_pos.png)
+![Store POS reflecting entered products information](../.gitbook/assets/store\_pos.png)
 
 ## Invoices
 
@@ -155,15 +155,15 @@ Supported information:
 * Price is the price in store's default currency, which will be converted to payment method's currency when generating payment URL
 * Currency, used to override store's default currency if needed
 * Store, from which to take wallets and other information
-* Connected products\(for store POS, optional\)
-* Promocode, if customer entered it during checkout process \(auto-filled\)
-* Notification URL where to send IPN notifications on invoice status change \(more below\)
+* Connected products(for store POS, optional)
+* Promocode, if customer entered it during checkout process (auto-filled)
+* Notification URL where to send IPN notifications on invoice status change (more below)
 * Redirect URL, customer will be redirected to it after successful checkout.
-* Buyer email, if customer entered it during checkout process\(auto-filled\)
-* Order ID, used by external integrations like woocommerce, track your orders by searching for order id\(auto-filled\)
-* Discount - ID of the discount applied during invoice creation\(auto-filled\)
+* Buyer email, if customer entered it during checkout process(auto-filled)
+* Order ID, used by external integrations like woocommerce, track your orders by searching for order id(auto-filled)
+* Discount - ID of the discount applied during invoice creation(auto-filled)
 * Invoice status, more below
-* Date of creation \(auto-filled\)
+* Date of creation (auto-filled)
 * Payment methods - not editable fields, displaying checkout information
 
 If your invoice contains connected products, you'll be able to know which products were bought by the customer. The name of the store will be used on checkout.
@@ -178,36 +178,34 @@ It will send the following json data:
 
 `{"id": invoice_id, "status": new_status}`
 
-When invoice status changes\(Pending-&gt;complete, Pending-&gt;expired, etc.\), notification will be sent.
+When invoice status changes(Pending->complete, Pending->expired, etc.), notification will be sent.
 
 It's up to you how to process that IPN notification. You should also verify that data sent is correct, as theoretically, anyone can send that POST request if they know your IPN handler URL. So, check that sent status is the same as the one got from get invoice request.
 
 Invoices statuses can be one of the following:
 
-* Pending \(in progress\)
-* complete \(invoice paid\)
-* invalid \(unexpected error\)
+* Pending (in progress)
+* complete (invoice paid)
+* invalid (unexpected error)
 * expired
-* In progress \(lightning network status\)
-* Failed \(lightning network status\)
+* In progress (lightning network status)
+* Failed (lightning network status)
 
-
-
-After invoice creation, you'll be able to view checkout information by clicking show button in payment methods column. It will display a so-called "invoice preview", it is not a fully functional checkout, but just an information dialog to display payment methods\(it ignores invoice status\).
+After invoice creation, you'll be able to view checkout information by clicking show button in payment methods column. It will display a so-called "invoice preview", it is not a fully functional checkout, but just an information dialog to display payment methods(it ignores invoice status).
 
 By clicking open checkout you'll be redirected to full checkout, respecting invoice statuses and other things. Invoice URL can be safely shared with others and used for checkout right from your admin panel.
 
-![Invoices page](../.gitbook/assets/admin_invoices.png)
+![Invoices page](../.gitbook/assets/admin\_invoices.png)
 
-![Create invoice pop-up](../.gitbook/assets/create_invoice%20%281%29.png)
+![Create invoice pop-up](<../.gitbook/assets/create\_invoice (1).png>)
 
-![Preview payment methods in the admin panel](../.gitbook/assets/checkout_preview%20%281%29.png)
+![Preview payment methods in the admin panel](<../.gitbook/assets/checkout\_preview (1).png>)
 
-![Invoice expired](../.gitbook/assets/checkout_expired.png)
+![Invoice expired](../.gitbook/assets/checkout\_expired.png)
 
-![Invoice paid](../.gitbook/assets/checkout_complete.png)
+![Invoice paid](../.gitbook/assets/checkout\_complete.png)
 
-![Full checkout page](../.gitbook/assets/full_checkout.png)
+![Full checkout page](../.gitbook/assets/full\_checkout.png)
 
 ## Notification providers
 
@@ -221,9 +219,9 @@ Supported information:
 
 ![Notification providers page](../.gitbook/assets/notifications.png)
 
-![Create notification provider pop-up](../.gitbook/assets/create_notification.png)
+![Create notification provider pop-up](../.gitbook/assets/create\_notification.png)
 
-![Choice of various providers](../.gitbook/assets/notification_provider_selection.png)
+![Choice of various providers](../.gitbook/assets/notification\_provider\_selection.png)
 
 Each notification provider has different settings. Refer to their documentation about how to get certain settings. After that, select needed provider, fill in the settings and save changes.
 
@@ -231,7 +229,7 @@ Then you can reuse notification providers by connecting them to needed stores!
 
 When notification provider is connected, on each successful order it will be run to deliver a notification to you.
 
-![Connect notification provider to store](../.gitbook/assets/connect_notification_provider.png)
+![Connect notification provider to store](../.gitbook/assets/connect\_notification\_provider.png)
 
 ![Sample notification via telegram provider](../.gitbook/assets/notification.png)
 
@@ -252,28 +250,27 @@ Read more about example usages of templates in BitcartCC [here](../guides/templa
 
 ![Templates page](../.gitbook/assets/templates.png)
 
-![Create template pop-up](../.gitbook/assets/create_template.png)
+![Create template pop-up](../.gitbook/assets/create\_template.png)
 
-![Default templates list](../.gitbook/assets/default_templates.png)
+![Default templates list](../.gitbook/assets/default\_templates.png)
 
 ### Template selection rules
 
-When a template is being requested to render \(for example, when sending notification via notification providers, or composing email message\), it is selected in the following order:
+When a template is being requested to render (for example, when sending notification via notification providers, or composing email message), it is selected in the following order:
 
 1. If this product or store has template connected, it will be used
-2. If it has no template connected, default global store or product template will be used \(named store or product\), if exists
-3. If none of templates above are customized, [default templates](https://github.com/bitcartcc/bitcart/tree/master/api/templates) are used 
+2. If it has no template connected, default global store or product template will be used (named store or product), if exists
+3. If none of templates above are customized, [default templates](https://github.com/bitcartcc/bitcart/tree/master/api/templates) are used
 
 ### Changing object's templates
 
-On some pages, for example, stores or products pages, you will be able to edit templates per each item \(per each product, per each store, etc.\)  
+On some pages, for example, stores or products pages, you will be able to edit templates per each item (per each product, per each store, etc.)\
 If so, on such pages you will see the following icon:
 
-![Edit templates icon](../.gitbook/assets/edit_templates.png)
+![Edit templates icon](../.gitbook/assets/edit\_templates.png)
 
 By clicking on it, you will be able to override default templates for this item. Such templates are always used the first if they are set.
 
-![Edit default templates pop-up](../.gitbook/assets/edit_templates_popup.png)
+![Edit default templates pop-up](../.gitbook/assets/edit\_templates\_popup.png)
 
 Note that in the example image above it is not neccesary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store.
-
