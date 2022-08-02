@@ -79,7 +79,7 @@ If that's what you want, then maybe the `BITCART_ADMIN_URL` or `BITCART_STORE_UR
 If merchant API is not running, you can check it's logs for possible issues:
 
 ```bash
-docker logs compose_backend_1
+docker logs compose-backend-1
 ```
 
 If some error is unexpected, please [report a bug](../troubleshooting-an-issue.md).
@@ -510,10 +510,10 @@ And the status should be "Up"
 If the docker container is not running, then check the reason for crash like this:
 
 ```
- sudo docker logs compose_backend_1 --tail 20
+ sudo docker logs compose-backend-1 --tail 20
 ```
 
-Where `compose_backend_1` is the container name that is having issues.
+Where `compose-backend-1` is the container name that is having issues.
 
 **# Cause 4: Other**
 

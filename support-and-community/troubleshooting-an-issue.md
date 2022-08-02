@@ -46,7 +46,7 @@ Run the commands below to print logs by container name. Replace the container na
 sudo su -
 cd bitcart-docker
 docker ps
-docker logs --tail 100 compose_worker_1
+docker logs --tail 100 compose-worker-1
 ```
 
 ## 3. Finding a solution yourself \(Google, FAQ, GitHub issues\)
