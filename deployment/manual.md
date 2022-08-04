@@ -2,11 +2,12 @@
 
 The process is basically the following:
 
-1. Install python3 (3.8+)
-2. Install nodejs (16+) and yarn
-3. Install postgresql
-4. Install redis
-5. Clone and run all parts of BitcartCC
+1. Install OS required libraries
+2. Install python3 (3.8+)
+3. Install nodejs (16+) and yarn
+4. Install postgresql
+5. Install redis
+6. Clone and run all parts of BitcartCC
 
 ## Warning: Not recommended to use in production <a href="#warning-not-recommended-to-use-in-production" id="warning-not-recommended-to-use-in-production"></a>
 
@@ -20,7 +21,15 @@ The docker deployment will provide you easy update system and make sure that all
 
 This steps have been done on ubuntu 18.04, adapt for your own install.
 
-### 1) Install Python 3
+### 1) Install OS required libraries
+
+    sudo apt install libsecp256k1-dev
+
+> Or the equivalent for your os package manager
+
+More info on libsecp256k1 in [electrum docs](https://github.com/spesmilo/electrum-docs/blob/master/libsecp256k1-linux.rst) or [bitcoin core](https://github.com/bitcoin-core/secp256k1#build-steps)
+
+### 2) Install Python 3
 
 Usually it might have already been installed, but we also need pip3 and dev packages, so:
 
@@ -28,7 +37,7 @@ Usually it might have already been installed, but we also need pip3 and dev pack
 sudo apt install python3 python3-pip python3-dev
 ```
 
-### 2) Install Node.JS and Yarn
+### 3) Install Node.JS and Yarn
 
 ```bash
 sudo apt install nodejs
@@ -42,7 +51,7 @@ sudo apt update && sudo apt install yarn
 If nodejs from your distro is not at least the version we require, then you should install it via [nodesource](https://github.com/nodesource/distributions)
 {% endhint %}
 
-### 3) Install PostgresSQL
+### 4) Install PostgresSQL
 
 Note, replace `REPLACEME` with your new postgres password.
 
@@ -52,13 +61,13 @@ sudo -u postgres createdb bitcart
 sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'REPLACEME';"
 ```
 
-### 4) Install Redis
+### 5) Install Redis
 
 ```bash
 sudo apt install redis-server
 ```
 
-### 5) Clone and prepare BitcartCC components
+### 6) Clone and prepare BitcartCC components
 
 #### BitcartCC core(daemons) & Merchants API:
 
@@ -77,6 +86,11 @@ sudo pip3 install -r requirements/daemons/coin_name.txt
 ```
 
 Where coin\_name is coin code(btc, ltc, etc.).
+
+Optional: Create virtual environment instead of using the global python environment
+
+    python3.9 -m venv env
+    source env/bin/activate
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
@@ -118,7 +132,7 @@ yarn build
 
 #### BitcartCC core(daemons) & Merchants API:
 
-Start daemons:
+Start daemons from the `bitcart` repo directory:
 
 ```bash
 python3 daemons/btc.py
@@ -145,16 +159,27 @@ python3 worker.py
 #### BitcartCC admin panel
 
 ```bash
+cd bitcart-admin
 yarn start
 ```
 
 #### BitcartCC store
 
 ```bash
+cd bitcart-store
 NUXT_PORT=4000 yarn start
 ```
 
-Your BitcartCC API will run on port 8000, daemons on ports 5000-500X, admin panel on 3000, store on 4000.
+#### Default ports
+
+* The BitcartCC API runs on port `8000`.
+* Daemons on ports `5000-500X`
+* The bitcartCC Admin panel runs on port `3000`
+* THe BitcartCC Store runs on port `4000`.
+
+## Managing Processes
+
+If you want the processes: bitcart api, daemons, workers and frontend (bitcart admin and bitcart store) to be managed - automatic startup, error reporting etc then consider using [supervisord](http://supervisord.org/) or [systemd](https://systemd.io/) to manage the processes.
 
 ## Upgrading manual deployment
 
