@@ -199,7 +199,7 @@ The complete running of the Bitcart admin panel and store may look like this:
     # bitcart-admin
     NUXT_HOST='0.0.0.0' BITCART_ADMIN_API_URL='http://my-bitcart-api-ip:8000' yarn start
     # bitcart-store
-    NUXT_PORT=4000;NUXT_HOST='0.0.0.0';BITCART_STORE_API_URL='http://my-bitcart-api-ip:8000' yarn start
+    NUXT_PORT=4000 NUXT_HOST='0.0.0.0' BITCART_STORE_API_URL='http://my-bitcart-api-ip:8000' yarn start
 
 > Note: The above is the minimum to make it work and not a production grade solution
 
