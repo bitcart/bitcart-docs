@@ -205,13 +205,13 @@ The complete running of the Bitcart admin panel and store may look like this:
 
 #### Access the site
 
-Go to `http://my-bitcart-admin-ip:3000/` and register a user. [The first registered user becomes the server admin](/manual-deploy-update/support-and-community/faq/deployment-faq.md#after-deployment-the-admin-panel-is-asking-me-to-log-in-but-i-dont-know-the-credentials).
+Go to `http://my-bitcart-admin-ip:3000/` and register a user. [The first registered user becomes the server admin](/support-and-community/faq/deployment-faq.md#after-deployment-the-admin-panel-is-asking-me-to-log-in-but-i-dont-know-the-credentials).
 
 View your storefront at `http://my-bitcart-store-ip:4000/`
 
 View the api docs at: `http://my-bitcart-store-ip:8000/`
 
-Continue with: [Your first invoice](/manual-deploy-update/your-first-invoice)
+Continue with: [Your first invoice](/your-first-invoice)
 
 ## Managing Processes
 
