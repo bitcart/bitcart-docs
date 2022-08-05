@@ -185,9 +185,9 @@ NUXT_PORT=4000 yarn start
 
 If you are running this systems on your local machine - you will not need to do these steps. You can go ahead and access the system with:
 
-Bitcart admin: `http://127.0.0.1:3000/`
-Bitcart store at `http://127.0.0.1:4000/`
-Bitcart api docs at: `http://127.0.0.1:8000/`
+* Bitcart admin: `http://127.0.0.1:3000/`
+* Bitcart store at `http://127.0.0.1:4000/`
+* Bitcart api docs at: `http://127.0.0.1:8000/`
 
 If you are running the systems on remote machines, you will need to do additional things to access them.
 
@@ -213,9 +213,9 @@ The complete running of the Bitcart admin panel and store may look like this:
 
 #### Access the site Remotely
 
-Bitcart admin: `http://my-bitcart-admin-ip:3000/`
-Bitcart store at `http://my-bitcart-store-ip:4000/`
-Bitcart api docs at: `http://my-bitcart-store-ip:8000/`
+* Bitcart admin: `http://my-bitcart-admin-ip:3000/`
+* Bitcart store at `http://my-bitcart-store-ip:4000/`
+* Bitcart api docs at: `http://my-bitcart-store-ip:8000/`
 
 Continue with: [Your first invoice](/your-first-invoice)
 
