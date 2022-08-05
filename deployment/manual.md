@@ -8,7 +8,7 @@ The process is basically the following:
 4. Install postgresql
 5. Install redis
 6. Clone and run all parts of BitcartCC
-7. Open Firewall Ports and Access the Sites
+7. (Optional) Open Firewall Ports and Access the Sites
 
 
 ## Warning: Not recommended to use in production <a href="#warning-not-recommended-to-use-in-production" id="warning-not-recommended-to-use-in-production"></a>
@@ -181,7 +181,9 @@ NUXT_PORT=4000 yarn start
 * The BitcartCC Admin panel runs on port `3000`
 * The BitcartCC Store runs on port `4000`.
 
-### 7) Open Firewall Ports and Access the Sites
+### 7) (Optional) Open Firewall Ports and Access the Sites
+
+If you are running the systems on remote machines, you will need to do additional things to access them.
 
 If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. Using `ufw` as an example:
 
@@ -193,23 +195,21 @@ If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. U
 
 The store and admin site need **public** access to the bitcart api.
 
-Using the manual method you need to set that with an environment variables.
+Using the manual method you need to set that with a environment variables.
 The complete running of the Bitcart admin panel and store may look like this:
 
     # bitcart-admin
-    NUXT_HOST='0.0.0.0' BITCART_ADMIN_API_URL='http://my-bitcart-api-ip:8000' yarn start
+    NUXT_HOST='0.0.0.0' BITCART_ADMIN_API_URL='http://bitcart-api-ip:8000' yarn start
     # bitcart-store
-    NUXT_PORT=4000 NUXT_HOST='0.0.0.0' BITCART_STORE_API_URL='http://my-bitcart-api-ip:8000' yarn start
+    NUXT_PORT=4000 NUXT_HOST='0.0.0.0' BITCART_STORE_API_URL='http://bitcart-api-ip:8000' yarn start
 
-> Note: The above is the minimum to make it work and not a production grade solution
+> Note: The above is the minimum to make it work and not a production grade solution.
 
-#### Access the site
+#### Access the site Remotely
 
-Go to `http://my-bitcart-admin-ip:3000/` and register a user. [The first registered user becomes the server admin](/support-and-community/faq/deployment-faq.md#after-deployment-the-admin-panel-is-asking-me-to-log-in-but-i-dont-know-the-credentials).
-
-View your storefront at `http://my-bitcart-store-ip:4000/`
-
-View the api docs at: `http://my-bitcart-store-ip:8000/`
+Bitcart admin: `http://my-bitcart-admin-ip:3000/`
+Bitcart store at `http://my-bitcart-store-ip:4000/`
+Bitcart api docs at: `http://my-bitcart-store-ip:8000/`
 
 Continue with: [Your first invoice](/your-first-invoice)
 
