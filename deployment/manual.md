@@ -183,6 +183,12 @@ NUXT_PORT=4000 yarn start
 
 ### 7) (Optional) Open Firewall Ports and Access the Sites
 
+If you are running this systems on your local machine - you will not need to do these steps. You can go ahead and access the system with:
+
+Bitcart admin: `http://127.0.0.1:3000/`
+Bitcart store at `http://127.0.0.1:4000/`
+Bitcart api docs at: `http://127.0.0.1:8000/`
+
 If you are running the systems on remote machines, you will need to do additional things to access them.
 
 If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. Using `ufw` as an example:
