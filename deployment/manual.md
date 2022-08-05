@@ -8,6 +8,8 @@ The process is basically the following:
 4. Install postgresql
 5. Install redis
 6. Clone and run all parts of BitcartCC
+7. Open Firewall Ports and Access the Sites
+
 
 ## Warning: Not recommended to use in production <a href="#warning-not-recommended-to-use-in-production" id="warning-not-recommended-to-use-in-production"></a>
 
@@ -67,6 +69,8 @@ sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with passw
 sudo apt install redis-server
 ```
 
+> Ensure that your redis version is > 5.0. Check with `redis-server -v`.
+
 ### 6) Clone and prepare BitcartCC components
 
 #### BitcartCC core(daemons) & Merchants API:
@@ -89,7 +93,7 @@ Where coin\_name is coin code(btc, ltc, etc.).
 
 Optional: Create virtual environment instead of using the global python environment
 
-    python3.9 -m venv env
+    python3 -m venv env
     source env/bin/activate
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
@@ -174,8 +178,40 @@ NUXT_PORT=4000 yarn start
 
 * The BitcartCC API runs on port `8000`.
 * Daemons on ports `5000-500X`
-* The bitcartCC Admin panel runs on port `3000`
-* THe BitcartCC Store runs on port `4000`.
+* The BitcartCC Admin panel runs on port `3000`
+* The BitcartCC Store runs on port `4000`.
+
+### 7) Open Firewall Ports and Access the Sites
+
+If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. Using `ufw` as an example:
+
+    sudo ufw allow 3000
+    sudo ufw allow 4000
+    sudo ufw allow 8000
+
+> `yarn` is listening on localhost `127.0.0.1` by default and you won't be able to access it over the internet unless you reverse proxy it with `nginx`.  For a short term solution, use the environment variable: `NUXT_HOST=0.0.0.0` to listen on all ips.
+
+The store and admin site need **public** access to the bitcart api.
+
+Using the manual method you need to set that with an environment variables.
+The complete running of the Bitcart admin panel and store may look like this:
+
+    # bitcart-admin
+    NUXT_HOST='0.0.0.0' BITCART_ADMIN_API_URL='http://my-bitcart-api-ip:8000' yarn start
+    # bitcart-store
+    NUXT_PORT=4000;NUXT_HOST='0.0.0.0';BITCART_STORE_API_URL='http://my-bitcart-api-ip:8000' yarn start
+
+> Note: The above is the minimum to make it work and not a production grade solution
+
+#### Access the site
+
+Go to `http://my-bitcart-admin-ip:3000/` and register a user. [The first registered user becomes the server admin](support-and-community/faq/deployment-faq#after-deployment-the-admin-panel-is-asking-me-to-log-in-but-i-dont-know-the-credentials).
+
+View your storefront at `http://my-bitcart-store-ip:4000/`
+
+View the api docs at: `http://my-bitcart-store-ip:8000/`
+
+Continue with: [Your first invoice](your-first-invoice/electrumwallet.md)
 
 ## Managing Processes
 
