@@ -160,6 +160,8 @@ Start background worker:
 python3 worker.py
 ```
 
+> If you want to run a specific coin on a test network or change other environment settings you can update the `.env` file in the [bitcart `conf/` directory](https://github.com/bitcartcc/bitcart/tree/master/conf)
+
 #### BitcartCC admin panel
 
 ```bash
