@@ -29,7 +29,7 @@ This steps have been done on ubuntu 18.04, adapt for your own install.
 
 > Or the equivalent for your os package manager
 
-More info on libsecp256k1 in [electrum docs](https://github.com/spesmilo/electrum-docs/blob/master/libsecp256k1-linux.rst) or [bitcoin core](https://github.com/bitcoin-core/secp256k1#build-steps)
+More info on libsecp256k1 in [electrum docs](https://github.com/spesmilo/electrum-docs/blob/master/libsecp256k1-linux.rst) or [bitcoin core docs](https://github.com/bitcoin-core/secp256k1#build-steps)
 
 ### 2) Install Python 3
 
@@ -191,6 +191,50 @@ If you are running this systems on your local machine - you will not need to do 
 
 If you are running the systems on remote machines, you will need to do additional things to access them.
 
+#### Option 1: Nginx proxy (Recommended)
+
+This option is recommended to proxy secure incoming requests to the correct bitcart process.
+
+Install Nginx
+
+    sudo apt install nginx
+
+Add configuration for each component: bitcart-store, bitcart-api and bitcart-admin
+
+    vim /etc/nginx/sites-available/bitcart-admin.conf
+
+    server {
+        server_name bitcart-admin.<mysite>.com;
+        access_log /var/log/nginx/bitcart-admin.access.log;
+        error_log /var/log/nginx/bitcart-admin.error.log;
+
+        location / {
+            proxy_pass http://localhost:3000;
+        }
+    }
+
+Enable the config
+
+    sudo ln -s /etc/nginx/sites-available/bitcart-admin.conf /etc/nginx/sites-enabled
+
+> Add DNS records for your server names to point to your vm's ip
+
+Check the config and reload nginx
+
+    sudo nginx -t
+    sudo systemctl reload nginx
+
+Add TLS certificates with the letsencrypt CA for the sites
+
+    sudo apt install certbot
+    sudo certbot --nginx
+
+Now you should be able to access the components over TLS. You can then also enable `http2` in your nginx configuration if you want.
+
+> You might want to look at the [FAQ for more detailed info on the Nginx configuration options](/support-and-community/faq/deployment-faq#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
+
+#### Option 2: No proxy
+
 If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. Using `ufw` as an example:
 
     sudo ufw allow 3000
@@ -211,7 +255,7 @@ The complete running of the Bitcart admin panel and store may look like this:
 
 > Note: The above is the minimum to make it work and not a production grade solution.
 
-#### Access the site Remotely
+##### Access the site Remotely
 
 * Bitcart admin: `http://my-bitcart-admin-ip:3000/`
 * Bitcart store at `http://my-bitcart-store-ip:4000/`
@@ -219,9 +263,9 @@ The complete running of the Bitcart admin panel and store may look like this:
 
 Continue with: [Your first invoice](/your-first-invoice)
 
-## Managing Processes
+### Managing Processes
 
-If you want the processes: bitcart api, daemons, workers and frontend (bitcart admin and bitcart store) to be managed - automatic startup, error reporting etc then consider using [supervisord](http://supervisord.org/) or [systemd](https://systemd.io/) to manage the processes.
+If you want the processes: bitcart api, daemons, worker and frontend (bitcart admin and bitcart store) to be managed with automatic startup, error reporting etc then consider using [supervisord](http://supervisord.org/) or [systemd](https://systemd.io/) to manage the processes.
 
 ## Upgrading manual deployment
 
