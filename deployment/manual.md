@@ -185,13 +185,13 @@ NUXT_PORT=4000 yarn start
 
 ### 7) (Optional) Open Firewall Ports and Access the Sites
 
-If you are running this systems on your local machine - you will not need to do these steps. You can go ahead and access the system with:
+If you are running BitcartCC on your local machine - you will not need to do these steps. You can go ahead and access the system with:
 
-* Bitcart admin: `http://127.0.0.1:3000/`
-* Bitcart store at `http://127.0.0.1:4000/`
-* Bitcart api docs at: `http://127.0.0.1:8000/`
+* BitcartCC Admin Panel: `http://127.0.0.1:3000/`
+* BitcartCC Store: `http://127.0.0.1:4000/`
+* BitcartCC Merchants API: `http://127.0.0.1:8000/`
 
-If you are running the systems on remote machines, you will need to do additional things to access them.
+If you are running BitcartCC on a remote machine, you will need to do additional things to access them.
 
 #### Option 1: Nginx proxy (Recommended)
 
@@ -201,7 +201,7 @@ Install Nginx
 
     sudo apt install nginx
 
-Add configuration for each component: bitcart-store, bitcart-api and bitcart-admin
+Add configuration for each component: bitcart-store, bitcart and bitcart-admin
 
     vim /etc/nginx/sites-available/bitcart-admin.conf
 
@@ -219,7 +219,7 @@ Enable the config
 
     sudo ln -s /etc/nginx/sites-available/bitcart-admin.conf /etc/nginx/sites-enabled
 
-> Add DNS records for your server names to point to your vm's ip
+> Add DNS records for your server names to point to your VM's ip
 
 Check the config and reload nginx
 
@@ -243,25 +243,25 @@ If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. U
     sudo ufw allow 4000
     sudo ufw allow 8000
 
-> `yarn` is listening on localhost `127.0.0.1` by default and you won't be able to access it over the internet unless you reverse proxy it with `nginx`.  For a short term solution, use the environment variable: `NUXT_HOST=0.0.0.0` to listen on all ips.
+> `yarn` is listening on localhost `127.0.0.1` by default and you won't be able to access it over the internet unless you reverse proxy it with `nginx`.  If you want to expose it without reverse proxy, use the environment variable: `NUXT_HOST=0.0.0.0` to listen on all interfaces.
 
-The store and admin site need **public** access to the bitcart api.
+The store and admin site need **public** access to the bitcart api (URL should be resolvable both client and server side).
 
-Using the manual method you need to set that with a environment variables.
-The complete running of the Bitcart admin panel and store may look like this:
+Using the manual method you need to set that with environment variables.
+The complete setup of the BitcartCC Admin Panel and Store may look like this:
 
     # bitcart-admin
-    NUXT_HOST='0.0.0.0' BITCART_ADMIN_API_URL='http://bitcart-api-ip:8000' yarn start
+    NUXT_HOST="0.0.0.0" BITCART_ADMIN_API_URL="http://bitcart-api-ip:8000" yarn start
     # bitcart-store
-    NUXT_PORT=4000 NUXT_HOST='0.0.0.0' BITCART_STORE_API_URL='http://bitcart-api-ip:8000' yarn start
+    NUXT_PORT=4000 NUXT_HOST="0.0.0.0" BITCART_STORE_API_URL="http://bitcart-api-ip:8000" yarn start
 
-> Note: The above is the minimum to make it work and not a production grade solution.
+> Note: The above is the minimum to make it work and not a production grade solution. We still recommend to use docker deployment unless you really know what you're doing.
 
-##### Access the site Remotely
+##### Access the site remotely
 
-* Bitcart admin: `http://my-bitcart-admin-ip:3000/`
-* Bitcart store at `http://my-bitcart-store-ip:4000/`
-* Bitcart api docs at: `http://my-bitcart-store-ip:8000/`
+* BitcartCC Admin Panel: `http://my-bitcart-admin-ip:3000/`
+* BitcartCC Store: `http://my-bitcart-store-ip:4000/`
+* BitcartCC Merchants API: `http://my-bitcart-store-ip:8000/`
 
 Continue with: [Your first invoice](/your-first-invoice)
 
