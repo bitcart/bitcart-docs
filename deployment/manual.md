@@ -10,7 +10,6 @@ The process is basically the following:
 6. Clone and run all parts of BitcartCC
 7. (Optional) Open Firewall Ports and Access the Sites
 
-
 ## Warning: Not recommended to use in production <a href="#warning-not-recommended-to-use-in-production" id="warning-not-recommended-to-use-in-production"></a>
 
 Manual installation is NOT recommended in production. It should be only used for learning purpose.
@@ -25,7 +24,9 @@ This steps have been done on ubuntu 18.04, adapt for your own install.
 
 ### 1) Install OS required libraries
 
-    sudo apt install libsecp256k1-dev
+```bash
+sudo apt install libsecp256k1-dev
+```
 
 > Or the equivalent for your os package manager
 
@@ -75,13 +76,15 @@ sudo apt install redis-server
 
 #### BitcartCC core(daemons) & Merchants API:
 
-```bash
-git clone https://github.com/bitcartcc/bitcart
+<pre class="language-bash"><code class="lang-bash">git clone https://github.com/bitcartcc/bitcart
 cd bitcart
+<strong># Optional: Create virtual environment instead of using the global python environment
+</strong>python3 -m venv env
+source env/bin/activate
+# continue installation
 sudo pip3 install -r requirements.txt
 sudo pip3 install -r requirements/production.txt
-sudo pip3 install -r requirements/daemons/btc.txt
-```
+sudo pip3 install -r requirements/daemons/btc.txt</code></pre>
 
 For any other daemon(coin) you want to use, run:
 
@@ -90,11 +93,6 @@ sudo pip3 install -r requirements/daemons/coin_name.txt
 ```
 
 Where coin\_name is coin code(btc, ltc, etc.).
-
-Optional: Create virtual environment instead of using the global python environment
-
-    python3 -m venv env
-    source env/bin/activate
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
@@ -183,7 +181,7 @@ NUXT_PORT=4000 yarn start
 * The BitcartCC Admin panel runs on port `3000`
 * The BitcartCC Store runs on port `4000`.
 
-### 7) (Optional) Open Firewall Ports and Access the Sites
+## (Optional) Open Firewall Ports and Access the Sites
 
 If you are running BitcartCC on your local machine - you will not need to do these steps. You can go ahead and access the system with:
 
@@ -199,75 +197,88 @@ This option is recommended to proxy secure incoming requests to the correct bitc
 
 Install Nginx
 
-    sudo apt install nginx
+```bash
+sudo apt install nginx
+```
 
 Add configuration for each component: bitcart-store, bitcart and bitcart-admin
 
-    vim /etc/nginx/sites-available/bitcart-admin.conf
+```nginx
+vim /etc/nginx/sites-available/bitcart-admin.conf
 
-    server {
-        server_name bitcart-admin.<mysite>.com;
-        access_log /var/log/nginx/bitcart-admin.access.log;
-        error_log /var/log/nginx/bitcart-admin.error.log;
+server {
+    server_name bitcart-admin.<mysite>.com;
+    access_log /var/log/nginx/bitcart-admin.access.log;
+    error_log /var/log/nginx/bitcart-admin.error.log;
 
-        location / {
-            proxy_pass http://localhost:3000;
-        }
+    location / {
+        proxy_pass http://localhost:3000;
     }
+}
+```
 
 Enable the config
 
-    sudo ln -s /etc/nginx/sites-available/bitcart-admin.conf /etc/nginx/sites-enabled
+```bash
+sudo ln -s /etc/nginx/sites-available/bitcart-admin.conf /etc/nginx/sites-enabled
+```
 
 > Add DNS records for your server names to point to your VM's ip
 
 Check the config and reload nginx
 
-    sudo nginx -t
-    sudo systemctl reload nginx
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+```
 
 Add TLS certificates with the letsencrypt CA for the sites
 
-    sudo apt install certbot
-    sudo certbot --nginx
+```bash
+sudo apt install certbot
+sudo certbot --nginx
+```
 
 Now you should be able to access the components over TLS. You can then also enable `http2` in your nginx configuration if you want.
 
-> You might want to look at the [FAQ for more detailed info on the Nginx configuration options](/support-and-community/faq/deployment-faq#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
+> You might want to look at the [FAQ for more detailed info on the Nginx configuration options](../support-and-community/faq/deployment-faq/#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 
 #### Option 2: No proxy
 
 If you have a firewall, you will want to open ports `3000`, `4000` and `8000`. Using `ufw` as an example:
 
-    sudo ufw allow 3000
-    sudo ufw allow 4000
-    sudo ufw allow 8000
+```bash
+sudo ufw allow 3000
+sudo ufw allow 4000
+sudo ufw allow 8000
+```
 
-> `yarn` is listening on localhost `127.0.0.1` by default and you won't be able to access it over the internet unless you reverse proxy it with `nginx`.  If you want to expose it without reverse proxy, use the environment variable: `NUXT_HOST=0.0.0.0` to listen on all interfaces.
+> `yarn` is listening on localhost `127.0.0.1` by default and you won't be able to access it over the internet unless you reverse proxy it with `nginx`. If you want to expose it without reverse proxy, use the environment variable: `NUXT_HOST=0.0.0.0` to listen on all interfaces.
 
 The store and admin site need **public** access to the bitcart api (URL should be resolvable both client and server side).
 
-Using the manual method you need to set that with environment variables.
-The complete setup of the BitcartCC Admin Panel and Store may look like this:
+Using the manual method you need to set that with environment variables. The complete setup of the BitcartCC Admin Panel and Store may look like this:
 
-    # bitcart-admin
-    NUXT_HOST="0.0.0.0" BITCART_ADMIN_API_URL="http://bitcart-api-ip:8000" yarn start
-    # bitcart-store
-    NUXT_PORT=4000 NUXT_HOST="0.0.0.0" BITCART_STORE_API_URL="http://bitcart-api-ip:8000" yarn start
+```bash
+# bitcart-admin
+NUXT_HOST="0.0.0.0" BITCART_ADMIN_API_URL="http://bitcart-api-ip:8000" yarn start
+# bitcart-store
+NUXT_PORT=4000 NUXT_HOST="0.0.0.0" BITCART_STORE_API_URL="http://bitcart-api-ip:8000" yarn start
+```
 
 > Note: The above is the minimum to make it work and not a production grade solution. We still recommend to use docker deployment unless you really know what you're doing.
 
-##### Access the site remotely
+**Access the site remotely**
 
 * BitcartCC Admin Panel: `http://my-bitcart-admin-ip:3000/`
 * BitcartCC Store: `http://my-bitcart-store-ip:4000/`
 * BitcartCC Merchants API: `http://my-bitcart-store-ip:8000/`
 
-Continue with: [Your first invoice](/your-first-invoice)
+Continue with: [Your first invoice](../your-first-invoice/)
 
-### Managing Processes
+## (Optional) Managing Processes
 
-If you want the processes: bitcart api, daemons, worker and frontend (bitcart admin and bitcart store) to be managed with automatic startup, error reporting etc then consider using [supervisord](http://supervisord.org/) or [systemd](https://systemd.io/) to manage the processes.
+If you want the procaesses: bitcart api, daemons, worker and frontend (bitcart admin and bitcart store) to be managed with automatic startup, error reporting etc then consider using [supervisord](http://supervisord.org/) or [systemd](https://systemd.io/) to manage the processes.
 
 ## Upgrading manual deployment
 
