@@ -92,6 +92,7 @@ Depending on the CMS you're using, you can easily connect BitcartCC to your onli
 * [Shopify](../integrations/shopify.md)
 * [​WooCommerce​​](../integrations/woocommerce.md)
 * [WHMCS](../integrations/whmcs.md)
+* [BoxBilling/FOSSBilling](../integrations/boxbilling.md)
 * [​Custom integration​](../integrations/custom-integration.md)
 
 ## Join our community!
