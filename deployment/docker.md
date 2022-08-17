@@ -6,7 +6,7 @@ You may check out an easier method: [Configurator](configurator.md)
 
 BitcartCC uses docker for deployment. This allows us to simplify the installation and make BitcartCC installable in almost any environment.
 
-Currently BitcartCC runs on 3 architectures: amd64 (most PC and servers), arm32, arm64 (raspberry pi)
+Currently BitcartCC runs on 2 architectures: amd64 (most PC and servers), arm64 (raspberry pi). Arm32 is not supported officially anymore.
 
 Almost every docker deployment starts like that:
 

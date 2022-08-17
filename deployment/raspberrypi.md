@@ -10,7 +10,7 @@ As for the disk, SD card, USB memory or SSD - it doesn't matter, just know that 
 
 ### Important note about 32-bit operating systems
 
-It is recommended that you install 64-bit version of raspberry pi OS, as it is tested natively via our CI systems. 32 bit version is obsolete and is less tested. But if you want to stay 32 bits, note that on debian modern docker images may fail to start, although we try to fix that bug in our setup scripts.
+It is recommended that you install 64-bit version of raspberry pi OS, as it is tested natively via our CI systems. 32 bit version is obsolete and is no longer officially supported. But if you want to stay 32 bits, note that on debian modern docker images may fail to start, although we try to fix that bug in our setup scripts.
 
 ### Setup
 
