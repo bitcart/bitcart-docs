@@ -47,3 +47,13 @@ Any wallet (payment method) may have a hint which will be displayed on checkout 
 ![It may link to your own's checkout guide](../../.gitbook/assets/wallet\_hint.png)
 
 ![And see it on the checkout page!](../../.gitbook/assets/checkout\_hint.png)
+
+## How do I randomize wallets used/distribute funds across multiple wallets?
+
+Usually when you have multiple wallets of same currency (currency+contract pair) connected, it would be displayed like `BTC (1)`, `BTC (2)` or with a custom label. But it is now possible to randomize wallet used. This is useful to either distribute funds across multiple wallets for even better privacy, or in case of ETH to improve UX of checkouts page. You will no longer see each method, but only one, selected randomly.
+
+![Before: the user chooses which method to use](../../.gitbook/assets/randomize\_wallet\_before.png)
+
+![Enable it in checkout settings](../../.gitbook/assets/randomize\_wallet\_prompt.png)
+
+![After: random wallet is chosen and only one method is displayed](../../.gitbook/assets/randomize\_wallet\_after.png)
