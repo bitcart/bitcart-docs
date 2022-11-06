@@ -57,3 +57,13 @@ Usually when you have multiple wallets of same currency (currency+contract pair)
 ![Enable it in checkout settings](../../.gitbook/assets/randomize\_wallet\_prompt.png)
 
 ![After: random wallet is chosen and only one method is displayed](../../.gitbook/assets/randomize\_wallet\_after.png)
+
+## Why could anyone create an invoice without authorization? How to disallow that?
+
+That's because, for store POS and custom integrations from different sites to work, it can't get an authorization token in a way which is not seen to the user. Currently all integrations work same way.
+
+But it is possible to make authorization mandatory on a per-store basis in store settings:
+
+<figure><img src="../../.gitbook/assets/mandatory_invoice_auth.png" alt=""><figcaption></figcaption></figure>
+
+Please note that, when disallowing anonymous invoice creation, all plugins and store POS will break. Use this only if you have a custom integration where you are able to create invoices server-side only for authorized users only (otherwise, it is working same way as BitcartCC works, but with another unneccesary layer of complexity added)
