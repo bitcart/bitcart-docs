@@ -41,6 +41,7 @@
 * [WooCommerce](integrations/woocommerce.md)
 * [WHMCS](integrations/whmcs.md)
 * [BoxBilling/FOSSBilling](integrations/boxbilling.md)
+* [Odoo](integrations/odoo.md)
 * [Custom Integration](integrations/custom-integration.md)
 
 ## Examples
