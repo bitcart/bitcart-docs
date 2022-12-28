@@ -4,9 +4,9 @@ The process is basically the following:
 
 1. Install OS required libraries
 2. Install python3 (3.8+)
-3. Install nodejs (16+) and yarn
+3. Install nodejs (16) and yarn
 4. Install postgresql
-5. Install redis
+5. Install redis (6.2.0+)
 6. Clone and run all parts of BitcartCC
 7. (Optional) Open Firewall Ports and Access the Sites
 
@@ -20,7 +20,7 @@ The docker deployment will provide you easy update system and make sure that all
 
 ## Typical manual installation <a href="#typical-manual-installation" id="typical-manual-installation"></a>
 
-This steps have been done on ubuntu 18.04, adapt for your own install.
+This steps have been done on ubuntu 22.04, adapt for your own install.
 
 ### 1) Install OS required libraries
 
@@ -46,12 +46,15 @@ sudo apt install python3 python3-pip python3-dev
 sudo apt install nodejs
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt remove cmdtest # comes preinstalled on ubuntu 18.04, overrides yarn
 sudo apt update && sudo apt install yarn
 ```
 
 {% hint style="info" %}
 If nodejs from your distro is not at least the version we require, then you should install it via [nodesource](https://github.com/nodesource/distributions)
+{% endhint %}
+
+{% hint style="warning" %}
+Using a nodejs version higher than specified way work, but we officially support only 1 release series (usually current LTS)
 {% endhint %}
 
 ### 4) Install PostgresSQL
@@ -70,7 +73,11 @@ sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with passw
 sudo apt install redis-server
 ```
 
-> Ensure that your redis version is > 5.0. Check with `redis-server -v`.
+{% hint style="info" %}
+Ensure that your redis version is > 6.2.0. Check with `redis-server -v`.
+
+If redis from your distro is too old, install from [official redis repository](https://redis.io/docs/getting-started/installation/install-redis-on-linux/#install-on-ubuntudebian)
+{% endhint %}
 
 ### 6) Clone and prepare BitcartCC components
 
@@ -84,7 +91,8 @@ source env/bin/activate
 # continue installation
 sudo pip3 install -r requirements.txt
 sudo pip3 install -r requirements/production.txt
-sudo pip3 install -r requirements/daemons/btc.txt</code></pre>
+sudo pip3 install -r requirements/daemons/btc.txt
+</code></pre>
 
 For any other daemon(coin) you want to use, run:
 
