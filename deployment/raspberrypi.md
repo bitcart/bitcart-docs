@@ -45,4 +45,8 @@ export BITCART_REVERSEPROXY="nginx"
 ./setup.sh
 ```
 
+{% hint style="warning" %}
+Ensure that your local computer you'll be accessing your BitcartCC from /etc/hosts entry for raspberry pi matches BITCART\_HOST. Or instead set BITCART\_HOST to your raspberry pi ip address directly.
+{% endhint %}
+
 * That's it! You can now access BitcartCC store at http://raspberrypi.local, admin at http://raspberrypi.local/admin, api at https://raspberrypi.local/api. For other ways of deployment (your own domain/tor) check [docker deployment](docker.md) and [tor support](../guides/tor.md)
