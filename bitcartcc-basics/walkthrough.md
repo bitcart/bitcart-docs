@@ -274,3 +274,32 @@ By clicking on it, you will be able to override default templates for this item.
 ![Edit default templates pop-up](../.gitbook/assets/edit\_templates\_popup.png)
 
 Note that in the example image above it is not neccesary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store.
+
+## Payouts
+
+BitcartCC supports sending funds from your connected wallets to outside sources. This can be useful for refunds for example, or in case you don't want to open a separate wallet for each currency and use universal BitcartCC interface.
+
+<figure><img src="../.gitbook/assets/create_payout.png" alt=""><figcaption><p>Create payout dialog</p></figcaption></figure>
+
+Just enter:
+
+* Destination
+* Amount to send (in fiat currency, defaults to default currency of the store, for this screenshot it would be 1 USD)
+* Store to use (used for setting some defaults like currency)
+* Wallet to send from. Whether it's a smart contract or not will automatically be determined via wallet settings
+* (Optional) notification url where to send IPN notifications on payout status updates (a HTTP POST request with data in format `{"id": "payout id", "status": "new status"}`
+* (Optional) Maximum fee (in fiat currency selected). If predicted fee exceeds the max fee, the payout will halt.
+
+When saving a payout, it won't be sent automatically. It will be set to pending status, waiting for your approval. There are a few statuses for you to use:
+
+pending (just created), approved (manual approval by you, not sent yet), cancelled (manual cancel by you, not sent), sent (payout is sent, tx hash is available, transaction not confirmed yet), complete (payout is sent and confirmed, used fee is available in payout details), failed (something failed during payout sending)
+
+<figure><img src="../.gitbook/assets/complete_payout.png" alt=""><figcaption><p>Payout details after it is complete (note: tron blockchain actually allows free transactions)</p></figcaption></figure>
+
+### Signing payouts
+
+By default, all wallets in BitcartCC are watch-only. We typically only require an address or xpub for payment processing needs. Private key is never required. In case you use the payouts feature, you will be able to connect relevant wallets used with their private keys. Signing will be done in a special "diskless" mode, where all operations will be performed in memory, with no data saved to disk.
+
+But in case your wallet was created as a hot wallet, it will be used automatically without the need to supply it (note that in this case, as per regular wallet loading operations, the keys will be saved on disk)
+
+<figure><img src="../.gitbook/assets/sign_payout.png" alt=""><figcaption><p>Sign payout dialog</p></figcaption></figure>

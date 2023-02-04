@@ -30,6 +30,7 @@
 * [Transaction speed](guides/transaction-speed.md)
 * [Fiat currencies support](guides/fiat-currencies-support.md)
 * [Templates](guides/templates.md)
+* [Themes](guides/themes.md)
 * [Store POS](guides/store-pos.md)
 * [Server management settings](guides/server-management-settings.md)
 * [Tor](guides/tor.md)
