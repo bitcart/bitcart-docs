@@ -42,7 +42,7 @@ The nice feature of BitcartCC is that it does not require your private keys, but
 
 You can enter (x/y/z)pub - public key, (x/y/z)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check [Architecture page](../development/architecture.md) for more information.
 
-When creating a wallet, it will get synced very fast (depends on the size of the wallet, but shoudn't take too long), and BitcartCC will fetch it's balance and display it.
+When creating a wallet, it will get synced very fast (depends on the size of the wallet, but shouldn't take too long), and BitcartCC will fetch it's balance and display it.
 
 ![Wallets page](../.gitbook/assets/admin\_wallets.png)
 
@@ -72,7 +72,7 @@ To do that, click on email icon in actions column, and enter SMTP server details
 
 Store email is the email used to send messages from, and the display email in BitcartCC POS store.
 
-Email host, port, login and password are credentials for your SMTP server. Email host shoudn't include any http:// or https:// parts. If your SMTP server requires TLS, turn on SSL/TLS switch.
+Email host, port, login and password are credentials for your SMTP server. Email host shouldn't include any http:// or https:// parts. If your SMTP server requires TLS, turn on SSL/TLS switch.
 
 When done(you should click save button first), click on Test ping button to see if your setup is working.
 
@@ -82,7 +82,7 @@ From the email settings pop-up, you will also be able to load a ready preset for
 
 ![Email server settings](../.gitbook/assets/store\_email\_settings.png)
 
-Your store is the main configuration point for all the futher actions with it, like invoice creation.
+Your store is the main configuration point for all the further actions with it, like invoice creation.
 
 You can configure different policies from your store settings.
 
@@ -273,7 +273,7 @@ By clicking on it, you will be able to override default templates for this item.
 
 ![Edit default templates pop-up](../.gitbook/assets/edit\_templates\_popup.png)
 
-Note that in the example image above it is not neccesary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store.
+Note that in the example image above it is not necessary to connect default templates for each store, as the template we created is named notification, therefore overriding default ones for each store.
 
 ## Payouts
 

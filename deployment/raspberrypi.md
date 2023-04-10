@@ -2,7 +2,7 @@
 
 Raspberry Pi is a good low-power solution to host BitcartCC at home. It is quite cheap and you can use it to build a lot of custom stuff.
 
-We recommend using the latest RPI4, but RPI3 woud be good too.
+We recommend using the latest RPI4, but RPI3 would be good too.
 
 What's good is: BitcartCC can work with any RPI flavour, even 1 GB RAM is enough to run BitcartCC. Though we recommend picking up a bit more (2 GB) just to avoid slowdowns.
 
@@ -20,7 +20,7 @@ Open a terminal on your RPI if you have connected a display to it, or ssh to you
 
 **Start a root shell**: `sudo su -`
 
-* Upgrade your system, install firewall and secure your pi from unneccesary ssh spam:
+* Upgrade your system, install firewall and secure your pi from unnecessary ssh spam:
 
 ```bash
 apt update && apt upgrade -y && apt autoremove

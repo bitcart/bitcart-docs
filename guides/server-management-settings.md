@@ -4,7 +4,7 @@ BitcartCC has a few server management settings available.
 
 They are accessible only by the superusers.
 
-Superusers are the users of the instance with admin privilegies.
+Superusers are the users of the instance with admin privilege.
 
 The first registered user is the super user, then they can add new ones from server management settings.
 

@@ -32,7 +32,7 @@ As of BitcartCC 0.3.1.0 (March 8 2021), the system requirements to run BitcartCC
 
 ### What is the easiest way to get started with BitcartCC?
 
-For a self-hosted solution, we recommend using our [BitcartCC Configurator](../../deployment/configurator.md) to easily deploy instances, without any techical skills required. You may also use the Lunanode Web deployment.
+For a self-hosted solution, we recommend using our [BitcartCC Configurator](../../deployment/configurator.md) to easily deploy instances, without any technical skills required. You may also use the Lunanode Web deployment.
 
 For just trying out, you can use our [demo](../../deployment/docker.md#live-demo) or a [third-party host](../../deployment/thirdpartyhosting.md).
 
@@ -195,7 +195,7 @@ Due to the nature of electrum networking, it is possible. But if you receive a p
 
 Yes, it is possible.
 
-The recomended way though is, to use the Merchants API, which handles many edge cases.
+The recommended way though is, to use the Merchants API, which handles many edge cases.
 
 But if you need to connect to your daemon directly, you can either:
 
@@ -262,7 +262,7 @@ server {
 
 	ssl on;
 
-	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encyrpt that came with BitcartCC Docker)
+	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with BitcartCC Docker)
 	ssl_certificate      /etc/letsencrypt/live/bitcartcc.domain.com/fullchain.pem;
 	ssl_certificate_key  /etc/letsencrypt/live/bitcartcc.domain.com/privkey.pem;
 
