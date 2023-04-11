@@ -18,7 +18,7 @@ To process payments, we should register an event handler on our `APIManager` to 
 
 ```python
 async def payment_handler(instance, event, address, status, status_str):
-    # bitcart: get invoice info, not neccesary here
+    # bitcart: get invoice info, not necessary here
     # instance.get_request(address)
     if status_str == "Paid":
         # process

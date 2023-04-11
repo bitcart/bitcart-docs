@@ -66,4 +66,4 @@ But it is possible to make authorization mandatory on a per-store basis in store
 
 <figure><img src="../../.gitbook/assets/mandatory_invoice_auth.png" alt=""><figcaption></figcaption></figure>
 
-Please note that, when disallowing anonymous invoice creation, all plugins and store POS will break. Use this only if you have a custom integration where you are able to create invoices server-side only for authorized users only (otherwise, it is working same way as BitcartCC works, but with another unneccesary layer of complexity added)
+Please note that, when disallowing anonymous invoice creation, all plugins and store POS will break. Use this only if you have a custom integration where you are able to create invoices server-side only for authorized users only (otherwise, it is working same way as BitcartCC works, but with another unnecessary layer of complexity added)
