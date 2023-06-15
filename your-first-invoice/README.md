@@ -45,7 +45,7 @@ To setup wallets, make sure you're logged in into your account, and go to > **Wa
 
 ## **Create a store**
 
-Inside BitcartCC, you can create and manage an unlimited number of stores. Each store has its own wallet or wallets **** (it allows multicurrency checkout), can create products, invoices or be connected with external e-commerce software through one of the integrations.
+Inside BitcartCC, you can create and manage an unlimited number of stores. Each store has its own wallet or wallets (it allows multicurrency checkout), can create products, invoices or be connected with external e-commerce software through one of the integrations.
 
 To create a store, make sure you're logged in into your account, and go to > **Stores** page by clicking on **Details** in it's card. Click on the **New Store** button. Enter the store name, and select this store's wallets.
 
@@ -92,7 +92,7 @@ Depending on the CMS you're using, you can easily connect BitcartCC to your onli
 * [Shopify](../integrations/shopify.md)
 * [​WooCommerce​​](../integrations/woocommerce.md)
 * [WHMCS](../integrations/whmcs.md)
-* [BoxBilling/FOSSBilling](../integrations/boxbilling.md)
+* [FOSSBilling](../integrations/fossbilling.md)
 * [Odoo](../integrations/odoo.md)
 * [​Custom integration​](../integrations/custom-integration.md)
 

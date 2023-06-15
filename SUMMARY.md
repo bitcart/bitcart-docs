@@ -41,7 +41,7 @@
 * [Shopify](integrations/shopify.md)
 * [WooCommerce](integrations/woocommerce.md)
 * [WHMCS](integrations/whmcs.md)
-* [BoxBilling/FOSSBilling](integrations/boxbilling.md)
+* [FOSSBilling](integrations/fossbilling.md)
 * [Odoo](integrations/odoo.md)
 * [Custom Integration](integrations/custom-integration.md)
 
