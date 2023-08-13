@@ -8,7 +8,7 @@ Check the example templates [here](../examples/templates.md)
 
 For each of the objects, you are able to select a custom template.
 
-The templates for an object are selected as per [template selection rules](../bitcartcc-basics/walkthrough.md#template-selection-rules)
+The templates for an object are selected as per [template selection rules](../bitcart-basics/walkthrough.md#template-selection-rules)
 
 ![Store default templates](../.gitbook/assets/store\_default\_templates.png)
 
@@ -18,7 +18,7 @@ In some places of BitcartCC, it is possible to render templates as html files in
 
 For example, in emails sent to customer on successful checkout, you could use default templates (or customized a bit) which are plain text, or instead, you could enable html template rendering and send your customers a beautiful email.
 
-Currently html template rendering is available only in [store emails sent to customer](../bitcartcc-basics/walkthrough.md#store-checkout-settings)
+Currently html template rendering is available only in [store emails sent to customer](../bitcart-basics/walkthrough.md#store-checkout-settings)
 
 **Note**: if you enable html template rendering, default templates or any plain text templates will now render incorrectly, without new lines. So ensure to check that template rendering templates match the templates themselves.
 
@@ -28,7 +28,7 @@ You can check html templates examples [here](../examples/templates.md).
 
 ### Notification
 
-Notification template is used when building the message to be sent via all configured [notification providers](../bitcartcc-basics/walkthrough.md#notification-providers) to the merchant notifying of successful order (to start shipping, for example).
+Notification template is used when building the message to be sent via all configured [notification providers](../bitcart-basics/walkthrough.md#notification-providers) to the merchant notifying of successful order (to start shipping, for example).
 
 The are two variables passed:
 

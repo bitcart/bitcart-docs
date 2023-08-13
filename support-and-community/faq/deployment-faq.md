@@ -6,17 +6,17 @@ This document covers the most common questions, errors, and issues you may encou
 
 ### How much does it cost to run BitcartCC?
 
-BitcartCC is a 100% free and open-source software. We do not charge you anything. However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do.&#x20;
+BitcartCC is a 100% free and open-source software. We do not charge you anything. However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do.
 
-Advanced users can run BitcartCC on [their own hardware](../../deployment/hardware.md).&#x20;
+Advanced users can run BitcartCC on [their own hardware](../../deployment/hardware.md).
 
-If you do not wish to host your own server, you can use a free [Third-Party Host](../../deployment/thirdpartyhosting.md).&#x20;
+If you do not wish to host your own server, you can use a free [Third-Party Host](../../deployment/thirdpartyhosting.md).
 
 Visit our [Deployment Page](../../deployment/) for more information on the various ways in which you can run BitcartCC.
 
 Hosting prices differ, but even a minimal server would suffice.
 
-Hosting your own instance might make it a bit harder to start using BitcartCC, but it is worth it, to get a [decentralized and secure solution](../../bitcartcc-basics/bitcartcc-vs-others.md), with no third-party.
+Hosting your own instance might make it a bit harder to start using BitcartCC, but it is worth it, to get a [decentralized and secure solution](../../bitcart-basics/bitcartcc-vs-others.md), with no third-party.
 
 ### What are the minimal requirements for running BitcartCC?
 
@@ -470,7 +470,7 @@ systemctl start docker
 
 #### **Cause 1: Trying to access my BitcartCC by IP address**
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment guide on pi 4](../../deployment/raspberrypi.md)  said to setup the source domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BitcartCC into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment guide on pi 4](../../deployment/raspberrypi.md) said to setup the source domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BitcartCC into the web-browser.
 
 Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 

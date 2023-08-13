@@ -2,12 +2,12 @@
 
 * [Introduction](README.md)
 
-## BitcartCC Basics
+## Bitcart Basics
 
-* [Use Case](bitcartcc-basics/use-case.md)
-* [Walkthrough](bitcartcc-basics/walkthrough.md)
-* [BitcartCC vs others](bitcartcc-basics/bitcartcc-vs-others.md)
-* [Try it out](bitcartcc-basics/try-it-out.md)
+* [Use Case](bitcart-basics/use-case.md)
+* [Walkthrough](bitcart-basics/walkthrough.md)
+* [BitcartCC vs others](bitcart-basics/bitcartcc-vs-others.md)
+* [Try it out](bitcart-basics/try-it-out.md)
 
 ***
 
