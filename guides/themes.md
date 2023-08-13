@@ -1,10 +1,10 @@
 # Themes
 
-It is possible to customize the look and feel of BitcartCC UI by overriding some CSS variables.
+It is possible to customize the look and feel of Bitcart UI by overriding some CSS variables.
 
 Currently it is supported for store POS only.
 
-A list of possible css variables: [https://github.com/bitcartcc/bitcart-store/blob/master/assets/bulma-generated/generated-bulma-vars.sass](https://github.com/bitcartcc/bitcart-store/blob/master/assets/bulma-generated/generated-bulma-vars.sass)
+A list of possible css variables: [https://github.com/bitcart/bitcart-store/blob/master/assets/bulma-generated/generated-bulma-vars.sass](https://github.com/bitcart/bitcart-store/blob/master/assets/bulma-generated/generated-bulma-vars.sass)
 
 Guide to customizing the theme:
 

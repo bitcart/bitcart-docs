@@ -8,13 +8,13 @@ Integrate Bitcart into your self-hosted FOSSBilling instance easily!
 
 This version requires the following:
 
-* FOSSBilling instance
-* Running Bitcart instance: [deployment guide](https://docs.bitcartcc.com/deployment)
+- FOSSBilling instance
+- Running Bitcart instance: [deployment guide](https://docs.bitcart.ai/deployment)
 
 ### Installing the Plugin
 
 1. From your FOSSBilling panel, go to configuration > payment gateways -> New payment gateway
-2. Upload Bitcart.php to the directory suggested by your deployment. [Download it](https://raw.githubusercontent.com/bitcartcc/bitcart-boxbilling/master/BitcartCC.php) from this repository
+2. Upload Bitcart.php to the directory suggested by your deployment. [Download it](https://raw.githubusercontent.com/bitcart/bitcart-boxbilling/master/Bitcart.php) from this repository
 3. Enable it by clicking on the button near Bitcart, fill in all settings and save.
 
 ### Plugin Configuration

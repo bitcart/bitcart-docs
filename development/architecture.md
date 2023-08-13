@@ -1,16 +1,16 @@
 # Architecture
 
-![BitcartCC structure diagram](../.gitbook/assets/bitcartcc_structure.png)
+![Bitcart structure diagram](../.gitbook/assets/bitcart_structure.png)
 
-BitcartCC is a complex project, and this page contains a detailed description of BitcartCC structure.
+Bitcart is a complex project, and this page contains a detailed description of Bitcart structure.
 
-Check the diagram, it shows that BitcartCC is modular, as it consists of many independent components. The only required component is BitcartCC Core, everything else is optional.
+Check the diagram, it shows that Bitcart is modular, as it consists of many independent components. The only required component is Bitcart Core, everything else is optional.
 
-## BitcartCC Core
+## Bitcart Core
 
-BitcartCC core are essentially the BitcartCC daemons for different currencies.
+Bitcart core are essentially the Bitcart daemons for different currencies.
 
-BitcartCC daemon is just a wrapper around electrum wallet, extending existing daemon functionality and providing more methods, wallet loading on the fly \(by passing xpub as part of the JSON-RPC request\), better events delivery \(supports polling, websocket\) and a specification for better exceptions to improve development time.
+Bitcart daemon is just a wrapper around electrum wallet, extending existing daemon functionality and providing more methods, wallet loading on the fly \(by passing xpub as part of the JSON-RPC request\), better events delivery \(supports polling, websocket\) and a specification for better exceptions to improve development time.
 
 So, all the networking and essential crypto parts are managed by electrum, which is battle-tested. 
 
@@ -26,7 +26,7 @@ The background worker estabilishes a websocket connection to the daemon, one for
 
 Upon successful payment, electrum networking and wallet functionality detects that payment request was paid, and fires an event. Our daemon is configured to preprocess the event \(to get maximum possible data\), and to send it to configured sources. In this case, new event data is sent via websocket.
 
-Websocket data is received by the worker via BitcartCC SDK, and a corresponding event handler is called.
+Websocket data is received by the worker via Bitcart SDK, and a corresponding event handler is called.
 
 The worker finds a payment method and an invoice related to that payment method having the address sent, and it marks the invoice as complete. When marking invoice as complete, multiple actions are done:
 
@@ -47,7 +47,7 @@ Optionally, you may also add the admin panel. It is a convenience UI built aroun
 
 It provides ultimate editing features, and is very powerful as it's built in material design.
 
-The admin panel also provides a universal checkout page, and a script which can be used to launch [checkout modal](../integrations/custom-integration.md#bitcartcc-admin-panels-checkout-modal) on any site 
+The admin panel also provides a universal checkout page, and a script which can be used to launch [checkout modal](../integrations/custom-integration.md#bitcart-admin-panels-checkout-modal) on any site 
 
 ## Ready Store \(POS\)
 

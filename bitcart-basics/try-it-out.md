@@ -1,13 +1,13 @@
 # Try it out
 
-This section goes through the process of creating an account and store on our public BitcartCC instance. \(For evaluation purpose\)
+This section goes through the process of creating an account and store on our public Bitcart instance. \(For evaluation purpose\)
 
 ## Create your first invoice <a id="create-your-first-invoice"></a>
 
 First let's create a new store:
 
-1. Go to the [demo website](https://admin.bitcartcc.com)
-2. In the login form click on **Sign up here** to [create an account](https://admin.bitcartcc.com/register)
+1. Go to the [demo website](https://admin.bitcart.ai)
+2. In the login form click on **Sign up here** to [create an account](https://admin.bitcart.ai/register)
 
 Let's use Electrum to create a mainnet wallet for your store:
 
@@ -19,24 +19,23 @@ Let's use Electrum to create a mainnet wallet for your store:
 
 Let's configure the store so it uses your Electrum wallet:
 
-1. Go to **Wallets** page and [create a new wallet](https://admin.bitcartcc.com/wallets) with your copied xpub
-2. Go to **Stores** page and [create a new store](https://admin.bitcartcc.com/stores) with your new wallet connected
-3. After that your test wallet should appear on the [Wallets page](https://admin.bitcartcc.com/wallets) of your BitcartCC account
+1. Go to **Wallets** page and [create a new wallet](https://admin.bitcart.ai/wallets) with your copied xpub
+2. Go to **Stores** page and [create a new store](https://admin.bitcart.ai/stores) with your new wallet connected
+3. After that your test wallet should appear on the [Wallets page](https://admin.bitcart.ai/wallets) of your Bitcart account
 
 Then you can create an invoice, either through
 
-* the **Invoices** page [on the website](https://admin.bitcartcc.com/invoices) or
-* the process documented on the [Custom integration](../integrations/custom-integration.md)
-* or the [store POS](../guides/store-pos.md), if you are the owner of the instance
+- the **Invoices** page [on the website](https://admin.bitcart.ai/invoices) or
+- the process documented on the [Custom integration](../integrations/custom-integration.md)
+- or the [store POS](../guides/store-pos.md), if you are the owner of the instance
 
-See the [What's Next](https://docs.bitcartcc.com/getting-started/whatsnext) page for other options on how to continue exploring BitcartCC.
+See the [What's Next](https://docs.bitcart.ai/getting-started/whatsnext) page for other options on how to continue exploring Bitcart.
 
-## BitcartCC Demo <a id="bitcartcc-demo"></a>
+## Bitcart Demo <a id="bitcart-demo"></a>
 
-To see BitcartCC in action, visit our demo apps and stores or check out some of the stores using BitcartCC in production.
+To see Bitcart in action, visit our demo apps and stores or check out some of the stores using Bitcart in production.
 
-* [BitcartCC Demo Store](https://store.bitcartcc.com)
-* [Admin panel](https://admin.bitcartcc.com)
-* [Merchants API](https://api.bitcartcc.com)
-* [Atomic tipbot](https://t.me/bitcart_atomic_tipbot)
-
+- [Bitcart Demo Store](https://store.bitcart.ai)
+- [Admin panel](https://admin.bitcart.ai)
+- [Merchants API](https://api.bitcart.ai)
+- [Atomic tipbot](https://t.me/bitcart_atomic_tipbot)

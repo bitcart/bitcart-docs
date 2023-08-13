@@ -1,10 +1,10 @@
 # Walkthrough
 
-In this article, we will walk you through the BitcartCC admin panel user interface and show you how to navigate through different options.
+In this article, we will walk you through the Bitcart admin panel user interface and show you how to navigate through different options.
 
 When creating an account, if you're the first user registered on the instance, you'll be granted superuser rights (full control over the server). On third-party hosts it is usually not so, but if you're hosting your own instance you'll of course become the full owner of it.
 
-After you created the account on the BitcartCC instance hosted by yourself or a third-party, you'll see a lot of information cards.
+After you created the account on the Bitcart instance hosted by yourself or a third-party, you'll see a lot of information cards.
 
 ![Information cards in your admin panel](../.gitbook/assets/admin\_main.png)
 
@@ -34,15 +34,15 @@ It is a feature-rich datatable, supporting searching, ordering, create/edit/dele
 
 ## Wallets
 
-The core of BitcartCC is creating a wallet. In BitcartCC, one wallet represents one currency.
+The core of Bitcart is creating a wallet. In Bitcart, one wallet represents one currency.
 
 Default currency is btc, you can change that. When creating wallet, just select currency code from the ones available on your instance (btc,ltc etc.). Wallets may have a name and their [xpub](../support-and-community/faq/terminology-faq.md#what-is-an-xpub).
 
-The nice feature of BitcartCC is that it does not require your private keys, but it supports many different formats.
+The nice feature of Bitcart is that it does not require your private keys, but it supports many different formats.
 
-You can enter (x/y/z)pub - public key, (x/y/z)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with BitcartCC, check [Architecture page](../development/architecture.md) for more information.
+You can enter (x/y/z)pub - public key, (x/y/z)prv - private key, or even electrum seed - providing easiest migration possible from many wallets, especially electrum. If you don't have an xpub yet, we recommend you create a wallet somewhere. [Electrum](https://electrum.org) wallet provides the best integration with Bitcart, check [Architecture page](../development/architecture.md) for more information.
 
-When creating a wallet, it will get synced very fast (depends on the size of the wallet, but shouldn't take too long), and BitcartCC will fetch it's balance and display it.
+When creating a wallet, it will get synced very fast (depends on the size of the wallet, but shouldn't take too long), and Bitcart will fetch it's balance and display it.
 
 ![Wallets page](../.gitbook/assets/admin\_wallets.png)
 
@@ -54,13 +54,13 @@ By clicking arrow near any of the rows, you can view some additional details, li
 
 ## Stores
 
-You can create unlimited amount of stores in BitcartCC.
+You can create unlimited amount of stores in Bitcart.
 
 Each store can contain any amount of products and associated invoices. Store is a base entrypoint for anything related to checkout.
 
 Store may have multiple wallets connected. That way, connecting different wallets with different base currencies, you can achieve multicurrency checkout.
 
-Selecting multiple wallets of the same currency is **NOT** recommended. On invoice creation, BitcartCC will pick the first wallet of that currency, returned by database(they might be returned in any order).
+Selecting multiple wallets of the same currency is **NOT** recommended. On invoice creation, Bitcart will pick the first wallet of that currency, returned by database(they might be returned in any order).
 
 ![Stores page](../.gitbook/assets/admin\_stores.png)
 
@@ -70,7 +70,7 @@ If you want to send customers invoices on successful checkout, you should config
 
 To do that, click on email icon in actions column, and enter SMTP server details.
 
-Store email is the email used to send messages from, and the display email in BitcartCC POS store.
+Store email is the email used to send messages from, and the display email in Bitcart POS store.
 
 Email host, port, login and password are credentials for your SMTP server. Email host shouldn't include any http:// or https:// parts. If your SMTP server requires TLS, turn on SSL/TLS switch.
 
@@ -99,7 +99,7 @@ By clicking on settings icon, you will be presented with the store checkout sett
 
 It is optional page for your initial setup, you may skip it for now.
 
-In many cases you might want to add some discounts to your store. New year discounts, other holidays? Limited time promocode discounts? Discount when paying in your preferred currency? Anything is possible with BitcartCC.
+In many cases you might want to add some discounts to your store. New year discounts, other holidays? Limited time promocode discounts? Discount when paying in your preferred currency? Anything is possible with Bitcart.
 
 Just provide a percent(integer) for your discount, and discount apply conditions:
 
@@ -109,7 +109,7 @@ Just provide a percent(integer) for your discount, and discount apply conditions
 
 You can link discounts to products in the products page.
 
-When one invoice at creation time has matched multiple discounts, BitcartCC will pick the best discount(by percent).
+When one invoice at creation time has matched multiple discounts, Bitcart will pick the best discount(by percent).
 
 ![Discounts page](<../.gitbook/assets/discounts\_page (1).png>)
 
@@ -119,7 +119,7 @@ When one invoice at creation time has matched multiple discounts, BitcartCC will
 
 Products are your base selling unit. Create your products, link them to your stores, add product details - and they will get displayed in your store POS!
 
-BitcartCC supports many different information for creating products:
+Bitcart supports many different information for creating products:
 
 * Amount, displayed in store POS in USD
 * quantity(how many products of the same kind available)
@@ -172,7 +172,7 @@ When converting to payment method's currency, destination currency's maximum dec
 
 ### Notification URL
 
-If you fill in notification URL, BitcartCC instance will send IPN notifications to that URL via a POST request.
+If you fill in notification URL, Bitcart instance will send IPN notifications to that URL via a POST request.
 
 It will send the following json data:
 
@@ -242,11 +242,11 @@ Available fields:
 * Name of template, you can select from built-in ones or type in a new one
 * Template text
 
-All templates in BitcartCC are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x).
+All templates in Bitcart are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x).
 
 Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/2.11.x/templates).
 
-Read more about example usages of templates in BitcartCC [here](../guides/templates.md)
+Read more about example usages of templates in Bitcart [here](../guides/templates.md)
 
 ![Templates page](../.gitbook/assets/templates.png)
 
@@ -260,7 +260,7 @@ When a template is being requested to render (for example, when sending notifica
 
 1. If this product or store has template connected, it will be used
 2. If it has no template connected, default global store or product template will be used (named store or product), if exists
-3. If none of templates above are customized, [default templates](https://github.com/bitcartcc/bitcart/tree/master/api/templates) are used
+3. If none of templates above are customized, [default templates](https://github.com/bitcart/bitcart/tree/master/api/templates) are used
 
 ### Changing object's templates
 
@@ -277,7 +277,7 @@ Note that in the example image above it is not necessary to connect default temp
 
 ## Payouts
 
-BitcartCC supports sending funds from your connected wallets to outside sources. This can be useful for refunds for example, or in case you don't want to open a separate wallet for each currency and use universal BitcartCC interface.
+Bitcart supports sending funds from your connected wallets to outside sources. This can be useful for refunds for example, or in case you don't want to open a separate wallet for each currency and use universal Bitcart interface.
 
 <figure><img src="../.gitbook/assets/create_payout.png" alt=""><figcaption><p>Create payout dialog</p></figcaption></figure>
 
@@ -298,7 +298,7 @@ pending (just created), approved (manual approval by you, not sent yet), cancell
 
 ### Signing payouts
 
-By default, all wallets in BitcartCC are watch-only. We typically only require an address or xpub for payment processing needs. Private key is never required. In case you use the payouts feature, you will be able to connect relevant wallets used with their private keys. Signing will be done in a special "diskless" mode, where all operations will be performed in memory, with no data saved to disk.
+By default, all wallets in Bitcart are watch-only. We typically only require an address or xpub for payment processing needs. Private key is never required. In case you use the payouts feature, you will be able to connect relevant wallets used with their private keys. Signing will be done in a special "diskless" mode, where all operations will be performed in memory, with no data saved to disk.
 
 But in case your wallet was created as a hot wallet, it will be used automatically without the need to supply it (note that in this case, as per regular wallet loading operations, the keys will be saved on disk)
 

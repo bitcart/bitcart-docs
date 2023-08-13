@@ -8,7 +8,7 @@ Process with caution, and don't put large amounts in your lightning channels.
 Before enabling lightning, please read all the warnings.
 {% endhint %}
 
-Lightning network in BitcartCC is supported via Electrum's lightning network implementation
+Lightning network in Bitcart is supported via Electrum's lightning network implementation
 
 It has some limitations, please read the most up-to-date version at your admin panel.
 
@@ -36,7 +36,7 @@ If lightning is supported, by clicking on the lightning icon and accepting all w
 
 If lightning is enabled for a wallet, then, along with the regular coin payment method, a lightning one will be created.
 
-As your BitcartCC daemons are standalone lightning nodes, you will need to open lightning channels from scratch. You can use the lightning management page for this
+As your Bitcart daemons are standalone lightning nodes, you will need to open lightning channels from scratch. You can use the lightning management page for this
 
 ## Lightning management
 

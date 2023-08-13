@@ -1,10 +1,10 @@
 # Raspberry Pi Deployment
 
-Raspberry Pi is a good low-power solution to host BitcartCC at home. It is quite cheap and you can use it to build a lot of custom stuff.
+Raspberry Pi is a good low-power solution to host Bitcart at home. It is quite cheap and you can use it to build a lot of custom stuff.
 
 We recommend using the latest RPI4, but RPI3 would be good too.
 
-What's good is: BitcartCC can work with any RPI flavour, even 1 GB RAM is enough to run BitcartCC. Though we recommend picking up a bit more (2 GB) just to avoid slowdowns.
+What's good is: Bitcart can work with any RPI flavour, even 1 GB RAM is enough to run Bitcart. Though we recommend picking up a bit more (2 GB) just to avoid slowdowns.
 
 As for the disk, SD card, USB memory or SSD - it doesn't matter, just know that SSD is usually faster. Basically any disk on the market should have enough space (10 GB)
 
@@ -35,10 +35,10 @@ ufw enable
 You should replace 192.168.1.0/24 with your own subnet. This is to allow ssh connections only from your local network. You may not need it.
 {% endhint %}
 
-* Clone and install BitcartCC
+* Clone and install Bitcart
 
 ```bash
-git clone https://github.com/bitcartcc/bitcart-docker
+git clone https://github.com/bitcart/bitcart-docker
 cd bitcart-docker
 export BITCART_HOST="raspberrypi.local"
 export BITCART_REVERSEPROXY="nginx"
@@ -46,7 +46,7 @@ export BITCART_REVERSEPROXY="nginx"
 ```
 
 {% hint style="warning" %}
-Ensure that your local computer you'll be accessing your BitcartCC from /etc/hosts entry for raspberry pi matches BITCART\_HOST. Or instead set BITCART\_HOST to your raspberry pi ip address directly.
+Ensure that your local computer you'll be accessing your Bitcart from /etc/hosts entry for raspberry pi matches BITCART\_HOST. Or instead set BITCART\_HOST to your raspberry pi ip address directly.
 {% endhint %}
 
-* That's it! You can now access BitcartCC store at http://raspberrypi.local, admin at http://raspberrypi.local/admin, api at https://raspberrypi.local/api. For other ways of deployment (your own domain/tor) check [docker deployment](docker.md) and [tor support](../guides/tor.md)
+* That's it! You can now access Bitcart store at http://raspberrypi.local, admin at http://raspberrypi.local/admin, api at https://raspberrypi.local/api. For other ways of deployment (your own domain/tor) check [docker deployment](docker.md) and [tor support](../guides/tor.md)

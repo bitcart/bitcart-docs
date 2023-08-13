@@ -4,35 +4,35 @@ This document covers the most common questions, errors, and issues you may encou
 
 ## General Deployment FAQ
 
-### How much does it cost to run BitcartCC?
+### How much does it cost to run Bitcart?
 
-BitcartCC is a 100% free and open-source software. We do not charge you anything. However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do.
+Bitcart is a 100% free and open-source software. We do not charge you anything. However, to run it, you should host it. You can run it as a self-hosted solution on your own local server, or use a cloud hosting provider, which is what a majority of users do.
 
-Advanced users can run BitcartCC on [their own hardware](../../deployment/hardware.md).
+Advanced users can run Bitcart on [their own hardware](../../deployment/hardware.md).
 
 If you do not wish to host your own server, you can use a free [Third-Party Host](../../deployment/thirdpartyhosting.md).
 
-Visit our [Deployment Page](../../deployment/) for more information on the various ways in which you can run BitcartCC.
+Visit our [Deployment Page](../../deployment/) for more information on the various ways in which you can run Bitcart.
 
 Hosting prices differ, but even a minimal server would suffice.
 
-Hosting your own instance might make it a bit harder to start using BitcartCC, but it is worth it, to get a [decentralized and secure solution](../../bitcart-basics/bitcartcc-vs-others.md), with no third-party.
+Hosting your own instance might make it a bit harder to start using Bitcart, but it is worth it, to get a [decentralized and secure solution](../../bitcart-basics/bitcart-vs-others.md), with no third-party.
 
-### What are the minimal requirements for running BitcartCC?
+### What are the minimal requirements for running Bitcart?
 
 The system requirements depend on the components you have chosen, but a typical full installation (with all essential components enabled, and btc daemon):
 
-* 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
-* \~= 10 GB disk (way less actually, but just to be sure)
-* Docker support by the OS (Ubuntu should work)
+- 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
+- \~= 10 GB disk (way less actually, but just to be sure)
+- Docker support by the OS (Ubuntu should work)
 
 Note that, adding new coins typically don't increase the requirements a lot.
 
-As of BitcartCC 0.3.1.0 (March 8 2021), the system requirements to run BitcartCC with all supported coins enabled are the same as the minimal requirements (maybe with a bit more swap space allocated).
+As of Bitcart 0.3.1.0 (March 8 2021), the system requirements to run Bitcart with all supported coins enabled are the same as the minimal requirements (maybe with a bit more swap space allocated).
 
-### What is the easiest way to get started with BitcartCC?
+### What is the easiest way to get started with Bitcart?
 
-For a self-hosted solution, we recommend using our [BitcartCC Configurator](../../deployment/configurator.md) to easily deploy instances, without any technical skills required. You may also use the Lunanode Web deployment.
+For a self-hosted solution, we recommend using our [Bitcart Configurator](../../deployment/configurator.md) to easily deploy instances, without any technical skills required. You may also use the Lunanode Web deployment.
 
 For just trying out, you can use our [demo](../../deployment/docker.md#live-demo) or a [third-party host](../../deployment/thirdpartyhosting.md).
 
@@ -40,7 +40,7 @@ For just trying out, you can use our [demo](../../deployment/docker.md#live-demo
 
 Please refer to [Deployment](../../deployment/) page to view comparison of different deployment methods
 
-### Can I run BitcartCC on my own hardware?
+### Can I run Bitcart on my own hardware?
 
 Yes, the installation instructions almost don't differ. Refer to [Hardware deployment](../../deployment/hardware.md) guide.
 
@@ -95,36 +95,36 @@ export BITCART_ADDITIONAL_COMPONENTS=$BITCART_ADDITIONAL_COMPONENTS,tor
 
 Refer to the [Tor guide](../../guides/tor.md) for more details.
 
-### Why is Tor useful for BitcartCC? Does it mean that nobody knows who I am?
+### Why is Tor useful for Bitcart? Does it mean that nobody knows who I am?
 
-Tor for BitcartCC is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office.
+Tor for Bitcart is intended more as an improvement of the setup process, and allows for more flexibility for hosting on one's own device at home or in an office.
 
-Having Tor activated would allow for simpler, plug-and-play usage of BitcartCC, as it suppress the need for the following configuration steps:
+Having Tor activated would allow for simpler, plug-and-play usage of Bitcart, as it suppress the need for the following configuration steps:
 
-* Opening multiple ports on the firewall
-* Configuring the NAT for port redirection to your device on your local network
-* Setting up a DNS entry to get a HTTPS certificate
-* And any other difficulties you may face
+- Opening multiple ports on the firewall
+- Configuring the NAT for port redirection to your device on your local network
+- Setting up a DNS entry to get a HTTPS certificate
+- And any other difficulties you may face
 
-While these steps are usually not a problem when BitcartCC is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
+While these steps are usually not a problem when Bitcart is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
 
 Of course, you may use .local domain, but it will only be accessible from your local PC.
 
 Tor just solves all these issues in one shot, all you have to do is plug your device on the local network. It is especially useful for POS application.
 
-But if you're looking for perfect privacy and security, **activating Tor with your BitcartCC just won't do it.**
+But if you're looking for perfect privacy and security, **activating Tor with your Bitcart just won't do it.**
 
-Tor is a really tricky software to use for developers, as the slightest mistake can tear down the anonymity it provides. As BitcartCC is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this traffic through Tor, we couldn't guarantee that there would never be leaks of data in clear. There are many different requests we can't fully control or guarantee we control. When enabling Tor support, we do route the electrum and exchange rate requests through Tor, but that's the best we can do.
+Tor is a really tricky software to use for developers, as the slightest mistake can tear down the anonymity it provides. As Bitcart is evolving into a rather complex service and adding more and more plugins, even if we tried to route all this traffic through Tor, we couldn't guarantee that there would never be leaks of data in clear. There are many different requests we can't fully control or guarantee we control. When enabling Tor support, we do route the electrum and exchange rate requests through Tor, but that's the best we can do.
 
 We think that the illusion of security is more dangerous that no security, or at least security we know is imperfect. So be aware that activating Tor doesn't prevent others to connect to your instance website, your bitcoin or lightning node in clear, **it doesn't make you anonymous at all.**
 
 ### **How do I get the .onion address of my instance without accessing it in the clearnet?**
 
-See this [guide](https://docs.bitcartcc.com/guides/tor#checking-if-tor-support-works).
+See this [guide](https://docs.bitcart.ai/guides/tor#checking-if-tor-support-works).
 
 ### How do I deactivate some additional components, or modify some settings?
 
-BitcartCC is configured via environment variables.
+Bitcart is configured via environment variables.
 
 You can always set some environment variable like so:
 
@@ -166,9 +166,9 @@ export BITCART_ADDITIONAL_COMPONENTS="$BITCART_ADDITIONAL_COMPONENTS,tor"
 
 If you need to figure out which environment variable you need to modify, have a look at [this list](../../deployment/docker.md#configuration).
 
-### How can I run BitcartCC on testnet?
+### How can I run Bitcart on testnet?
 
-There is no such term as "testnet BitcartCC". BitcartCC is modular, and what you can do instead is, enable testnet on certain coins (daemons), but not on every one. So it is possible, let's say, to have bitcoin daemon running in mainnet, bitcoin cash in testnet, and litecoin in regtest.
+There is no such term as "testnet Bitcart". Bitcart is modular, and what you can do instead is, enable testnet on certain coins (daemons), but not on every one. So it is possible, let's say, to have bitcoin daemon running in mainnet, bitcoin cash in testnet, and litecoin in regtest.
 
 To change the network of a coin, run:
 
@@ -185,13 +185,13 @@ export BTC_NETWORK=testnet
 ./setup.sh
 ```
 
-### Can I start BitcartCC only when I'm expecting a payment?
+### Can I start Bitcart only when I'm expecting a payment?
 
 Theoretically it's possible, but it is not recommended.
 
-Due to the nature of electrum networking, it is possible. But if you receive a payment when BitcartCC is offline, it will only be processed when BitcartCC is back up.
+Due to the nature of electrum networking, it is possible. But if you receive a payment when Bitcart is offline, it will only be processed when Bitcart is back up.
 
-### Can I connect to the BitcartCC core daemon from my deployment stack?
+### Can I connect to the Bitcart core daemon from my deployment stack?
 
 Yes, it is possible.
 
@@ -203,7 +203,7 @@ But if you need to connect to your daemon directly, you can either:
 
 You can add a custom component to the deployment stack via the `BITCART_ADDITIONAL_COMPONENTS` setting, and then, when running inside docker, you can always connect to daemons via their docker-compose name. For example, for bitcoin, the URL will be `http://bitcoin:5000`.
 
-Check the list of URLs to connect to [here](https://github.com/bitcartcc/bitcart-docker/blob/master/dev-setup.sh#L10).
+Check the list of URLs to connect to [here](https://github.com/bitcart/bitcart-docker/blob/master/dev-setup.sh#L10).
 
 #### Connect to the daemon from outside
 
@@ -232,7 +232,7 @@ Yes you can! Just make sure to use the proper configuration.
 
 It is way easier to use built-in reverse proxy, but in cases when you are running [multiple deployments on one server](../../guides/multiple-deployments-on-one-server.md), it is required.
 
-Create an extra config file for your vhost in `/etc/nginx/sites-available/bitcartcc` and create a symlink for this file at `/etc/nginx/sites-enabled/bitcartcc`
+Create an extra config file for your vhost in `/etc/nginx/sites-available/bitcart` and create a symlink for this file at `/etc/nginx/sites-enabled/bitcart`
 
 The contents of this vhost file should look like this:
 
@@ -244,7 +244,7 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 
 	# Put your domain name here
-	server_name bitcartcc.domain.com;
+	server_name bitcart.domain.com;
 
 	# Needed for Let's Encrypt verification
 	location ~ /.well-known {
@@ -262,19 +262,19 @@ server {
 
 	ssl on;
 
-	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with BitcartCC Docker)
-	ssl_certificate      /etc/letsencrypt/live/bitcartcc.domain.com/fullchain.pem;
-	ssl_certificate_key  /etc/letsencrypt/live/bitcartcc.domain.com/privkey.pem;
+	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with Bitcart Docker)
+	ssl_certificate      /etc/letsencrypt/live/bitcart.domain.com/fullchain.pem;
+	ssl_certificate_key  /etc/letsencrypt/live/bitcart.domain.com/privkey.pem;
 
 	root /var/www/html;
 	index index.html index.htm index.nginx-debian.html;
 
 	# Put your domain name here
-	server_name bitcartcc.domain.com;
+	server_name bitcart.domain.com;
 
-	# Route everything to the real BitcartCC instance
+	# Route everything to the real Bitcart instance
 	location / {
-		# URL of BitcartCC (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
+		# URL of Bitcart (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
 		proxy_pass http://127.0.0.1:10080;
 
 		proxy_set_header Host $http_host;
@@ -321,7 +321,7 @@ http {
 
 Now test your Nginx config with `nginx -t` and reload the config with `service nginx reload`.
 
-Then, you need to make sure that BitcartCC does not try to handle HTTPS on its side, you can do this by disabling it on your BitcartCC instance.
+Then, you need to make sure that Bitcart does not try to handle HTTPS on its side, you can do this by disabling it on your Bitcart instance.
 
 ```
 export BITCART_REVERSEPROXY=nginx
@@ -329,11 +329,11 @@ export REVERSEPROXY_HTTP_PORT=10080
 ./setup.sh
 ```
 
-Notice: If your BitcartCC install has more than one domain (for example, when [one domain mode](../../guides/one-domain-mode.md) is off) you will need to modify your config for each domain name. The example above only covers 1 domain name called `bitcartcc.domain.com`.
+Notice: If your Bitcart install has more than one domain (for example, when [one domain mode](../../guides/one-domain-mode.md) is off) you will need to modify your config for each domain name. The example above only covers 1 domain name called `bitcart.domain.com`.
 
-### Can I run BitcartCC on my home computer?
+### Can I run Bitcart on my home computer?
 
-Similar to the requirements for hosting a website, a web server is required for a BitcartCC instance. While it is possible to run BitcartCC locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to BitcartCC payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server (VPS) is commonly used to address these problems.
+Similar to the requirements for hosting a website, a web server is required for a Bitcart instance. While it is possible to run Bitcart locally on your PC, it would have to meet the minimal requirements and also run 24/7 if you don't want interruptions of service. You might also not want to expose your home IP address for the activity related to Bitcart payments. For all these reasons, while local hosting is suitable for testing, it's not a viable solution for production. A Virtual Private Server (VPS) is commonly used to address these problems.
 
 But if you really need to do so, you have two options:
 
@@ -351,21 +351,21 @@ See the [Tor guide](../../guides/tor.md) for more details.
 
 ## Manual Deployment FAQ
 
-### How do I manually install BitcartCC on Ubuntu 18.04?
+### How do I manually install Bitcart on Ubuntu 18.04?
 
 See this [guide](../../deployment/manual.md).
 
-### How do I completely uninstall BitcartCC from a linux environment (docker version)
+### How do I completely uninstall Bitcart from a linux environment (docker version)
 
-1. Shutdown BitcartCC with `./stop.sh` and cleanup the install with `./cleanup.sh`.
+1. Shutdown Bitcart with `./stop.sh` and cleanup the install with `./cleanup.sh`.
 2. Delete all volumes in `/var/lib/docker/volumes/` with:`docker-compose -f compose/generated.yml down --v`
-3. Remove other BitcartCC system files with: `rm /etc/systemd/system/bitcartcc.service && rm /etc/profile.d/bitcartcc-env.sh`
-4. Remove your BitcartCC installation folder with `rm -r "$BITCART_BASE_DIRECTORY"`
+3. Remove other Bitcart system files with: `rm /etc/systemd/system/bitcart.service && rm /etc/profile.d/bitcart-env.sh`
+4. Remove your Bitcart installation folder with `rm -r "$BITCART_BASE_DIRECTORY"`
 5. Just to make sure, run `docker system prune` after a reboot to get rid of any other docker related artifacts.
 
 ### With the docker deployment, how to use a different volume for the data?
 
-First, you need to make sure that bitcartcc and docker is not running
+First, you need to make sure that bitcart and docker is not running
 
 ```bash
 sudo su -
@@ -457,7 +457,7 @@ if ! grep -qF "$DOCKER_VOLUMES" /etc/fstab; then
 fi
 ```
 
-Now restart docker and bitcartcc
+Now restart docker and bitcart
 
 ```bash
 systemctl start docker
@@ -468,9 +468,9 @@ systemctl start docker
 
 ### I get 503 Service Temporarily Unavailable nginx
 
-#### **Cause 1: Trying to access my BitcartCC by IP address**
+#### **Cause 1: Trying to access my Bitcart by IP address**
 
-Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment guide on pi 4](../../deployment/raspberrypi.md) said to setup the source domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your BitcartCC into the web-browser.
+Your nginx config is set to route the HTTP request to a particular container based on the domain name of the request. For example, the official [deployment guide on pi 4](../../deployment/raspberrypi.md) said to setup the source domain name to http://raspberrypi.local/ yet getting automatic local domain raspberrypi.local does not always work. You are probably in this situation and trying to type the IP address of your Bitcart into the web-browser.
 
 Since nginx gets the IP address in the request instead of raspberrypi.local it does not know where to route that request and returns:
 
@@ -480,7 +480,7 @@ Since nginx gets the IP address in the request instead of raspberrypi.local it d
 nginx
 ```
 
-You can fix this by forcing nginx to route the HTTP request to BitcartCC even if the request domain name is not recognized. Simply, re-run the setup script like this:
+You can fix this by forcing nginx to route the HTTP request to Bitcart even if the request domain name is not recognized. Simply, re-run the setup script like this:
 
 ```
 sudo su -
@@ -490,7 +490,7 @@ export REVERSEPROXY_DEFAULT_HOST="$BITCART_HOST" && ./setup.sh
 
 Now putting local IP in the web-browser works.
 
-#### **Cause 2: bitcartcc or letsencrypt-nginx-proxy is not running**
+#### **Cause 2: bitcart or letsencrypt-nginx-proxy is not running**
 
 To check, run:
 
@@ -502,8 +502,8 @@ Press "q" to quit out of less.
 
 The output should contain:
 
-* jrcs/letsencrypt-nginx-proxy-companion
-* bitcartcc/bitcart
+- jrcs/letsencrypt-nginx-proxy-companion
+- bitcart/bitcart
 
 And the status should be "Up"
 
@@ -517,4 +517,4 @@ Where `compose-backend-1` is the container name that is having issues.
 
 **# Cause 4: Other**
 
-There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/bitcartcc/bitcart/issues) and when cause becomes known add it here in the [Deployment FAQ](deployment-faq.md) doc.
+There could be many causes for 5XX HTTP errors. Please create an [Issue](https://github.com/bitcart/bitcart/issues) and when cause becomes known add it here in the [Deployment FAQ](deployment-faq.md) doc.

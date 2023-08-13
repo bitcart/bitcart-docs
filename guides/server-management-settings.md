@@ -1,6 +1,6 @@
 # Server management settings
 
-BitcartCC has a few server management settings available.
+Bitcart has a few server management settings available.
 
 They are accessible only by the superusers.
 
@@ -12,23 +12,23 @@ The server management settings don't leak the privacy of other users, super user
 
 If you are the super user, you will be able to enter the settings by clicking on the profile icon->server management settings
 
-![Enter server management settings](../.gitbook/assets/server\_management\_enter.png)
+![Enter server management settings](../.gitbook/assets/server_management_enter.png)
 
 ## User management
 
-![User management page](../.gitbook/assets/user\_management.png)
+![User management page](../.gitbook/assets/user_management.png)
 
 From the user management page, you will be able to view all users registered on your instance, create new users or delete existing ones. Also, you can change a user's password and optionally make someone a superuser.
 
-![Create new user](../.gitbook/assets/create\_user.png)
+![Create new user](../.gitbook/assets/create_user.png)
 
 ![Superuser is displayed this way](../.gitbook/assets/superuser.png)
 
 Note that, when editing user, it is not possible to view their existing password.
 
-It is because, BitcartCC is secure and doesn't store plain text passwords. Only hashed passwords are stored.
+It is because, Bitcart is secure and doesn't store plain text passwords. Only hashed passwords are stored.
 
-![Edit user](../.gitbook/assets/edit\_user.png)
+![Edit user](../.gitbook/assets/edit_user.png)
 
 You can click on the switch to make someone a superuser or make someone a regular user instead.
 
@@ -36,7 +36,7 @@ You can click on the switch to make someone a superuser or make someone a regula
 
 ## Server logs
 
-![Server logs page](../.gitbook/assets/server\_logs.png)
+![Server logs page](../.gitbook/assets/server_logs.png)
 
 From the server logs page, you will be able to check server logs.
 
@@ -50,7 +50,7 @@ You can also download the log, to send it for troubleshooting purposes for examp
 
 ## Maintenance commands
 
-![Maintenance commands page](../.gitbook/assets/maintenance\_commands.png)
+![Maintenance commands page](../.gitbook/assets/maintenance_commands.png)
 
 From the maintenance commands page, you can execute common actions-upgrade your server or clean up it.
 
@@ -72,7 +72,7 @@ See more below
 
 ### Cleanup unused images
 
-This process does the same as after upgrade-cleans up all unused bitcartcc images from previous upgrades
+This process does the same as after upgrade-cleans up all unused bitcart images from previous upgrades
 
 ### Cleanup logs
 
@@ -88,7 +88,7 @@ The policies allow you to control some server-wide important settings.
 
 If you check this on, users will not be able to register on your instance. Register link will be removed from the login page, register page will not be accessible and the API will discard any register attempts. Turn it off to enable registration back.
 
-![No link for registration on login page](../.gitbook/assets/register\_no\_link.png)
+![No link for registration on login page](../.gitbook/assets/register_no_link.png)
 
 ### Discourage search engines from indexing this site
 
@@ -96,17 +96,17 @@ By enabling this setting, your instance will tell the search engines to stop ind
 
 ### Check for updates once a day
 
-When enabled, your instance will check github for new BitcartCC releases, and display a notification in the admin panel that a new update is available.
+When enabled, your instance will check github for new Bitcart releases, and display a notification in the admin panel that a new update is available.
 
-![New update available message](../.gitbook/assets/new\_update.jpg)
+![New update available message](../.gitbook/assets/new_update.jpg)
 
 ### Allow access to configurator for unauthorized users
 
-By default it is on. When enabled, users can access `https://admin.yourbitcartcc.com/configurator`, and deploy their instance from there via the [Configurator](../deployment/configurator.md).
+By default it is on. When enabled, users can access `https://admin.yourbitcart.ai/configurator`, and deploy their instance from there via the [Configurator](../deployment/configurator.md).
 
 ## Store policies
 
-![](<../.gitbook/assets/store\_policies (1).png>)
+![](<../.gitbook/assets/store_policies (1).png>)
 
 On the store policies page, you are able to configure some settings related to all the stores on the server or the [Store POS](store-pos.md)
 
@@ -120,6 +120,6 @@ By default it is on. When enabled, users must enter their email on store POS to 
 
 ## Daemons management
 
-![Daemons management page](../.gitbook/assets/daemons\_management.png)
+![Daemons management page](../.gitbook/assets/daemons_management.png)
 
 This page is purely informational. You will see a list of connected daemons and some of their settings.

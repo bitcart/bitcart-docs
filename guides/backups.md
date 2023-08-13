@@ -1,6 +1,6 @@
 # Backups
 
-BitcartCC supports backing up it's data on one server and restoring it on another.
+Bitcart supports backing up it's data on one server and restoring it on another.
 
 It is available via both UI and terminal.
 

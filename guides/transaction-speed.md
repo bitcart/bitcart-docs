@@ -6,7 +6,7 @@ What does transaction speed mean?
 
 First of all, transaction speed applies only to on-chain invoices. All lightning invoices are instantly marked as complete.
 
-To understand why transaction speed setting is needed, you need to understand the invoice statuses in BitcartCC:
+To understand why transaction speed setting is needed, you need to understand the invoice statuses in Bitcart:
 
 When invoice has just been created, it has `pending` status.
 

@@ -1,12 +1,12 @@
 # Hardware Deployment
 
-Sometimes you might want to run BitcartCC on your own hardware. This is a bit more complicated than using a VPS. But in the end you will get way better security and control over your data.
+Sometimes you might want to run Bitcart on your own hardware. This is a bit more complicated than using a VPS. But in the end you will get way better security and control over your data.
 
-Note that no matter where you host BitcartCC, as your private keys are never required, your data is always safe, you can export and move the data to any server. So if you started on a VPS, you can use our [backups feature](../guides/backups.md) to create a backup of all your data and restore on your own hardware.
+Note that no matter where you host Bitcart, as your private keys are never required, your data is always safe, you can export and move the data to any server. So if you started on a VPS, you can use our [backups feature](../guides/backups.md) to create a backup of all your data and restore on your own hardware.
 
 ### Requirements
 
-Here are the requirements for running BitcartCC on your own hardware:
+Here are the requirements for running Bitcart on your own hardware:
 
 1. High-speed internet connection. The faster the better. This is to ensure the speed of invoice detection
 2. Any hardware ever. Yes, that's right! You can use your old PC or basically anything for that. Our minimal requirements are 1 GB RAM and around 10 GB disk. AMD64 hardware is the most tested one, but if needed, refer to our [raspberry pi guide](broken-reference)
@@ -36,12 +36,12 @@ sudo ufw enable
 You should replace 192.168.1.0/24 with your own subnet. This is to allow ssh connections only from your local network. You may not need it.
 {% endhint %}
 
-* Clone and install BitcartCC (replace bitcartcc.yourdomain.com with the actual domain name):
+* Clone and install Bitcart (replace bitcart.yourdomain.com with the actual domain name):
 
 ```bash
 sudo su -
-git clone https://github.com/bitcartcc/bitcart-docker
-export BITCART_HOST=bitcartcc.yourdomain.com
+git clone https://github.com/bitcart/bitcart-docker
+export BITCART_HOST=bitcart.yourdomain.com
 ./setup.sh
 ```
 
@@ -49,4 +49,4 @@ export BITCART_HOST=bitcartcc.yourdomain.com
 You may customize additional settings by `export`'ing more things. For example, use `BITCART_CRYPTOS` to customize the list of coins enabled. For the full list, see [docker deployment page](docker.md#configuration)
 {% endhint %}
 
-* All done! Enjoy your BitcartCC instance! If needed, check out [backups support](../guides/backups.md) on how to restore the data from your previous instance.
+* All done! Enjoy your Bitcart instance! If needed, check out [backups support](../guides/backups.md) on how to restore the data from your previous instance.

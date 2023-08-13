@@ -1,16 +1,16 @@
 # Tor
 
-BitcartCC supports Tor as an additional service. When enabling it, all the services \(admin, merchants API, store\) will also be available as Tor hidden services.
+Bitcart supports Tor as an additional service. When enabling it, all the services \(admin, merchants API, store\) will also be available as Tor hidden services.
 
 When enabling Tor hidden services, nginx will automatically be configured to serve requests from .onion domains. But if using a custom reverse proxy or just not the built-in nginx, ensure to set up server records for each hidden service. More information below.
 
 ## Warning
 
-Enabling Tor doesn't give absolute security. And if used incorrectly, it may even lead to bigger problems. It is very hard to make every component of BitcartCC and it's dependencies use the onion network only, and we don't guarantee that.
+Enabling Tor doesn't give absolute security. And if used incorrectly, it may even lead to bigger problems. It is very hard to make every component of Bitcart and it's dependencies use the onion network only, and we don't guarantee that.
 
-When enabling tor, the components of BitcartCC will be communicating via the onion URLs if accessed from the onion network too, and all the daemons will be connecting to the onion servers more often than regular ones.
+When enabling tor, the components of Bitcart will be communicating via the onion URLs if accessed from the onion network too, and all the daemons will be connecting to the onion servers more often than regular ones.
 
-So, Tor support is mostly to be used to access BitcartCC components when running it at home, or behind a complex firewall.
+So, Tor support is mostly to be used to access Bitcart components when running it at home, or behind a complex firewall.
 
 ## Enabling Tor support
 
@@ -42,9 +42,9 @@ Where `compose` is the name of your deployment, by default it is indeed `compose
 Examples:
 
 ```bash
-cat /var/lib/docker/volumes/compose_tor_servicesdir/_data/BitcartCC-Merchants-API/hostname # for Merchants API
-cat /var/lib/docker/volumes/compose_tor_servicesdir/_data/BitcartCC-Admin-Panel/hostname # for admin panel
-cat /var/lib/docker/volumes/compose_tor_servicesdir/_data/BitcartCC-Store/hostname # for store
+cat /var/lib/docker/volumes/compose_tor_servicesdir/_data/Bitcart-Merchants-API/hostname # for Merchants API
+cat /var/lib/docker/volumes/compose_tor_servicesdir/_data/Bitcart-Admin-Panel/hostname # for admin panel
+cat /var/lib/docker/volumes/compose_tor_servicesdir/_data/Bitcart-Store/hostname # for store
 ```
 
 ![Admin panel&apos;s tor icon](../.gitbook/assets/admin_tor.png)

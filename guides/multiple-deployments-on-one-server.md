@@ -1,6 +1,6 @@
 # Multiple deployments on one server
 
-BitcartCC supports multiple deployments on one server.
+Bitcart supports multiple deployments on one server.
 
 **Note** that it is an advanced topic, and use it only if you know what you are doing.
 
@@ -23,12 +23,12 @@ Note that you should use different clones of the `bitcart-docker` for each deplo
 Do it like so:
 
 ```bash
-git clone https://github.com/bitcartcc/bitcart-docker
+git clone https://github.com/bitcart/bitcart-docker
 cd bitcart-docker
 # export settings
 ./setup.sh
 cd ..
-git clone https://github.com/bitcartcc/bitcart-docker bitcart-demo
+git clone https://github.com/bitcart/bitcart-docker bitcart-demo
 cd bitcart-demo
 # export settings
 ./setup.sh --name demo

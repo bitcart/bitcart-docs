@@ -1,8 +1,8 @@
 # Templates
 
-Templates in BitcartCC are powered by the Jinja2 templating engine. It means that you have the full flexibility of the templating engine.
+Templates in Bitcart are powered by the Jinja2 templating engine. It means that you have the full flexibility of the templating engine.
 
-There are currently 3 different templates you able to customize in BitcartCC: `notification`, `product` and `shop`. Plus you are able to create custom-named templates for use with our future scripting language.
+There are currently 3 different templates you able to customize in Bitcart: `notification`, `product` and `shop`. Plus you are able to create custom-named templates for use with our future scripting language.
 
 Check the example templates [here](../examples/templates.md)
 
@@ -14,7 +14,7 @@ The templates for an object are selected as per [template selection rules](../bi
 
 ## HTML templates
 
-In some places of BitcartCC, it is possible to render templates as html files instead of plain text.
+In some places of Bitcart, it is possible to render templates as html files instead of plain text.
 
 For example, in emails sent to customer on successful checkout, you could use default templates (or customized a bit) which are plain text, or instead, you could enable html template rendering and send your customers a beautiful email.
 
@@ -43,7 +43,7 @@ The default template is the following:
 New order from {{ invoice.buyer_email }}
 ```
 
-&#x20;An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/notification.j2)
+&#x20;An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/notification.j2)
 
 ### Shop
 
@@ -71,7 +71,7 @@ If you've got any questions, email us at {{store.email}}.
 Best wishes, your {{store.name}}.
 ```
 
-An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/shop.j2)
+An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/shop.j2)
 
 ### Product
 
@@ -98,5 +98,5 @@ It'll ship shortly!
 {% endraw %}
 ```
 
-An up-to-date version can always be found at this [link](https://github.com/bitcartcc/bitcart/blob/master/api/templates/product.j2)
+An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/product.j2)
 

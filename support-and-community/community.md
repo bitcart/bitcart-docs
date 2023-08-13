@@ -4,9 +4,8 @@ This project is nothing without its community!
 
 Join us:
 
-[Telegram](https://t.me/bitcartcc)
+[Telegram](https://t.me/bitcart)
 
-[Github](https://github.com/bitcartcc/bitcart)
+[Github](https://github.com/bitcart/bitcart)
 
-[More communities](https://bitcartcc.com/#community)
-
+[More communities](https://bitcart.ai/#community)

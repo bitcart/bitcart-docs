@@ -6,7 +6,7 @@
 
 * [Use Case](bitcart-basics/use-case.md)
 * [Walkthrough](bitcart-basics/walkthrough.md)
-* [BitcartCC vs others](bitcart-basics/bitcartcc-vs-others.md)
+* [Bitcart vs others](bitcart-basics/bitcart-vs-others.md)
 * [Try it out](bitcart-basics/try-it-out.md)
 
 ***

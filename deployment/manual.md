@@ -7,7 +7,7 @@ The process is basically the following:
 3. Install nodejs (18) and yarn
 4. Install postgresql
 5. Install redis (6.2.0+)
-6. Clone and run all parts of BitcartCC
+6. Clone and run all parts of Bitcart
 7. (Optional) Open Firewall Ports and Access the Sites
 
 ## Warning: Not recommended to use in production <a href="#warning-not-recommended-to-use-in-production" id="warning-not-recommended-to-use-in-production"></a>
@@ -79,11 +79,11 @@ Ensure that your redis version is > 6.2.0. Check with `redis-server -v`.
 If redis from your distro is too old, install from [official redis repository](https://redis.io/docs/getting-started/installation/install-redis-on-linux/#install-on-ubuntudebian)
 {% endhint %}
 
-### 6) Clone and prepare BitcartCC components
+### 6) Clone and prepare Bitcart components
 
-#### BitcartCC core(daemons) & Merchants API:
+#### Bitcart core(daemons) & Merchants API:
 
-<pre class="language-bash"><code class="lang-bash">git clone https://github.com/bitcartcc/bitcart
+<pre class="language-bash"><code class="lang-bash">git clone https://github.com/bitcart/bitcart
 cd bitcart
 <strong># Optional: Create virtual environment instead of using the global python environment
 </strong>python3 -m venv env
@@ -120,19 +120,19 @@ Apply database migrations:
 alembic upgrade head
 ```
 
-#### BitcartCC admin panel
+#### Bitcart admin panel
 
 ```bash
-git clone https://github.com/bitcartcc/bitcart-admin
+git clone https://github.com/bitcart/bitcart-admin
 cd bitcart-admin
 yarn
 yarn build
 ```
 
-#### BitcartCC store
+#### Bitcart store
 
 ```bash
-git clone https://github.com/bitcartcc/bitcart-store
+git clone https://github.com/bitcart/bitcart-store
 cd bitcart-store
 yarn
 yarn build
@@ -140,7 +140,7 @@ yarn build
 
 ## Run everything
 
-#### BitcartCC core(daemons) & Merchants API:
+#### Bitcart core(daemons) & Merchants API:
 
 Start daemons from the `bitcart` repo directory:
 
@@ -166,16 +166,16 @@ Start background worker:
 python3 worker.py
 ```
 
-> If you want to run a specific coin on a test network or change other environment settings you can update the `.env` file in the [bitcart `conf/` directory](https://github.com/bitcartcc/bitcart/tree/master/conf)
+> If you want to run a specific coin on a test network or change other environment settings you can update the `.env` file in the [bitcart `conf/` directory](https://github.com/bitcart/bitcart/tree/master/conf)
 
-#### BitcartCC admin panel
+#### Bitcart admin panel
 
 ```bash
 cd bitcart-admin
 yarn start
 ```
 
-#### BitcartCC store
+#### Bitcart store
 
 ```bash
 cd bitcart-store
@@ -184,20 +184,20 @@ NUXT_PORT=4000 yarn start
 
 #### Default ports
 
-* The BitcartCC API runs on port `8000`.
+* The Bitcart API runs on port `8000`.
 * Daemons on ports `5000-500X`
-* The BitcartCC Admin panel runs on port `3000`
-* The BitcartCC Store runs on port `4000`.
+* The Bitcart Admin panel runs on port `3000`
+* The Bitcart Store runs on port `4000`.
 
 ## (Optional) Open Firewall Ports and Access the Sites
 
-If you are running BitcartCC on your local machine - you will not need to do these steps. You can go ahead and access the system with:
+If you are running Bitcart on your local machine - you will not need to do these steps. You can go ahead and access the system with:
 
-* BitcartCC Admin Panel: `http://127.0.0.1:3000/`
-* BitcartCC Store: `http://127.0.0.1:4000/`
-* BitcartCC Merchants API: `http://127.0.0.1:8000/`
+* Bitcart Admin Panel: `http://127.0.0.1:3000/`
+* Bitcart Store: `http://127.0.0.1:4000/`
+* Bitcart Merchants API: `http://127.0.0.1:8000/`
 
-If you are running BitcartCC on a remote machine, you will need to do additional things to access them.
+If you are running Bitcart on a remote machine, you will need to do additional things to access them.
 
 #### Option 1: Nginx proxy (Recommended)
 
@@ -265,7 +265,7 @@ sudo ufw allow 8000
 
 The store and admin site need **public** access to the bitcart api (URL should be resolvable both client and server side).
 
-Using the manual method you need to set that with environment variables. The complete setup of the BitcartCC Admin Panel and Store may look like this:
+Using the manual method you need to set that with environment variables. The complete setup of the Bitcart Admin Panel and Store may look like this:
 
 ```bash
 # bitcart-admin
@@ -278,9 +278,9 @@ NUXT_PORT=4000 NUXT_HOST="0.0.0.0" BITCART_STORE_API_URL="http://bitcart-api-ip:
 
 **Access the site remotely**
 
-* BitcartCC Admin Panel: `http://my-bitcart-admin-ip:3000/`
-* BitcartCC Store: `http://my-bitcart-store-ip:4000/`
-* BitcartCC Merchants API: `http://my-bitcart-store-ip:8000/`
+* Bitcart Admin Panel: `http://my-bitcart-admin-ip:3000/`
+* Bitcart Store: `http://my-bitcart-store-ip:4000/`
+* Bitcart Merchants API: `http://my-bitcart-store-ip:8000/`
 
 Continue with: [Your first invoice](../your-first-invoice/)
 
@@ -306,11 +306,11 @@ Run :
 git pull
 ```
 
-For every BitcartCC component directory (Merchants API, Admin Panel, Store).
+For every Bitcart component directory (Merchants API, Admin Panel, Store).
 
 ### 3) Upgrade dependencies
 
-#### BitcartCC core(daemons) & Merchants API:
+#### Bitcart core(daemons) & Merchants API:
 
 ```bash
 sudo pip3 install -r requirements.txt
@@ -318,13 +318,13 @@ sudo pip3 install -r requirements/production.txt
 sudo pip3 install -r requirements/daemons/btc.txt
 ```
 
-**BitcartCC admin**
+**Bitcart admin**
 
 ```
 yarn
 ```
 
-**BitcartCC store**
+**Bitcart store**
 
 ```
 yarn
@@ -332,7 +332,7 @@ yarn
 
 ### 4) Apply new database migrations
 
-In BitcartCC core(daemons) & Merchants API directory, run:
+In Bitcart core(daemons) & Merchants API directory, run:
 
 ```
 alembic upgrade head
@@ -340,7 +340,7 @@ alembic upgrade head
 
 ### 5) Rebuild store and admin
 
-For BitcartCC Admin Panel and Store, run:
+For Bitcart Admin Panel and Store, run:
 
 ```
 yarn build

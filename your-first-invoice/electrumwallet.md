@@ -1,10 +1,10 @@
 # Electrum wallet
 
-This document explains how to connect a desktop [Electrum Wallet](https://electrum.org/) to BitcartCC.
+This document explains how to connect a desktop [Electrum Wallet](https://electrum.org/) to Bitcart.
 
-Electrum wallet is recommended, as BitcartCC is tightly integrated with it, providing the best user experience and speed.
+Electrum wallet is recommended, as Bitcart is tightly integrated with it, providing the best user experience and speed.
 
-1. Register an account in your BitcartCC instance
+1. Register an account in your Bitcart instance
 2. ​[Download](https://electrum.org/#download) and install Electrum Wallet
 
 ## Electrum Wallet Setup <a href="#electrum-wallet-setup" id="electrum-wallet-setup"></a>
@@ -15,13 +15,13 @@ After the installation, open Electrum Wallet by clicking on the icon on your des
 
 1. Create a new Electrum Wallet
 2. In Electrum, Wallet > Information - copy the **Master Public Key**.
-3. In BitcartCC, Wallets > Create wallet > Paste the Extended Public Key in xpub field
+3. In Bitcart, Wallets > Create wallet > Paste the Extended Public Key in xpub field
 
 ## Step by Step <a href="#step-by-step" id="step-by-step"></a>
 
 The following setup guides you through setting up an entirely new Bech32 (SegWit) Wallet in Electrum. If you already have a wallet skip to the Extended Public Key copying.
 
-Firstly, give your wallet a name, for example, `BitcartCC Wallet` and click `Next`.
+Firstly, give your wallet a name, for example, `Bitcart Wallet` and click `Next`.
 
 ![Enter your new wallet's name](../../.gitbook/assets/electrum\_createwallet.png)
 
@@ -51,11 +51,11 @@ When the wallet loads (it may take few moments), in the top menu, click on the `
 
 ![See wallet information](../../.gitbook/assets/electrum\_createwallet\_step7.png)
 
-Select and **copy** the `Master Public Key`. This is the **public** key from which BitcartCC will derive addresses.
+Select and **copy** the `Master Public Key`. This is the **public** key from which Bitcart will derive addresses.
 
 ![Copy the Master Public Key](../../.gitbook/assets/electrum\_createwallet\_step8.png)
 
-Return to your BitcartCC. Click on the `Details` button in the `Wallets` card and click on the `New Wallet` button. Enter your wallet name and Paste the Master Public Key from electrum to xpub field. Click `Save`.
+Return to your Bitcart. Click on the `Details` button in the `Wallets` card and click on the `New Wallet` button. Enter your wallet name and Paste the Master Public Key from electrum to xpub field. Click `Save`.
 
 ![Add new wallet](../../.gitbook/assets/connect\_electrum.png)
 
@@ -89,4 +89,4 @@ There's no good answer to how much you should set the gap limit to. Most merchan
 
 For more details about the Gap Limit, check the FAQ.
 
-Electrum and BitcartCC are now connected. Any payments received to your BitcartCC will be visible in Electrum, where you can further spend them.
+Electrum and Bitcart are now connected. Any payments received to your Bitcart will be visible in Electrum, where you can further spend them.

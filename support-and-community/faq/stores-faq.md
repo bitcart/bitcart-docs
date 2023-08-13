@@ -14,7 +14,7 @@ When enabling this store checkout setting, the checkout page will always be serv
 
 ## What is custom logo link?
 
-To keep consistent branding, you can change the default BitcartCC logo to your own logo. For that, it must be accessible via the URL provided. Note that, no matter what resolution the image is, it will be fit into maximum height of 40.
+To keep consistent branding, you can change the default Bitcart logo to your own logo. For that, it must be accessible via the URL provided. Note that, no matter what resolution the image is, it will be fit into maximum height of 40.
 
 ![Custom logo link](../../.gitbook/assets/custom\_logo.png)
 
@@ -30,7 +30,7 @@ To configure it, you need to set the recommended fee confirmation target blocks 
 
 ## How do I change my payment method's name?
 
-By default BitcartCC uses currency symbol as method name, and if there are multiple wallets of the same currency connected it adds an index to it (BTC(1), BTC(2)).
+By default Bitcart uses currency symbol as method name, and if there are multiple wallets of the same currency connected it adds an index to it (BTC(1), BTC(2)).
 
 In some cases you may want to have a custom label for your payment methods, for example to indicate if some payment method is for legacy payments, and another is for segwit payments.
 
@@ -42,7 +42,7 @@ To do that, just add a label to your wallet:
 
 ## How do I display a checkout hint for customers?
 
-Any wallet (payment method) may have a hint which will be displayed on checkout page. First of all, the default BitcartCC hints are displayed (recommended fee unless disabled, and about sending exact amounts in eth). Your custom hint will be displayed below.
+Any wallet (payment method) may have a hint which will be displayed on checkout page. First of all, the default Bitcart hints are displayed (recommended fee unless disabled, and about sending exact amounts in eth). Your custom hint will be displayed below.
 
 ![It may link to your own's checkout guide](../../.gitbook/assets/wallet\_hint.png)
 
@@ -66,4 +66,4 @@ But it is possible to make authorization mandatory on a per-store basis in store
 
 <figure><img src="../../.gitbook/assets/mandatory_invoice_auth.png" alt=""><figcaption></figcaption></figure>
 
-Please note that, when disallowing anonymous invoice creation, all plugins and store POS will break. Use this only if you have a custom integration where you are able to create invoices server-side only for authorized users only (otherwise, it is working same way as BitcartCC works, but with another unnecessary layer of complexity added)
+Please note that, when disallowing anonymous invoice creation, all plugins and store POS will break. Use this only if you have a custom integration where you are able to create invoices server-side only for authorized users only (otherwise, it is working same way as Bitcart works, but with another unnecessary layer of complexity added)
