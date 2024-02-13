@@ -351,7 +351,7 @@ See the [Tor guide](../../guides/tor.md) for more details.
 
 ## Manual Deployment FAQ
 
-### How do I manually install Bitcart on Ubuntu 18.04?
+### How do I manually install Bitcart on Ubuntu 22.04?
 
 See this [guide](../../deployment/manual.md).
 
