@@ -60,7 +60,7 @@ The default template is the following:
 
 ```
 Welcome to our shop!
-Thank you so much for your purchase!
+Thank you so much for your order!
 Your summary is below:
 {% raw %}
 {% for product in products %}
@@ -99,4 +99,3 @@ It'll ship shortly!
 ```
 
 An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/product.j2)
-
