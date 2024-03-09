@@ -22,6 +22,12 @@ Currently html template rendering is available only in [store emails sent to cus
 
 **Note**: if you enable html template rendering, default templates or any plain text templates will now render incorrectly, without new lines. So ensure to check that template rendering templates match the templates themselves.
 
+If you have a decimal field that needs to be formatted properly using currency data (e.g. price), you can use the `format_decimal` filter to format it properly, passing key of field on the model.
+
+```jinja
+{{ invoice | format_decimal("price") }}
+```
+
 You can check html templates examples [here](../examples/templates.md).
 
 ## Available templates
@@ -40,7 +46,7 @@ You can use those two variables to build whatever message that fits the best for
 The default template is the following:
 
 ```
-New order from {{ invoice.buyer_email }}
+New order from {{ invoice.buyer_email }} for {{ invoice | format_decimal("price") }} {{ invoice.currency }}!
 ```
 
 &#x20;An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/notification.j2)
