@@ -3,7 +3,7 @@
 The process is basically the following:
 
 1. Install OS required libraries
-2. Install python3 (3.8+)
+2. Install python3 (3.9+)
 3. Install nodejs (20) and yarn
 4. Install postgresql
 5. Install redis (6.2.0+)
