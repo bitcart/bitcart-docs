@@ -30,6 +30,8 @@ sudo apt install libsecp256k1-dev
 
 > Or the equivalent for your os package manager
 
+Some systems may require creating a symlink between your libsecp256k1 installation path and the location that Bitcart looks for it in. You can discover that location from the failure logs.
+
 More info on libsecp256k1 in [electrum docs](https://github.com/spesmilo/electrum-docs/blob/master/libsecp256k1-linux.rst) or [bitcoin core docs](https://github.com/bitcoin-core/secp256k1#build-steps)
 
 ### 2) Install Python 3
@@ -113,6 +115,10 @@ DB_PASSWORD=REPLACEME
 BITCART_CRYPTOS=btc,ltc
 EOF
 ```
+
+Other coins may require additional environmental variables in `conf/.env`, like `XMR_NETWORK` and `XMR_SERVER`.
+
+Note that if you're running redis on a custom port, you need to set that custom port in the configuration file as well, like this: `REDIS_HOST=redis://localhost:1234`
 
 Apply database migrations:
 
@@ -287,6 +293,64 @@ Continue with: [Your first invoice](../your-first-invoice/)
 ## (Optional) Managing Processes
 
 If you want the procaesses: bitcart api, daemons, worker and frontend (bitcart admin and bitcart store) to be managed with automatic startup, error reporting etc then consider using [supervisord](http://supervisord.org/) or [systemd](https://systemd.io/) to manage the processes.
+
+Here's an example of a systemd service:
+
+```
+[Unit]
+Description=Bitcart Core and Services
+After=network.target
+After=redis.service
+
+[Service]
+Type=simple
+User=bitcart
+WorkingDirectory=/path/to/bitcart
+EnvironmentFile=/path/to/bitcart/conf/.env
+Environment=XDG_CACHE_HOME=/home/bitcart/.cache
+Environment=NPM_CONFIG_CACHE=/home/bitcart/.npm
+ExecStart=/bin/bash -c 'python3 daemons/btc.py >> /var/log/bitcart/bitcart.log 2>&1 & \
+                        python3 daemons/xmr.py >> /var/log/bitcart/bitcart.log 2>&1 & \
+                        gunicorn -c gunicorn.conf.py main:app >> /var/log/bitcart/bitcart.log 2>&1 & \
+                        python3 worker.py >> /var/log/bitcart/bitcart.log 2>&1 & \
+                        cd bitcart-admin && yarn start >> /var/log/bitcart/bitcart.log 2>&1 & \
+                        cd bitcart-store && NUXT_PORT=4141 yarn start >> /var/log/bitcart/bitcart.log 2>&1'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Make sure to also create a user called bitcart (or update the `User` attribute to whatever user you're having bitcart run as). Then run `chown bitcart:bitcart /path/to/bitcart -R` to ensure the user owns all the files it needs to have permission over.
+
+## (Optional) One-domain-mode
+
+Note that the [one-domain-mode](one-domain-mode.md) instructions only work with a Docker installation. In order to achieve the same effect on a manual deployment, you need to add the following environmental variables to your `conf/.env` file:
+
+```
+BITCART_HOST=sub.domain.com
+BITCART_ADMIN_HOST=sub.domain.com/admin
+BITCART_ADMIN_ROOTPATH=/admin
+BITCART_BACKEND_ROOTPATH=/api
+BITCART_ADMIN_API_URL=https://sub.domain.com/api
+BITCART_ADMIN_URL=https://sub.doain.com/admin
+BITCART_STORE_HOST=sub.domain.com
+BITCART_STORE_URL=https://sub.domain.com
+```
+
+And update your web server to handle the routes correctly, like this:
+
+```
+    location /admin {
+        proxy_pass http://localhost:4000;
+    }
+    location /api {
+        proxy_pass http://localhost:8000;
+    }
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+```
 
 ## Upgrading manual deployment
 
