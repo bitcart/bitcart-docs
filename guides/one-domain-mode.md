@@ -1,5 +1,8 @@
 # One domain mode
 
+### Note that the following instructions only work with a Docker installation. In order to achieve the same effect on a [manual deployment](manual.md#optional-one-domain-mode), click the link and follow the instructions.
+---
+
 One domain mode is an opt-out feature, enabled by default, which simplifies the configuration of domains.One domain mode allows running all Bitcart services under one domain.
 
 If you are deploying a new instance from the Bitcart Configurator, it is the default mode enabled. 
