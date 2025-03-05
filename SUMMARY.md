@@ -24,6 +24,7 @@
 
 ## Guides
 
+* [Default nodes/your own node](guides/default-nodes-your-own-node.md)
 * [One domain mode](guides/one-domain-mode.md)
 * [Backups](guides/backups.md)
 * [Lightning Network](guides/lightning.md)
