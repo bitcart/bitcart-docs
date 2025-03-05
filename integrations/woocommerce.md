@@ -31,6 +31,8 @@ Go to your store dashboard. WooCommerce > Settings > Payments. Click Bitcart.
 3. Change the store id used if needed
 4. Save changes
 
+## Important note
+Bitcart will only be visible on the WooCommerce checkout page if you are using the Classic Checkout. This is no longer the default option, so Bitcart will not appear as a payment method unless you activate it. For instructions on how to enable the Classic Checkout, please visit: [WooCommerce.com - Reverting to the classic Cart and Checkout](https://woocommerce.com/document/woocommerce-store-editing/customizing-cart-and-checkout/#reverting-to-the-classic-cart-and-checkout)
 ## Test the checkout
 
 If you have successfully configured your plugin, you will be able to checkout via cryptocurrency.
