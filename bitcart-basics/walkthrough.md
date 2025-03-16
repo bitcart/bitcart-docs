@@ -242,9 +242,9 @@ Available fields:
 * Name of template, you can select from built-in ones or type in a new one
 * Template text
 
-All templates in Bitcart are rendered via [Jinja2](https://jinja.palletsprojects.com/en/2.11.x).
+All templates in Bitcart are rendered via [Jinja2](https://jinja.palletsprojects.com/en/stable).
 
-Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/2.11.x/templates).
+Read about it's syntax in their [template designer documentation](https://jinja.palletsprojects.com/en/stable/templates).
 
 Read more about example usages of templates in Bitcart [here](../guides/templates.md)
 

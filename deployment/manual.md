@@ -249,7 +249,7 @@ sudo certbot --nginx
 
 Now you should be able to access the components over TLS. You can then also enable `http2` in your nginx configuration if you want.
 
-> You might want to look at the [FAQ for more detailed info on the Nginx configuration options](../support-and-community/faq/deployment-faq/#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
+> You might want to look at the [FAQ for more detailed info on the Nginx configuration options](../support-and-community/faq/deployment-faq.md#can-i-use-an-existing-nginx-server-as-a-reverse-proxy-with-ssl-termination)
 
 #### Option 2: No proxy
 

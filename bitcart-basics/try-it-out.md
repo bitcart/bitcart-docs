@@ -29,8 +29,6 @@ Then you can create an invoice, either through
 - the process documented on the [Custom integration](../integrations/custom-integration.md)
 - or the [store POS](../guides/store-pos.md), if you are the owner of the instance
 
-See the [What's Next](https://docs.bitcart.ai/getting-started/whatsnext) page for other options on how to continue exploring Bitcart.
-
 ## Bitcart Demo <a id="bitcart-demo"></a>
 
 To see Bitcart in action, visit our demo apps and stores or check out some of the stores using Bitcart in production.

@@ -9,7 +9,7 @@ Note that no matter where you host Bitcart, as your private keys are never requi
 Here are the requirements for running Bitcart on your own hardware:
 
 1. High-speed internet connection. The faster the better. This is to ensure the speed of invoice detection
-2. Any hardware ever. Yes, that's right! You can use your old PC or basically anything for that. Our minimal requirements are 1 GB RAM and around 10 GB disk. AMD64 hardware is the most tested one, but if needed, refer to our [raspberry pi guide](broken-reference)
+2. Any hardware ever. Yes, that's right! You can use your old PC or basically anything for that. Our minimal requirements are 1 GB RAM and around 10 GB disk. AMD64 hardware is the most tested one, but if needed, refer to our [raspberry pi guide](raspberrypi.md)
 3. Any linux-based OS would suffice, but using something like Ubuntu 20.04 is the most common choice.
 4. (Optional) Static ip - that's required only if your setting up with your own domain name. If you only plan to use bitcart locally/via tor, this is not needed
 5. (Optional) Domain name - see the note above

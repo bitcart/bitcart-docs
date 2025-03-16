@@ -23,47 +23,47 @@ The following setup guides you through setting up an entirely new Bech32 (SegWit
 
 Firstly, give your wallet a name, for example, `Bitcart Wallet` and click `Next`.
 
-![Enter your new wallet's name](../../.gitbook/assets/electrum\_createwallet.png)
+![Enter your new wallet's name](../.gitbook/assets/electrum_createwallet.png)
 
 Choose `Standard wallet` and proceed by clicking the `Next`button.
 
-![Select wallet type](../../.gitbook/assets/electrum\_createwallet\_step2.png)
+![Select wallet type](../.gitbook/assets/electrum_createwallet_step2.png)
 
 Since we're creating a brand-new wallet,choose `Create a new seed` and `Next`
 
-![Create a new seed](../../.gitbook/assets/electrum\_createwallet\_step3.png)
+![Create a new seed](../.gitbook/assets/electrum_createwallet_step3.png)
 
 From the multiple choice menu, select `SegWit` and `Next`
 
-![Select Segwit](../../.gitbook/assets/electrum\_createwallet\_step4.png)
+![Select Segwit](../.gitbook/assets/electrum_createwallet_step4.png)
 
 **IMPORTANT NOTE:** If you're a merchant, instead of SegWit (Bech32), it's recommended to use SegWit wrapped (P2SH) format. [This guide](https://www.youtube.com/watch?v=-1DBJWwA2Cw) explains how to create P2SH wallet in Electrum that's more suited for merchants, due to compatibility with legacy wallets customers use.
 
 **IMPORTANT NOTE 2:** Write down your recovery words in the order you see them on the screen. Write them down a piece of paper and store it somewhere secure. Take your time and triple check each word. Do not store your seed in a digital format (photograph, text document). Whoever has the access to your seed can access your funds. Confirm that the seed has been properly backed up by re-entering it in the same order. Once the seed is validated, proceed to the next step.
 
-![Backup your seed!](../../.gitbook/assets/electrum\_createwallet\_step5.png)
+![Backup your seed!](../.gitbook/assets/electrum_createwallet_step5.png)
 
 It's highly recommended that you encrypt your wallet. Select a password that you can easily remember and mark make sure `Encrypt Wallet File` is marked. Proceed by clicking `Next`.
 
-![Encrypt your wallet!](../../.gitbook/assets/electrum\_createwallet\_step6.png)
+![Encrypt your wallet!](../.gitbook/assets/electrum_createwallet_step6.png)
 
 When the wallet loads (it may take few moments), in the top menu, click on the `Wallet` and then`Information` .
 
-![See wallet information](../../.gitbook/assets/electrum\_createwallet\_step7.png)
+![See wallet information](../.gitbook/assets/electrum_createwallet_step7.png)
 
 Select and **copy** the `Master Public Key`. This is the **public** key from which Bitcart will derive addresses.
 
-![Copy the Master Public Key](../../.gitbook/assets/electrum\_createwallet\_step8.png)
+![Copy the Master Public Key](../.gitbook/assets/electrum_createwallet_step8.png)
 
 Return to your Bitcart. Click on the `Details` button in the `Wallets` card and click on the `New Wallet` button. Enter your wallet name and Paste the Master Public Key from electrum to xpub field. Click `Save`.
 
-![Add new wallet](../../.gitbook/assets/connect\_electrum.png)
+![Add new wallet](../.gitbook/assets/connect_electrum.png)
 
 ### Configuring the Gap Limit in Electrum <a href="#configuring-the-gap-limit-in-electrum" id="configuring-the-gap-limit-in-electrum"></a>
 
 In the top menu, click on the `View` and then`Show Console` .
 
-![Show console](../../.gitbook/assets/electrum\_gaplimit.png)
+![Show console](../.gitbook/assets/electrum_gaplimit.png)
 
 Enter following commands in Electrum console and press `enter` on your keyboard.
 
@@ -77,7 +77,7 @@ If you are running a version older than Electrum 4, also enter the following com
 wallet.storage.write()
 ```
 
-![Enter the commands here](../../.gitbook/assets/electrum\_gaplimit\_step2.png)
+![Enter the commands here](../.gitbook/assets/electrum_gaplimit_step2.png)
 
 Restart your Electrum and verify that the newly set gap limit is correct by entering in the console:
 

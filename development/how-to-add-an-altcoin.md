@@ -24,7 +24,6 @@ If so, the process is easy. If that electrum fork is maintained, usually the pro
 
    Create a docker file for that coin \(base on the btc one\), a docker-compose component and edit the setup scripts. See this [example](https://github.com/bitcart/bitcart-docker/commit/34e70b5a265ac23182d19cb95b457815937724b9). Ensure to add `COIN_HOST=component` line to this [file](https://github.com/bitcart/bitcart-docker/blob/master/dev-setup.sh), where `COIN` is the coin symbol, and `component` is the name of the docker-compose component you have created
 
-6. Optionally, add the coin to our [lunanode installer](https://github.com/bitcart/launchbitcart)
 
 ## There is no electrum fork for that coin
 
