@@ -10,7 +10,7 @@ For each of the objects, you are able to select a custom template.
 
 The templates for an object are selected as per [template selection rules](../bitcart-basics/walkthrough.md#template-selection-rules)
 
-![Store default templates](../.gitbook/assets/store\_default\_templates.png)
+![Store default templates](../.gitbook/assets/store_default_templates.png)
 
 ## HTML templates
 
@@ -41,7 +41,7 @@ The are two variables passed:
 * `store`, containing the store this notification belongs to
 * `invoice`, containing the invoice that has been paid
 
-You can use those two variables to build whatever message that fits the best for you.&#x20;
+You can use those two variables to build whatever message that fits the best for you.
 
 The default template is the following:
 
@@ -49,7 +49,7 @@ The default template is the following:
 New order from {{ invoice.buyer_email }} for {{ invoice | format_decimal("price") }} {{ invoice.currency }}!
 ```
 
-&#x20;An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/notification.j2)
+An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/notification.j2)
 
 ### Shop
 
@@ -73,6 +73,7 @@ Your summary is below:
 {{product}}
 {% endfor %}
 {% endraw %}
+
 If you've got any questions, email us at {{store.email}}.
 Best wishes, your {{store.name}}.
 ```
