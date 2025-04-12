@@ -22,9 +22,9 @@ Hosting your own instance might make it a bit harder to start using Bitcart, but
 
 The system requirements depend on the components you have chosen, but a typical full installation (with all essential components enabled, and btc daemon):
 
-- 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
-- \~= 10 GB disk (way less actually, but just to be sure)
-- Docker support by the OS (Ubuntu should work)
+* 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
+* \~= 10 GB disk (way less actually, but just to be sure)
+* Docker support by the OS (Ubuntu should work)
 
 Note that, adding new coins typically don't increase the requirements a lot.
 
@@ -101,10 +101,10 @@ Tor for Bitcart is intended more as an improvement of the setup process, and all
 
 Having Tor activated would allow for simpler, plug-and-play usage of Bitcart, as it suppress the need for the following configuration steps:
 
-- Opening multiple ports on the firewall
-- Configuring the NAT for port redirection to your device on your local network
-- Setting up a DNS entry to get a HTTPS certificate
-- And any other difficulties you may face
+* Opening multiple ports on the firewall
+* Configuring the NAT for port redirection to your device on your local network
+* Setting up a DNS entry to get a HTTPS certificate
+* And any other difficulties you may face
 
 While these steps are usually not a problem when Bitcart is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
 
@@ -240,9 +240,6 @@ The contents of this vhost file should look like this:
 server {
 	listen 80;
 
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-
 	# Put your domain name here
 	server_name bitcart.domain.com;
 
@@ -265,9 +262,6 @@ server {
 	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with Bitcart Docker)
 	ssl_certificate      /etc/letsencrypt/live/bitcart.domain.com/fullchain.pem;
 	ssl_certificate_key  /etc/letsencrypt/live/bitcart.domain.com/privkey.pem;
-
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
 
 	# Put your domain name here
 	server_name bitcart.domain.com;
@@ -326,6 +320,9 @@ Then, you need to make sure that Bitcart does not try to handle HTTPS on its sid
 ```
 export BITCART_REVERSEPROXY=nginx
 export REVERSEPROXY_HTTP_PORT=10080
+export REVERSEPROXY_HTTPS_PORT=10081
+export BITCART_HTTPS_ENABLED=true # if your reverse proxy handles https
+export BITCART_BEHIND_REVERSEPROXY=true
 ./setup.sh
 ```
 
@@ -502,8 +499,8 @@ Press "q" to quit out of less.
 
 The output should contain:
 
-- jrcs/letsencrypt-nginx-proxy-companion
-- bitcart/bitcart
+* jrcs/letsencrypt-nginx-proxy-companion
+* bitcart/bitcart
 
 And the status should be "Up"
 
