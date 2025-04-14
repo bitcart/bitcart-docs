@@ -89,9 +89,9 @@ cd bitcart
 </strong>python3 -m venv env
 source env/bin/activate
 # continue installation
-sudo pip3 install -r requirements.txt
-sudo pip3 install -r requirements/production.txt
-sudo pip3 install -r requirements/daemons/btc.txt
+sudo env/bin/pip install -r requirements.txt
+sudo env/bin/pip install -r requirements/production.txt
+sudo env/bin/pip install -r requirements/daemons/btc.txt
 </code></pre>
 
 For any other daemon(coin) you want to use, run:
