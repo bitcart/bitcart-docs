@@ -113,6 +113,13 @@ It doesn't remember the old state, so each time you run `uv sync` you need to in
 E.g. for btc and eth, you need to run `uv sync --no-dev --group web --group production --group btc --group eth`.
 {% endhint %}
 
+{% hint style="warning" %}
+If you are met with the following error during launch of the app/alembic:
+```ModuleNotFoundError: No module named 'sqlalchemy.cutils'```
+
+It means that your system is missing python development packages or a compiler. On ubuntu `python3-dev` does exactly that.
+{% endhint %}
+
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
 ```bash
