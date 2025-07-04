@@ -3,7 +3,7 @@
 The process is basically the following:
 
 1. Install OS required libraries
-2. Install python3 (3.9+)
+2. Install python3 (3.11+)
 3. Install nodejs (20) and yarn
 4. Install postgresql
 5. Install redis (6.2.0+)
@@ -40,7 +40,15 @@ Usually it might have already been installed, but we also need pip3 and dev pack
 sudo apt install python3 python3-pip python3-dev
 ```
 
-### 3) Install Node.JS and Yarn
+### 3) Install uv
+
+uv is a fast Python package manager used to manage dependencies in Bitcart. Install it by following the official [uv installation guide](https://docs.astral.sh/uv/getting-started/installation).
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### 4) Install Node.JS and Yarn
 
 ```bash
 sudo apt install nodejs
@@ -57,7 +65,7 @@ If nodejs from your distro is not at least the version we require, then you shou
 Using a nodejs version higher than specified way work, but we officially support only 1 release series (usually current LTS)
 {% endhint %}
 
-### 4) Install PostgresSQL
+### 5) Install PostgresSQL
 
 Note, replace `REPLACEME` with your new postgres password.
 
@@ -67,7 +75,7 @@ sudo -u postgres createdb bitcart
 sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'REPLACEME';"
 ```
 
-### 5) Install Redis
+### 6) Install Redis
 
 ```bash
 sudo apt install redis-server
@@ -79,28 +87,31 @@ Ensure that your redis version is > 6.2.0. Check with `redis-server -v`.
 If redis from your distro is too old, install from [official redis repository](https://redis.io/docs/getting-started/installation/install-redis-on-linux/#install-on-ubuntudebian)
 {% endhint %}
 
-### 6) Clone and prepare Bitcart components
+### 7) Clone and prepare Bitcart components
 
 #### Bitcart core(daemons) & Merchants API:
 
 <pre class="language-bash"><code class="lang-bash">git clone https://github.com/bitcart/bitcart
 cd bitcart
-<strong># Optional: Create virtual environment instead of using the global python environment
-</strong>python3 -m venv env
-source env/bin/activate
-# continue installation
-sudo pip3 install -r requirements.txt
-sudo pip3 install -r requirements/production.txt
-sudo pip3 install -r requirements/daemons/btc.txt
+<strong># uv creates a virtual environment in .venv for us automatically
+</strong>
+uv sync --no-dev --group web --group production --group btc
+source .venv/bin/activate
 </code></pre>
 
 For any other daemon(coin) you want to use, run:
 
 ```bash
-sudo pip3 install -r requirements/daemons/coin_name.txt
+uv sync --no-dev --group coin_name
 ```
 
-Where coin\_name is coin code(btc, ltc, etc.).
+Where coin\_name is coin code(btc, ltc, eth, etc.).
+
+{% hint style="info" %}
+Ensure that you include all the needed groups when running `uv sync`.
+It doesn't remember the old state, so each time you run `uv sync` you need to include all the needed groups.
+E.g. for btc and eth, you need to run `uv sync --no-dev --group web --group production --group btc --group eth`.
+{% endhint %}
 
 Create a file `conf/.env` It contains all the settings. For now, we just need to set database password and enabled cryptos.
 
@@ -313,10 +324,22 @@ For every Bitcart component directory (Merchants API, Admin Panel, Store).
 #### Bitcart core(daemons) & Merchants API:
 
 ```bash
-sudo pip3 install -r requirements.txt
-sudo pip3 install -r requirements/production.txt
-sudo pip3 install -r requirements/daemons/btc.txt
+uv sync --group web --group production --group btc
 ```
+
+For any other daemon(coin) you want to use, run:
+
+```bash
+uv sync --group coin_name
+```
+
+Where coin\_name is coin code(btc, ltc, eth, etc.).
+
+{% hint style="info" %}
+Ensure that you include all the needed groups when running `uv sync`.
+It doesn't remember the old state, so each time you run `uv sync` you need to include all the needed groups.
+E.g. for btc and eth, you need to run `uv sync --no-dev --group web --group production --group btc --group eth`.
+{% endhint %}
 
 **Bitcart admin**
 
