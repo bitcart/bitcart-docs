@@ -91,13 +91,13 @@ If redis from your distro is too old, install from [official redis repository](h
 
 #### Bitcart core(daemons) & Merchants API:
 
-<pre class="language-bash"><code class="lang-bash">git clone https://github.com/bitcart/bitcart
+```bash
+git clone https://github.com/bitcart/bitcart
 cd bitcart
-<strong># uv creates a virtual environment in .venv for us automatically
-</strong>
+# uv creates a virtual environment in .venv for us automatically
 uv sync --no-dev --group web --group production --group btc
 source .venv/bin/activate
-</code></pre>
+```
 
 For any other daemon(coin) you want to use, run:
 
