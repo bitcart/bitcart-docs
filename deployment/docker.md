@@ -121,7 +121,7 @@ cd /path/to/bitcart-docker
 ./setup.sh
 ```
 
-Verification
+Step 6: Verification
 
 1. Visit your domain: `https://yourdomain.com`
 2. Check SSL certificate is working
