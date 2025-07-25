@@ -55,7 +55,7 @@ For the complete list of configuration settings you can use (to e.g. open some p
 
 Deploying Bitcart behind Cloudflare provides additional benefits like DDoS protection, CDN, and detailed traffic insights. This section covers the specific steps needed for Cloudflare deployment.
 
-Prerequisites
+### Prerequisites
 
 - A running Bitcart instance deployed following the Docker deployment process above.
 
