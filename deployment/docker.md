@@ -50,3 +50,99 @@ There are also quite a few settings related to configuring coins in Bitcart. Eac
 * `COIN_SERVER` configures the daemon to use exact server you specify instead of connecting to many servers at once. For example `export BNB_SERVER=https://bsc-dataseed.binance.org` For btc-based coins, you can set up your own [ElectrumX](https://github.com/spesmilo/electrumx) or [Fulcrum](https://github.com/cculianu/Fulcrum) server with your own full node. For eth-based coins, server is your full node's RPC url.
 
 For the complete list of configuration settings you can use (to e.g. open some ports, change networks used or anything else), check out full configuration description at [bitcart-docker github](https://github.com/bitcart/bitcart-docker/blob/master/README.md#configuration).
+
+## Deployment behind Cloudflare
+
+Deploying Bitcart behind Cloudflare provides additional benefits like DDoS protection, CDN, and detailed traffic insights. This section covers the specific steps needed for Cloudflare deployment.
+
+### Prerequisites
+
+- A running Bitcart instance deployed following the Docker deployment process above.
+
+### Step 1: Cloudflare Setup
+
+1. Create a Cloudflare account (free tier is sufficient) at [cloudflare.com](https://cloudflare.com)
+2. Add your domain to Cloudflare
+3. Wait for DNS propagation (usually takes a few minutes to a few hours)
+
+### Step 2: Configure Cloudflare SSL
+
+1. In your Cloudflare dashboard, go to **SSL/TLS** > **Overview**
+2. Set **Custom SSL/TLS** encryption mode to **Full (strict)**
+3. Save your settings
+
+### Step 3: Generate Origin Certificate
+
+1. go to **SSL/TLS** > **Origin Server**
+2. Click **Create Certificate**
+3. Choose **Let Cloudflare generate a private key and a CSR**
+4. Set **Certificate Validity** to 15 years
+5. Add your domain(s): `yourdomain.com` and `*.yourdomain.com`
+6. Copy the **Origin Certificate** and save it as `yourdomain.com.crt`
+7. Copy the **Private Key** and save it as `yourdomain.com.key`
+8. Go to **SSL/TLS** > **Edge Certificates** and enable **Always Use HTTPS** (optional but recommended)
+
+### Step 4: Install SSL Certificates
+
+Place your Cloudflare certificates in the nginx directory:
+
+```bash
+# Navigate to the nginx certificates directory
+cd /var/lib/docker/volumes/compose_nginx_certs/_data
+
+# Copy your certificate file and private key
+cp /path/to/your/yourdomain.com.crt ./yourdomain.com.crt
+cp /path/to/your/yourdomain.com.key ./yourdomain.com.key
+
+# Set proper permissions
+chmod +x yourdomain.com.crt
+chmod +x yourdomain.com.key
+```
+
+### Step 5: Update Bitcart deployment
+
+1. Export the required environment variables
+
+```bash
+export BITCART_HTTPS_ENABLED=true
+export BITCART_REVERSEPROXY=nginx
+```
+
+{% hint style="warning" %}
+For Cloudflare deployment, you **must** set:
+- `BITCART_HTTPS_ENABLED=true` - Enables HTTPS support
+- `BITCART_REVERSEPROXY=nginx` - Uses nginx without automatic Let's Encrypt (since we're using Cloudflare certificates)
+{% endhint %}
+
+2. Rerun the setup script to apply the new certificates:
+
+```bash
+cd /path/to/bitcart-docker
+./setup.sh
+```
+
+### Verification
+
+1. Visit your domain: `https://yourdomain.com`
+2. Check SSL certificate is working
+
+### Troubleshooting Cloudflare Issues
+
+**SSL Certificate Issues:**
+```bash
+# Verify certificate files location
+ls -la /var/lib/docker/volumes/compose_nginx_certs/_data/
+
+# Fix permissions if needed
+chmod +x /var/lib/docker/volumes/compose_nginx_certs/_data/yourdomain.com.crt
+chmod +x /var/lib/docker/volumes/compose_nginx_certs/_data/yourdomain.com.key
+
+# Restart nginx
+cd /path/to/bitcart-docker
+docker compose restart nginx
+```
+
+**DNS Issues:**
+- Check your domain's DNS A record points to your server's IP
+- Verify Cloudflare proxy is enabled (orange cloud icon)
+- Wait for DNS propagation if you made recent changes
