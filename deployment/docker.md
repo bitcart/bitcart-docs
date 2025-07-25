@@ -55,23 +55,23 @@ For the complete list of configuration settings you can use (to e.g. open some p
 
 Deploying Bitcart behind Cloudflare provides additional benefits like DDoS protection, CDN, and detailed traffic insights. This section covers the specific steps needed for Cloudflare deployment.
 
-### Prerequisites
+Prerequisites
 
 - A running Bitcart instance deployed following the Docker deployment process above.
 
-### Step 1: Cloudflare Setup
+Step 1: Cloudflare Setup
 
 1. Create a Cloudflare account (free tier is sufficient) at [cloudflare.com](https://cloudflare.com)
 2. Add your domain to Cloudflare
 3. Wait for DNS propagation (usually takes a few minutes to a few hours)
 
-### Step 2: Configure Cloudflare SSL
+Step 2: Configure Cloudflare SSL
 
 1. In your Cloudflare dashboard, go to **SSL/TLS** > **Overview**
 2. Set **Custom SSL/TLS** encryption mode to **Full (strict)**
 3. Save your settings
 
-### Step 3: Generate Origin Certificate
+Step 3: Generate Origin Certificate
 
 1. go to **SSL/TLS** > **Origin Server**
 2. Click **Create Certificate**
@@ -82,7 +82,7 @@ Deploying Bitcart behind Cloudflare provides additional benefits like DDoS prote
 7. Copy the **Private Key** and save it as `yourdomain.com.key`
 8. Go to **SSL/TLS** > **Edge Certificates** and enable **Always Use HTTPS** (optional but recommended)
 
-### Step 4: Install SSL Certificates
+Step 4: Install SSL Certificates
 
 Place your Cloudflare certificates in the nginx directory:
 
@@ -99,7 +99,7 @@ chmod +x yourdomain.com.crt
 chmod +x yourdomain.com.key
 ```
 
-### Step 5: Update Bitcart deployment
+Step 5: Update Bitcart deployment
 
 1. Export the required environment variables
 
@@ -121,12 +121,12 @@ cd /path/to/bitcart-docker
 ./setup.sh
 ```
 
-### Verification
+Verification
 
 1. Visit your domain: `https://yourdomain.com`
 2. Check SSL certificate is working
 
-### Troubleshooting Cloudflare Issues
+Troubleshooting Cloudflare Issues
 
 **SSL Certificate Issues:**
 ```bash
