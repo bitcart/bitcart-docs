@@ -24,8 +24,6 @@
 
 ## Guides
 
-* [ETH payments plugin](guides/eth-payments-plugin.md)
-* [Bitcart Plugins Development](guides/bitcart-plugins-dev.md)
 * [Default nodes/your own node](guides/default-nodes-your-own-node.md)
 * [One domain mode](guides/one-domain-mode.md)
 * [Backups](guides/backups.md)
@@ -47,6 +45,11 @@
 * [FOSSBilling](integrations/fossbilling.md)
 * [Odoo](integrations/odoo.md)
 * [Custom Integration](integrations/custom-integration.md)
+
+## Plugins
+
+* [ETH payments plugin](eth-payments-plugin.md)
+* [Bitcart Plugins Development](bitcart-plugins-dev.md)
 
 ## Examples
 
