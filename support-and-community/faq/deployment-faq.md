@@ -185,6 +185,8 @@ export BTC_NETWORK=testnet
 ./setup.sh
 ```
 
+Note that Bitcart uses Bitcoin testnet v3.
+
 ### Can I start Bitcart only when I'm expecting a payment?
 
 Theoretically it's possible, but it is not recommended.
