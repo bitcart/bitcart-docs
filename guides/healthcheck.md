@@ -4,6 +4,8 @@ Bitcart Merchants API automatically performs health checks of your daemons every
 
 If some daemons are not running somehow, or are unsynchronized, it will log this in the server logs. If you want, you can connect notification providers and get real-time notifications to your favourite messenger when something fails. For that, go to server policies page and set Health check store ID to the store which has the needed notification providers connected, and it will then work automatically. If you need to customize the default template, edit the syncinfo template in global templates, see [templates.md](templates.md "mention").
 
+<figure><img src="../.gitbook/assets/image (9).png" alt="" width="375"><figcaption><p>Example notification when daemons are down</p></figcaption></figure>
+
 ### Troubleshooting not running daemon
 
 Please check your daemon logs and ensure they are running properly.

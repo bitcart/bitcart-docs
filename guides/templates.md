@@ -68,11 +68,9 @@ The default template is the following:
 Welcome to our shop!
 Thank you so much for your order!
 Your summary is below:
-{% raw %}
 {% for product in products %}
 {{product}}
 {% endfor %}
-{% endraw %}
 
 If you've got any questions, email us at {{store.email}}.
 Best wishes, your {{store.name}}.
@@ -96,13 +94,11 @@ The default template is the following:
 
 ```
 Thanks for buying {{product.name}} x {{quantity|int}}!
-{% raw %}
 {% if product.download_url %}
 Your download link: {{product.download_url}}
 {% else %}
 It'll ship shortly!
 {% endif %}
-{% endraw %}
 ```
 
 An up-to-date version can always be found at this [link](https://github.com/bitcart/bitcart/blob/master/api/templates/product.j2)
