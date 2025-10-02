@@ -38,6 +38,7 @@
 * [Server management settings](guides/server-management-settings.md)
 * [Tor](guides/tor.md)
 * [Multiple deployments on one server](guides/multiple-deployments-on-one-server.md)
+* [Healthcheck](guides/healthcheck.md)
 
 ## Integrations
 
