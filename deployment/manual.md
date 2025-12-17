@@ -175,6 +175,12 @@ python3 daemons/coin_name.py
 Start api:
 
 ```bash
+uv run task production
+```
+
+or, if you are deploying development instance, the below command will launch hot-reloadable api instance:
+
+```bash
 uv run task api
 ```
 
