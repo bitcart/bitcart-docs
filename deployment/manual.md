@@ -52,8 +52,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ```bash
 sudo apt install nodejs
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /usr/share/keyrings/yarn-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install yarn
 ```
 
@@ -175,13 +175,19 @@ python3 daemons/coin_name.py
 Start api:
 
 ```bash
-gunicorn -c gunicorn.conf.py main:app
+uv run task production
+```
+
+or, if you are deploying development instance, the below command will launch hot-reloadable api instance:
+
+```bash
+uv run task api
 ```
 
 Start background worker:
 
 ```bash
-python3 worker.py
+uv run task worker
 ```
 
 > If you want to run a specific coin on a test network or change other environment settings you can update the `.env` file in the [bitcart `conf/` directory](https://github.com/bitcart/bitcart/tree/master/conf)
@@ -220,6 +226,8 @@ If you are running Bitcart on a remote machine, you will need to do additional t
 #### Option 1: Nginx proxy (Recommended)
 
 This option is recommended to proxy secure incoming requests to the correct bitcart process.
+
+Ensure to add `BITCART_ADMIN_API_URL` environment variable to Bitcart admin, i.e `BITCART_ADMIN_API_URL=bitcart-admin.<mysite>.com yarn start` if accessing from remote machine.
 
 Install Nginx
 
