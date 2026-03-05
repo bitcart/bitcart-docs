@@ -19,6 +19,9 @@
   * [Hardware Deployment](deployment/hardware.md)
   * [Raspberry Pi Deployment](deployment/raspberrypi.md)
   * [Third-Party Hosting](deployment/thirdpartyhosting.md)
+* [Hosting Bitcart behind CDN or reverse proxy](proxying-bitcart/README.md)
+  * [Cloudflare](proxying-bitcart/cloudflare.md)
+  * [Custom reverse proxy](proxying-bitcart/custom-reverse-proxy.md)
 * [Your first invoice](your-first-invoice/README.md)
   * [Electrum wallet](your-first-invoice/electrumwallet.md)
 
