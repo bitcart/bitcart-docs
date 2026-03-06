@@ -13,7 +13,8 @@
 
 * [Deployment](deployment/README.md)
   * [Configurator](deployment/configurator.md)
-  * [Docker Deployment](deployment/docker.md)
+  * [Docker Deployment](deployment/docker/README.md)
+    * [IPv6 Support](deployment/docker/ipv6-support.md)
   * [Local Deployment](deployment/local.md)
   * [Manual Deployment](deployment/manual.md)
   * [Hardware Deployment](deployment/hardware.md)
