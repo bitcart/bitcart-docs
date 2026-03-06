@@ -1,7 +1,7 @@
 # Docker Deployment
 
 {% hint style="info" %}
-You may check out an easier method: [Configurator](configurator.md)
+You may check out an easier method: [Configurator](../configurator.md)
 {% endhint %}
 
 Bitcart uses docker for deployment. This allows us to simplify the installation and make Bitcart installable in almost any environment.
@@ -26,7 +26,7 @@ Note the minus sign after `su`. It is required. If you are deploying on mac os, 
 There are different environment variables available in order to customize the deployment
 
 {% hint style="info" %}
-In order for Bitcart to work, if you use `BITCART_HOST`, you should create a DNS A record from your domain registar, pointing to your current server
+In order for Bitcart to work, if you use `BITCART_HOST`, you should create a DNS A (and/or AAAA if you have [IPv6 support](ipv6-support.md) enabled) record from your domain registar, pointing to your current server
 {% endhint %}
 
 Environment variables are set like so:
@@ -37,7 +37,7 @@ export VARIABLE_NAME=value
 
 Here are the main ones:
 
-* `BITCART_HOST` configures on which domain Bitcart should run. It is required unless you use any of the methods from [local deployment](local.md). It works in [one domain mode](../guides/one-domain-mode.md). Your Bitcart Store will be accessible at `BITCART_HOST`, admin panel at /admin and Merchants API at /api. For other ways of configuration (for example different servers), check the one domain guide
+* `BITCART_HOST` configures on which domain Bitcart should run. It is required unless you use any of the methods from [local deployment](../local.md). It works in [one domain mode](../../guides/one-domain-mode.md). Your Bitcart Store will be accessible at `BITCART_HOST`, admin panel at /admin and Merchants API at /api. For other ways of configuration (for example different servers), check the one domain guide
 * `BITCART_CRYPTOS` configures which coins to enable. It is a list of coin symbols separated by commas. By default only btc is enabled. For example, to enable btc and eth, you would run `export BITCART_CRYPTOS=btc,eth`
 * `BITCART_REVERSEPROXY` - configures the reverse proxy used. By default `nginx-https` is used (with automatic ssl certificates generation). It might be useful to disable it to access your services directly or you can set it to `nginx` to disable ssl
 * `BITCART_ADDITIONAL_COMPONENTS` - you can add additional components to your deployment. For example, using `export BITCART_ADDITIONAL_COMPONENTS=tor` enables tor.
