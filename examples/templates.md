@@ -38,18 +38,18 @@ And we also use `{{store.name}}` to display store name at the top.
 
 ## HTML notification template
 
-The following HTML template produces a nice summary to the recipient whenever a new order is placed. It can be used 
-anywhere notification templates are supported, but this example is especially suitable for Telegram or other 
+The following HTML template produces a nice summary to the recipient whenever a new order is placed. It can be used
+anywhere notification templates are supported, but this example is especially suitable for Telegram or other
 instant-messaging notification services.
 
 ![Example Rendered template](../.gitbook/assets/example_html_template_rendered.jpg)
 
 ### Tips and gotchas
 
-* Ensure that you _escape_ all input -- *especially* user-provided input like email addresses, notes, and shipping 
+* Ensure that you _escape_ all input -- _especially_ user-provided input like email addresses, notes, and shipping
   addresses. You do this by using the `escape` filter, e.g. `{{ invoice.buyer_email|escape }}`.
-* To use this template as a notification template, you need to ensure that HTML rendering is supported by your notification 
-  provider. Telegram supports HTML formatting in messages, [for example](../guides/telegram_notifications.md).
+* To use this template as a notification template, you need to ensure that HTML rendering is supported by your notification
+  provider. Telegram supports HTML formatting in messages, [for example](../guides/telegram-notifications.md).
 
 ```html
 <b>New Order in {{ store.name|escape }}</b>
