@@ -35,3 +35,60 @@ And in `shop.html` template (containing most of the design), we just use:
 To include all products' rendered templates.
 
 And we also use `{{store.name}}` to display store name at the top.
+
+## HTML notification template
+
+The following HTML template produces a nice summary to the recipient whenever a new order is placed. It can be used 
+anywhere notification templates are supported, but this example is especially suitable for Telegram or other 
+instant-messaging notification services.
+
+![Example Rendered template](../.gitbook/assets/example_html_template_rendered.jpg)
+
+### Tips and gotchas
+
+* Ensure that you _escape_ all input -- *especially* user-provided input like email addresses, notes, and shipping 
+  addresses. You do this by using the `escape` filter, e.g. `{{ invoice.buyer_email|escape }}`.
+* To use this template as a notification template, you need to ensure that HTML rendering is supported by your notification 
+  provider. Telegram supports HTML formatting in messages, [for example](../guides/telegram_notifications.md).
+
+```html
+<b>New Order in {{ store.name|escape }}</b>
+
+From {{ invoice.buyer_email|escape }}
+Price: {{ invoice.currency }} {{ invoice.price|format_decimal("price") }}
+Sent amount: {{ invoice.sent_amount|round(6) }} {{ invoice.paid_currency }}
+
+{% if invoice.promocode %}
+* Promo: {{ invoice.promocode|escape }}
+{% endif %}
+{% if invoice.discount %}
+* Discount: {{ invoice.discount }}
+{% endif %}
+{% if invoice.shipping_address %}
+* Deliver to: 
+{{ invoice.shipping_address|escape }}
+{% endif %}
+
+<b>Notes:</b>
+{{ invoice.notes|escape }}
+{% if invoice.products %}
+
+<b>Invoice</b>
+<code>
+| Item          | Price    | Qty |  Total |
+|---------------|----------|-----|--------|
+{% for product in invoice.products %}
+{% set q = invoice.product_quantities[product.id] %}
+{{ "| %-14s| %8.2f | %3.0f | %6.2f |"|format(product.name,product.price,q,product.price*q) }}
+{% endfor %}
+</code>
+{% endif %}
+
+<b>Actions</b>
+* <a href="https://my_store.xyz/admin/i/{{ invoice.id }}">Open checkout screen</a>
+* <a href="https://my_store.xyz/store/{{ store.id }}">Open Store</a>
+
+<b>Details</b>
+* Status: {{  invoice.status }}
+
+```
