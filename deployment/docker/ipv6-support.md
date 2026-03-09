@@ -50,6 +50,18 @@ After saving `/etc/docker/daemon.json` configuration file, ensure to apply the n
 sudo systemctl restart docker
 ```
 
+{% hint style="warning" %}
+If you are running Bitcart behind another reverse proxy (e.g. Caddy, Nginx), ensure to refer to the [custom reverse proxy guide](../../proxying-bitcart/custom-reverse-proxy.md) as well. In that case, it is better to enable IPv6 only on the reverse proxy itself, rather than in Bitcart. To do so, add the following to your Docker Compose file for the reverse proxy's network:
+
+```yaml
+networks:
+  default:
+    enable_ipv6: true
+```
+
+This way, Bitcart does not need the `opt-add-ipv6` component at all.
+{% endhint %}
+
 The last step is to enable IPv6 support in Bitcart:
 
 ```bash
