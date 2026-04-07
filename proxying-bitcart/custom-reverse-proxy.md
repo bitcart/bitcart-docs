@@ -118,6 +118,10 @@ otherservice.yourdomain.tld {
 Ensure to replace `bitcart.yourdomain.tld` with your actual domain running bitcart
 {% endhint %}
 
+{% hint style="warning" %}
+Caddy will not start if you don't configure at least one domain besides the Bitcart one. Make sure to set up your other website(s) in the Caddyfile (like the `otherservice.yourdomain.tld` block in the example above) before starting Caddy.
+{% endhint %}
+
 Restart caddy:
 
 ```bash
