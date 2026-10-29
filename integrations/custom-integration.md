@@ -27,17 +27,19 @@ You can pass many arguments, but the only required ones are `price` and `store_i
 
 Check out the [swagger documentation](https://api.bitcart.ai) for more information.
 
-## Bitcart Admin Panel's checkout modal
+## Bitcart checkout modal
 
-To easily integrate a ready checkout page in your website, you may use a script that comes with your admin panel. You can create the invoice, and use that script to show a checkout modal on your page.
+To easily integrate a ready checkout page in your website, you may use a script that comes with your Bitcart checkout. You can create the invoice, and use that script to show a checkout modal on your page.
 
 Example of usage to add the modal to your website:
 
-1. Include the `bitcart.js` script in your html page
+1. Include the `v1.js` script in your html page
 
    ```markup
-   <script src="https://admin.your.bitcart.url/modal/bitcart.js"></script>
+   <script src="https://checkout.your.bitcart.url/embed/v1.js"></script>
    ```
+
+   In one domain mode, the checkout runs on your Bitcart domain, for example `https://bitcart.yourdomain.com/embed/v1.js`.
 
 2. Call the invoice API to generate an invoice \(example code\). This is sample backend code as it contains an auth token that should not be exposed in your front-end.
 
@@ -50,7 +52,7 @@ Example of usage to add the modal to your website:
        "Content-Type": "application/json",
        Authorization: BITCART_AUTH,
      },
-   })
+   });
 
    const invoiceCreation = {
      price: 5,
@@ -58,21 +60,27 @@ Example of usage to add the modal to your website:
      order_id: "something",
      notification_url: "https://webhook.after.checkout.com/goeshere",
      redirect_url: "https://go.here.after.checkout.com",
-   }
+   };
 
-   const response = await axiosClient.post("/invoices", invoiceCreation)
-   const invoiceId = response.data.id
+   const response = await axiosClient.post("/invoices", invoiceCreation);
+   const invoiceId = response.data.id;
    ```
 
 3. Use the `invoiceId` to pop up the modal
 
    ```javascript
-   window.bitcart.showInvoice(invoiceId)
+   const checkout = window.Bitcart.open(invoiceId);
    ```
 
-4. You'll often want to do something like refresh the state of your page when the invoice is paid, or note some kind of state before the modal pops up. You can attach event listeners like this:
+4. You'll often want to do something like refresh the state of your page when the invoice is paid. The checkout fires `bitcart:ready`, `bitcart:status`, `bitcart:expired`, `bitcart:complete`, `bitcart:close` and `bitcart:error` events on the returned element. For the first four, `event.detail` holds the invoice state.
 
    ```javascript
-   window.bitcart.onModalWillEnter(yourCallbackFunction)
-   window.bitcart.onModalWillLeave(yourCallbackFunction)
+   checkout.addEventListener("bitcart:status", (event) => yourCallbackFunction(event.detail));
+   checkout.addEventListener("bitcart:close", yourCallbackFunction);
    ```
+
+   When the buyer returns to the store, `bitcart:complete` navigates your page to the invoice's `redirect_url`. Call `event.preventDefault()` to stay on the page.
+
+### Older modal script
+
+The `/modal/bitcart.js` script keeps working, also when loaded from your admin panel URL: it opens the checkout on its own domain. It provides `window.bitcart.showInvoice(invoiceId)`, `window.bitcart.onModalWillEnter(callback)` and `window.bitcart.onModalWillLeave(callback)`.

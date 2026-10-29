@@ -23,7 +23,7 @@ This version requires the following:
 
 After you have enabled the Bitcart plugin, the configuration steps are:
 
-1. Enter your admin panel URL (for example, [https://admin.bitcart.ai](https://admin.bitcart.ai/)) without slashes. If deployed via configurator, you should use [https://bitcart.yourdomain.com/admin](https://bitcart.yourdomain.com/admin)
+1. In the admin panel URL field, enter your checkout URL (for example, [https://checkout.bitcart.ai](https://checkout.bitcart.ai/)) without slashes. If deployed via configurator, you should use [https://bitcart.yourdomain.com](https://bitcart.yourdomain.com). If your Bitcart doesn't run the new checkout, enter your admin panel URL (for example, [https://admin.bitcart.ai](https://admin.bitcart.ai/), or [https://bitcart.yourdomain.com/admin](https://bitcart.yourdomain.com/admin) if deployed via configurator) instead
 2. Enter your merchants API URL (for example, [https://api.bitcart.ai](https://api.bitcart.ai/)) without slashes. If deployed via configurator, you should use [https://bitcart.yourdomain.com/api](https://bitcart.yourdomain.com/api)
 3. Enter your store ID (click on id field in Bitcart's admin panel to copy id)
 

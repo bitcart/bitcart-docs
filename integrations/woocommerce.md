@@ -27,12 +27,14 @@ Refer to our [deployment guide](../deployment/)
 Go to your store dashboard. WooCommerce > Settings > Payments. Click Bitcart.
 
 1. Enter your Bitcart URL (URL of the Merchants API, like https://api.bitcart.ai)
-2. Enter your Bitcart Admin Panel URL (for example, https://admin.bitcart.ai)
+2. In the Bitcart Admin Panel URL field, enter your checkout URL (for example, https://checkout.bitcart.ai). If your Bitcart doesn't run the new checkout, enter your admin panel URL (for example, https://admin.bitcart.ai) instead
 3. Change the store id used if needed
 4. Save changes
 
 ## Important note
+
 Bitcart will only be visible on the WooCommerce checkout page if you are using the Classic Checkout. This is no longer the default option, so Bitcart will not appear as a payment method unless you activate it. For instructions on how to enable the Classic Checkout, please visit: [WooCommerce.com - Reverting to the classic Cart and Checkout](https://woocommerce.com/document/woocommerce-store-editing/customizing-cart-and-checkout/#reverting-to-the-classic-cart-and-checkout)
+
 ## Test the checkout
 
 If you have successfully configured your plugin, you will be able to checkout via cryptocurrency.

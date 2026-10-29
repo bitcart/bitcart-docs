@@ -22,9 +22,9 @@ Hosting your own instance might make it a bit harder to start using Bitcart, but
 
 The system requirements depend on the components you have chosen, but a typical full installation (with all essential components enabled, and btc daemon):
 
-* 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
-* \~= 10 GB disk (way less actually, but just to be sure)
-* Docker support by the OS (Ubuntu should work)
+- 1 GB RAM (if using 1 GB RAM, adding a bit of swap space is recommended, due to the OS using some resources too)
+- \~= 10 GB disk (way less actually, but just to be sure)
+- Docker support by the OS (Ubuntu should work)
 
 Note that, adding new coins typically don't increase the requirements a lot.
 
@@ -60,19 +60,21 @@ It might be possible that admin panel tries to access the merchants API via http
 
 #### 2. Invalid Merchants API URL set
 
-When using [one-domain mode](../../guides/one-domain-mode.md), it should always work. But if you have accidentally set any of `BITCART_ADMIN_HOST`, `BITCART_ADMIN_URL`, `BITCART_STORE_HOST`, `BITCART_STORE_URL`, then one domain mode is disabled.
+When using [one-domain mode](../../guides/one-domain-mode.md), it should always work. But if you have accidentally set any of `BITCART_ADMIN_HOST`, `BITCART_STORE_HOST`, `BITCART_CHECKOUT_HOST`, `BITCART_API_URL`, `BITCART_ADMIN_API_URL`, `BITCART_STORE_API_URL`, then one domain mode is disabled.
 
 If that's not what you want, unset those variables:
 
 ```bash
 unset BITCART_ADMIN_HOST
 unset BITCART_STORE_HOST
-unset BITCART_ADMIN_URL
-unset BITCART_STORE_URL
+unset BITCART_CHECKOUT_HOST
+unset BITCART_API_URL
+unset BITCART_ADMIN_API_URL
+unset BITCART_STORE_API_URL
 ./setup.sh
 ```
 
-If that's what you want, then maybe the `BITCART_ADMIN_URL` or `BITCART_STORE_URL` is set to an incorrect value. Ensure that it starts with the protocol (http:// or https://), and that that URL is accessible.
+If that's what you want, then maybe `BITCART_API_URL` (or `BITCART_ADMIN_API_URL`, `BITCART_STORE_API_URL`) is set to an incorrect value. Ensure that it starts with the protocol (http:// or https://), and that that URL is accessible.
 
 #### 3. Merchant API not running or is having errors
 
@@ -101,10 +103,10 @@ Tor for Bitcart is intended more as an improvement of the setup process, and all
 
 Having Tor activated would allow for simpler, plug-and-play usage of Bitcart, as it suppress the need for the following configuration steps:
 
-* Opening multiple ports on the firewall
-* Configuring the NAT for port redirection to your device on your local network
-* Setting up a DNS entry to get a HTTPS certificate
-* And any other difficulties you may face
+- Opening multiple ports on the firewall
+- Configuring the NAT for port redirection to your device on your local network
+- Setting up a DNS entry to get a HTTPS certificate
+- And any other difficulties you may face
 
 While these steps are usually not a problem when Bitcart is hosted on a VPS, it can be difficult to solve for non-technical users on home or office networks.
 
@@ -240,52 +242,52 @@ The contents of this vhost file should look like this:
 
 ```
 server {
-	listen 80;
+ listen 80;
 
-	# Put your domain name here
-	server_name bitcart.domain.com;
+ # Put your domain name here
+ server_name bitcart.domain.com;
 
-	# Needed for Let's Encrypt verification
-	location ~ /.well-known {
-		allow all;
-	}
+ # Needed for Let's Encrypt verification
+ location ~ /.well-known {
+  allow all;
+ }
 
-	# Force HTTP to HTTPS
-	location / {
-		return 301 https://$http_host$request_uri;
-	}
+ # Force HTTP to HTTPS
+ location / {
+  return 301 https://$http_host$request_uri;
+ }
 }
 
 server {
-	listen 443 ssl http2;
+ listen 443 ssl http2;
 
-	ssl on;
+ ssl on;
 
-	# SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with Bitcart Docker)
-	ssl_certificate      /etc/letsencrypt/live/bitcart.domain.com/fullchain.pem;
-	ssl_certificate_key  /etc/letsencrypt/live/bitcart.domain.com/privkey.pem;
+ # SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with Bitcart Docker)
+ ssl_certificate      /etc/letsencrypt/live/bitcart.domain.com/fullchain.pem;
+ ssl_certificate_key  /etc/letsencrypt/live/bitcart.domain.com/privkey.pem;
 
-	# Put your domain name here
-	server_name bitcart.domain.com;
+ # Put your domain name here
+ server_name bitcart.domain.com;
 
-	# Route everything to the real Bitcart instance
-	location / {
-		# URL of Bitcart (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
-		proxy_pass http://127.0.0.1:10080;
+ # Route everything to the real Bitcart instance
+ location / {
+  # URL of Bitcart (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
+  proxy_pass http://127.0.0.1:10080;
 
-		proxy_set_header Host $http_host;
-		proxy_set_header X-Forwarded-Proto $scheme;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header Host $http_host;
+  proxy_set_header X-Forwarded-Proto $scheme;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-		# For websockets (used by checkout page)
-		proxy_set_header Upgrade $http_upgrade;
-	}
+  # For websockets (used by checkout page)
+  proxy_set_header Upgrade $http_upgrade;
+ }
 
-	# Needed for Let's Encrypt verification
-	location ~ /.well-known {
-		allow all;
-	}
+ # Needed for Let's Encrypt verification
+ location ~ /.well-known {
+  allow all;
+ }
 }
 ```
 
@@ -294,23 +296,23 @@ Also, put the following in your main Nginx config file at `/etc/nginx/nginx.conf
 ```
 http {
 
-	# ... # Existing stuff
+ # ... # Existing stuff
 
-	# Needed to allow very long URLs to allow Tor services support
-	server_names_hash_bucket_size 128;
-	proxy_buffer_size          128k;
-	proxy_buffers              4 256k;
-	proxy_busy_buffers_size    256k;
-	client_header_buffer_size 500k;
-	large_client_header_buffers 4 500k;
-	http2_max_field_size       500k;
-	http2_max_header_size      500k;
+ # Needed to allow very long URLs to allow Tor services support
+ server_names_hash_bucket_size 128;
+ proxy_buffer_size          128k;
+ proxy_buffers              4 256k;
+ proxy_busy_buffers_size    256k;
+ client_header_buffer_size 500k;
+ large_client_header_buffers 4 500k;
+ http2_max_field_size       500k;
+ http2_max_header_size      500k;
 
-	# Needed websocket support (used by checkout page)
-	map $http_upgrade $connection_upgrade {
-    	default upgrade;
-    	''      close;
-	}
+ # Needed websocket support (used by checkout page)
+ map $http_upgrade $connection_upgrade {
+     default upgrade;
+     ''      close;
+ }
 
 }
 ```
@@ -399,17 +401,17 @@ Now we can partition the disk and format the partition:
 echo "Partitioning the external drive $DEVICE_NAME..."
 ### DANGER ZONE ###
 (
-	echo o # Create a new empty DOS partition table
-	echo n # Add a new partition
-	echo p # Primary partition
-	echo 1 # Partition number
-	echo   # First sector (Accept default: 1)
-	echo   # Last sector (Accept default: varies)
-	echo w # Write changes
+ echo o # Create a new empty DOS partition table
+ echo n # Add a new partition
+ echo p # Primary partition
+ echo 1 # Partition number
+ echo   # First sector (Accept default: 1)
+ echo   # Last sector (Accept default: varies)
+ echo w # Write changes
 ) | fdisk ${DEVICE_NAME}
 partprobe ${DEVICE_NAME}
 while ! lsblk $PARTITION_NAME &> /dev/null; do
-	sleep 1
+ sleep 1
 done
 mkfs.ext4 -F "$PARTITION_NAME"
 ```
@@ -425,8 +427,8 @@ mount -o defaults,noatime "$PARTITION_NAME" "$MOUNT_DIR"
 # Make sure the partition exists at the next reboot, we use UUID in case
 # the partition name is different in the next reboot
 if ! grep -qF "$MOUNT_DIR" /etc/fstab; then
-	UUID="$(sudo blkid -s UUID -o value $PARTITION_NAME)"
-	echo "UUID=$UUID $MOUNT_DIR ext4 defaults,noatime,nofail 0 2" >> /etc/fstab
+ UUID="$(sudo blkid -s UUID -o value $PARTITION_NAME)"
+ echo "UUID=$UUID $MOUNT_DIR ext4 defaults,noatime,nofail 0 2" >> /etc/fstab
 fi
 ```
 
@@ -436,7 +438,7 @@ Then, we need to make sure that docker won't start before the mount.
 MOUNT_UNIT="$(systemd-escape --path "$MOUNT_DIR").mount"
 docker_service="/lib/systemd/system/docker.service"
 if ! grep -qF "After=$MOUNT_UNIT" "$docker_service"; then
-	sed -i "s/After=/After=$MOUNT_UNIT /g" "$docker_service"
+ sed -i "s/After=/After=$MOUNT_UNIT /g" "$docker_service"
 fi
 ```
 
@@ -452,7 +454,7 @@ mkdir -p "$DOCKER_VOLUMES"
 mount --bind "$MOUNT_DIR" "$DOCKER_VOLUMES"
 # Make sure the mountpoint is mounted after reboot
 if ! grep -qF "$DOCKER_VOLUMES" /etc/fstab; then
-	echo "$MOUNT_DIR $DOCKER_VOLUMES none bind,nobootwait 0 2" >> /etc/fstab
+ echo "$MOUNT_DIR $DOCKER_VOLUMES none bind,nobootwait 0 2" >> /etc/fstab
 fi
 ```
 
@@ -501,8 +503,8 @@ Press "q" to quit out of less.
 
 The output should contain:
 
-* jrcs/letsencrypt-nginx-proxy-companion
-* bitcart/bitcart
+- jrcs/letsencrypt-nginx-proxy-companion
+- bitcart/bitcart
 
 And the status should be "Up"
 

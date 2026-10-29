@@ -85,7 +85,7 @@ Sent amount: {{ invoice.sent_amount|round(6) }} {{ invoice.paid_currency }}
 {% endif %}
 
 <b>Actions</b>
-* <a href="https://my_store.xyz/admin/i/{{ invoice.id }}">Open checkout screen</a>
+* <a href="https://my_store.xyz/i/{{ invoice.id }}">Open checkout screen</a>
 * <a href="https://my_store.xyz/store/{{ store.id }}">Open Store</a>
 
 <b>Details</b>

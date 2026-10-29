@@ -12,7 +12,7 @@ Bitcart core are essentially the Bitcart daemons for different currencies.
 
 Bitcart daemon is just a wrapper around electrum wallet, extending existing daemon functionality and providing more methods, wallet loading on the fly \(by passing xpub as part of the JSON-RPC request\), better events delivery \(supports polling, websocket\) and a specification for better exceptions to improve development time.
 
-So, all the networking and essential crypto parts are managed by electrum, which is battle-tested. 
+So, all the networking and essential crypto parts are managed by electrum, which is battle-tested.
 
 How does the networking work and why is it so light?
 
@@ -30,10 +30,10 @@ Websocket data is received by the worker via Bitcart SDK, and a corresponding ev
 
 The worker finds a payment method and an invoice related to that payment method having the address sent, and it marks the invoice as complete. When marking invoice as complete, multiple actions are done:
 
-* Paid currency is set
-* Email message is built by configured templates and is sent to the customer, if email server is configured and there was buyer email specified
-* All connected notification providers are used to notify the merchant
-* And other tasks to be added in the future, like executing custom scripts
+- Paid currency is set
+- Email message is built by configured templates and is sent to the customer, if email server is configured and there was buyer email specified
+- All connected notification providers are used to notify the merchant
+- And other tasks to be added in the future, like executing custom scripts
 
 In case of a temporary connection failure, on successful re-connect to websocket, the worker will fetch and check pending invoices to process missed events.
 
@@ -47,7 +47,7 @@ Optionally, you may also add the admin panel. It is a convenience UI built aroun
 
 It provides ultimate editing features, and is very powerful as it's built in material design.
 
-The admin panel also provides a universal checkout page, and a script which can be used to launch [checkout modal](../integrations/custom-integration.md#bitcart-admin-panels-checkout-modal) on any site 
+The checkout pages, and a script which can be used to launch the [checkout modal](../integrations/custom-integration.md#bitcart-checkout-modal) on any site, are served by the checkout, or by the admin panel when the checkout isn't enabled.
 
 ## Ready Store \(POS\)
 
@@ -66,6 +66,3 @@ Check [this guide](../guides/tor.md) for more information
 Nginx is serving all the incoming requests, from multiple configured domains, and is forwarding traffic to different components of the ecosystem. It is essential for production setup.
 
 Optionally, you may enable ssl support via let's encrypt. It works via a small docker container, automatically refreshing your certificates once in a while
-
-
-
