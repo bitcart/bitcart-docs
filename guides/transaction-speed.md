@@ -20,11 +20,12 @@ When payment has been confirmed \(has &gt;= 1 confirmations\), invoice status is
 
 When payment's number of confirmations is &gt;= transaction speed, invoice status is set to `complete`, and all the postorder actions are executed \(like notifications\).
 
-So, transaction speed controls how fast you want your invoice to be complete. Default value of 0 provides the fastest checkout, but it is not always good for your use case, it might be not safe. 
+So, transaction speed controls how fast you want your invoice to be complete. Default value of 0 provides the fastest checkout, but it is not always good for your use case, it might be not safe.
 
 Value of 1 means waiting for one confirmation, which is enough in most cases.
 
-You can set transaction speed to any value between 0 and 6 \(there is no point in waiting past 6 confirmations\).
+You can set transaction speed in store checkout settings to any value between 0 and 10.
 
+Wallets also have their own transaction speed setting. If set, it overrides the store setting for payments to that wallet, e.g. to require more confirmations for one coin than for another. If empty, the store setting is used. Wallet transaction speed can be any value between 0 and 10, or between 0 and 32 for Monero wallets.
 
-
+Required number of confirmations is fixed when the invoice is created: changing transaction speed only affects new invoices.

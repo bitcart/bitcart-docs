@@ -132,7 +132,7 @@ class Plugin(BasePlugin):
     async def startup(self):
         register_filter("create_payment_method", self.create_payment_method)
 
-    async def create_payment_method(self, method, wallet, coin, amount, invoice, product, store, lightning):
+    async def create_payment_method(self, method, wallet, coin, amount, invoice, product, store, lightning, get_lightning_description):
         # multiple options:
         # return SKIP_PAYMENT_METHOD # skip this method, e.g. if error occured
         # return method # fallback to bitcart default code, e.g. call add_request on the daemon
@@ -143,6 +143,8 @@ class Plugin(BasePlugin):
           "metadata": {"somekey": "somevalue"},
         }
 ```
+
+If your plugin creates a Lightning invoice, return `"lightning": True` in the method, and use `await get_lightning_description()` as the invoice description. It renders the store's [`lightning_description` template](templates.md#lightning-description) the first time it's called, and should only be called when you create a Lightning invoice.
 
 #### Plugin Settings
 
@@ -166,6 +168,70 @@ from api.plugins import get_plugin_settings
 
 settings = await get_plugin_settings("your_plugin_name")
 ```
+
+#### Templates
+
+Plugins can add their own templates, which merchants can then customize. The text can be passed directly, or loaded from `templates/your_template.j2` in the plugin folder:
+
+```python
+from api import models
+from api.plugins import BasePlugin, TemplateAudience, TemplateScope, TemplateTestData, sample_model
+
+
+class Plugin(BasePlugin):
+    name = "your_plugin_name"
+
+    async def get_receipt_test_context(self, data: TemplateTestData[models.Store]) -> dict:
+        return {"store": data.owner or sample_model(models.Store), "total": "10.50"}
+
+    async def startup(self) -> None:
+        self.register_template(
+            "receipt",
+            "{{ store.name }}: {{ total }}",
+            applicable_to=TemplateScope.STORE,
+            audience=TemplateAudience.EXTERNAL,
+            get_test_context=self.get_receipt_test_context,
+        )
+```
+
+`get_test_context` provides the data for the test button on the templates page:
+
+* `data.owner` is the store or product the user entered, or `None` if they entered nothing. Use `TemplateTestData[models.Store]` or `TemplateTestData[models.Product]` to match `applicable_to`, or `TemplateTestData[None]` for `TemplateScope.GLOBAL`
+* `data.user` is the user running the test
+* `data.container` gives access to services for the current request, if you need to load real data
+
+`sample_model(models.Invoice)` builds an unsaved model with every field filled, to use when there is no real data. Don't link it to a saved object, because that could save it to the database.
+
+The result of rendering one template can be passed to another, and it is printed correctly for the format of the outer template:
+
+```python
+header = await template_service.render("receipt_header", owner=store, store=store)
+message = await template_service.render("receipt", owner=store, store=store, header=header)
+```
+
+If the inner template failed and used its default, `message.is_fallback` is also true.
+
+Any model can be passed to a template, including your plugin's own models. Its columns and properties are available automatically, with these exceptions:
+
+* Columns marked `info=HIDDEN_FROM_TEMPLATES` are left out. Mark every secret column with it:
+
+```python
+api_secret: Mapped[str] = mapped_column(Text, info=HIDDEN_FROM_TEMPLATES)
+```
+
+* Relations are left out unless they are marked `info=EXPOSED_TO_TEMPLATES`:
+
+```python
+reviews = relationship("Review", lazy="raise", info=EXPOSED_TO_TEMPLATES)
+```
+
+* A model with `template_blocked: ClassVar[bool] = True` can't be passed at all. `User`, `Wallet`, `Notification`, `Token` and `Setting` are blocked. Pass only the values you need from them:
+
+```python
+await template_service.render("receipt", owner=store, store=store, user={"id": user.id, "email": user.email})
+```
+
+Both markers are available from `api.plugins`. Properties starting with `_` are skipped. Start the name of a secret property with `_`, or block the model.
 
 #### Dependencies
 

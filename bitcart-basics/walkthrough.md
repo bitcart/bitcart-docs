@@ -91,7 +91,6 @@ You can configure different policies from your store settings.
 By clicking on settings icon, you will be presented with the store checkout settings pop-up, where you can change different settings affecting the checkout.
 
 * Invoice expiration time, in minutes. It affects the timer displayed in the checkout. It is the time in which the customer must send the payment, otherwise invoice is marked as expired
-* Use HTML templates - whether to render templates of email message sent to customer as html or as plain text. For more information, see this [guide](../guides/templates.md#html-templates).
 
 ![Store checkout settings](../.gitbook/assets/store\_checkout\_settings.png)
 
@@ -260,7 +259,7 @@ When a template is being requested to render (for example, when sending notifica
 
 1. If this product or store has template connected, it will be used
 2. If it has no template connected, default global store or product template will be used (named store or product), if exists
-3. If none of templates above are customized, [default templates](https://github.com/bitcart/bitcart/tree/master/api/templates) are used
+3. If none of templates above are customized, [default templates](https://github.com/bitcart/bitcart/tree/master/api/templates/defaults) are used
 
 ### Changing object's templates
 

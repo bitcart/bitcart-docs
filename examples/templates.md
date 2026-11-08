@@ -6,7 +6,7 @@ Please read the [templates guide](../guides/templates.md) first.
 
 Here are some examples of ready templates.
 
-As plain text templates are pretty simple, we show complex html examples. Ensure to enable [html template rendering](../guides/templates.md#html-templates).
+As plain text templates are pretty simple, we show complex html examples. Ensure to set the format of these templates to `html` ([html templates](../guides/templates.md#html-templates)).
 
 **Note**: the templates contain a lot of boilerplate code to workaround different email clients rendering issues. All examples are self-contained and are ready to be used in production.
 
