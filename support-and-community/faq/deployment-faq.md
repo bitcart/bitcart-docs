@@ -254,14 +254,12 @@ server {
 
  # Force HTTP to HTTPS
  location / {
-  return 301 https://$http_host$request_uri;
+  return 301 https://$host$request_uri;
  }
 }
 
 server {
  listen 443 ssl http2;
-
- ssl on;
 
  # SSL certificate by Let's Encrypt in this Nginx (not using Let's Encrypt that came with Bitcart Docker)
  ssl_certificate      /etc/letsencrypt/live/bitcart.domain.com/fullchain.pem;
@@ -275,13 +273,15 @@ server {
   # URL of Bitcart (i.e. a Docker installation with REVERSEPROXY_HTTP_PORT set to 10080)
   proxy_pass http://127.0.0.1:10080;
 
-  proxy_set_header Host $http_host;
+  proxy_set_header Host $host;
   proxy_set_header X-Forwarded-Proto $scheme;
   proxy_set_header X-Real-IP $remote_addr;
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
   # For websockets (used by checkout page)
+  proxy_http_version 1.1;
   proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection $connection_upgrade;
  }
 
  # Needed for Let's Encrypt verification
@@ -319,16 +319,13 @@ http {
 
 Now test your Nginx config with `nginx -t` and reload the config with `service nginx reload`.
 
-Then, you need to make sure that Bitcart does not try to handle HTTPS on its side, you can do this by disabling it on your Bitcart instance.
+Then, configure Bitcart to leave HTTPS to your Nginx and listen on port `10080`:
 
+```bash
+./setup.sh --preset proxied-tls-termination
 ```
-export BITCART_REVERSEPROXY=nginx
-export REVERSEPROXY_HTTP_PORT=10080
-export REVERSEPROXY_HTTPS_PORT=10081
-export BITCART_HTTPS_ENABLED=true # if your reverse proxy handles https
-export BITCART_BEHIND_REVERSEPROXY=true
-./setup.sh
-```
+
+The preset also makes Bitcart trust the `X-Forwarded-For` and `X-Forwarded-Proto` headers your Nginx sends, from `172.16.0.0/12`. Docker shows connections from your server to port `10080` as coming from that range. See [Custom reverse proxy](../../proxying-bitcart/custom-reverse-proxy.md#tls-termination) for details, including how to add your proxy's range.
 
 Notice: If your Bitcart install has more than one domain (for example, when [one domain mode](../../guides/one-domain-mode.md) is off) you will need to modify your config for each domain name. The example above only covers 1 domain name called `bitcart.domain.com`.
 

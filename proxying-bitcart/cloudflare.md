@@ -26,6 +26,15 @@ If not, visit [SSL/TLS configuration page](https://dash.cloudflare.com/?to=/:acc
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>SSL mode full</p></figcaption></figure>
 
+With this preset, Bitcart reads the visitor's IP address and protocol from Cloudflare's `X-Forwarded-For` and `X-Forwarded-Proto` headers, and accepts them only from Cloudflare's IP ranges. If traffic passes through another proxy of yours before reaching Bitcart, such as a load balancer, Bitcart sees that proxy's address for every visitor. To accept the headers from that proxy too, add its address range when running the preset:
+
+```bash
+export REVERSEPROXY_TRUSTED_IPS=10.0.0.5/32
+./setup.sh --preset cloudflare
+```
+
+The proxy must pass on Cloudflare's `X-Forwarded-For` and `X-Forwarded-Proto` headers without replacing them.
+
 If you are running a reverse proxy on your server, you should use&#x20;
 
 ```bash
